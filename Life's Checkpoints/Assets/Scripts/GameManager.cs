@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text goldText;
-    public Text pCText;
-    public GameObject panel1;
+    //public Text pCText;
+    //public GameObject panel1;
     public static int currentGold;
     public float blinkSpeed = 2.0f;
 
@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<Objectives>().Objective1();
     }
 
-    public void Panel1()
+    /*public void Panel1()
     {
         panel1.SetActive (true);
         pCText.text = "Gaming PC\n I've wanted a gaming PC for a number of years.";
-    }
+    }*/
 }

@@ -8,9 +8,10 @@ public class GoldPickup : MonoBehaviour {
     public GameObject goldBar;
     public GameObject pickupEffect;
     public HealthManager healthManager;
+    public Checkpoint checkpoint;
 
-    private Quaternion goldPosition;
-    private Vector3 goldRespawnPoint;
+    //private Quaternion goldPosition;
+    public Vector3 startPosition;
 
     //private Coroutine _respawnCoroutine;
 
@@ -18,9 +19,10 @@ public class GoldPickup : MonoBehaviour {
     //To reference a method from another script in a public function, an object reference must be used. In this case, 'checkpoint'.
     //Reference a method from another script using GetComponent.
     {
+        startPosition = transform.position;
         healthManager = GetComponent<HealthManager>();
-        goldRespawnPoint = goldBar.transform.position;
-        goldPosition = goldBar.transform.rotation;
+        checkpoint = GetComponent<Checkpoint>();
+        //goldPosition = goldBar.transform.rotation;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -35,12 +37,16 @@ public class GoldPickup : MonoBehaviour {
 
     public void GoldReset()
     {
-        if (healthManager.isRespawning == true)
+        if(checkpoint.checkpoint1On == true && healthManager.isRespawning == true)
+        {
+            transform.position = startPosition;
+        }
+        /*if (healthManager.isRespawning == true)
         {
             Destroy(goldBar);
-            Instantiate(goldBar, goldRespawnPoint, goldPosition);
-            goldBar.transform.position = goldRespawnPoint;
+            Instantiate(goldBar, startPosition, goldPosition);
+            goldBar.transform.position = goldResp;
             goldBar.transform.rotation = goldPosition;
-        }
+        }*/
     }
 }

@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
     public bool isRespawning;
-    public GoldPickup goldPickup;
+    //public GoldPickup goldPickup;
 
     private Quaternion startPosition;
     //private Quaternion goldPosition;
@@ -36,7 +36,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
         startPosition = thePlayer.transform.rotation;
-        goldPickup = FindObjectOfType<GoldPickup>();
+        //goldPickup = FindObjectOfType<GoldPickup>();
         //goldRespawnPoint = goldBar.transform.position;
         //goldPosition = goldBar.transform.rotation;
     }
@@ -131,6 +131,7 @@ public class HealthManager : MonoBehaviour
             yield return new WaitForSeconds(waitForFade);
             //Instantiate(goldBar, goldRespawnPoint, goldPosition);
             isFadefromBlack = true;
+            GetComponent<GoldPickup>().GoldReset();
             //goldBar.transform.position = goldRespawnPoint;
             //goldBar.transform.rotation = goldPosition;
             isRespawning = false;
