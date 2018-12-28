@@ -111,9 +111,7 @@ public class HealthManager : MonoBehaviour
         else if(_respawnCoroutine != null)
         {
             StopCoroutine(_respawnCoroutine);
-            Debug.Log("Coroutine Stopped");
             _respawnCoroutine = StartCoroutine("RespawnCo");
-            Debug.Log("Coroutine Respawned");
         }
     }
 

@@ -5,21 +5,24 @@ using UnityEngine;
 public class GoldPickup : MonoBehaviour {
 
     public int value;
+    public GameObject thePlayer;
     public GameObject goldBar;
     public GameObject pickupEffect;
     public HealthManager healthManager;
     public Checkpoint checkpoint;
 
     //private Quaternion goldPosition;
-    public Vector3 startPosition;
+    private Vector3 respawnPoint;
+    private Quaternion startPosition;
 
-    //private Coroutine _respawnCoroutine;
+    private Coroutine _respawnCoroutine;
 
     void Start()
     //To reference a method from another script in a public function, an object reference must be used. In this case, 'checkpoint'.
     //Reference a method from another script using GetComponent.
     {
-        startPosition = transform.position;
+        respawnPoint = transform.position;
+        startPosition = transform.rotation;
         healthManager = GetComponent<HealthManager>();
         checkpoint = GetComponent<Checkpoint>();
         //goldPosition = goldBar.transform.rotation;
@@ -37,10 +40,20 @@ public class GoldPickup : MonoBehaviour {
 
     public void GoldReset()
     {
-        if(checkpoint.checkpoint1On == true && healthManager.isRespawning == true)
+        if(healthManager.isRespawning == true)
         {
-            transform.position = startPosition;
+            if (checkpoint.checkpoint1On == false)
+            {
+                StartCoroutine("GoldRespawnCo");
+            }
         }
+
+        else if(_respawnCoroutine != null)
+        {
+            StopCoroutine(_respawnCoroutine);
+            _respawnCoroutine = StartCoroutine("GoldRespawnCo");
+        }
+
         /*if (healthManager.isRespawning == true)
         {
             Destroy(goldBar);
@@ -48,5 +61,17 @@ public class GoldPickup : MonoBehaviour {
             goldBar.transform.position = goldResp;
             goldBar.transform.rotation = goldPosition;
         }*/
+    }
+    public IEnumerator GoldRespawnCo()
+    {
+        if(thePlayer.gameObject.activeInHierarchy == false)
+        {
+            Instantiate(goldBar, transform.position, transform.rotation);
+            if(thePlayer.gameObject.activeInHierarchy == true)
+            {
+                transform.position = respawnPoint;
+                transform.rotation = startPosition;
+            }
+        }
     }
 }

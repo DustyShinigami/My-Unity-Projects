@@ -29,10 +29,4 @@ public class GameManager : MonoBehaviour
         goldText.text = "Gold: " + currentGold.ToString();
         FindObjectOfType<Objectives>().Objective1();
     }
-
-    /*public void Panel1()
-    {
-        panel1.SetActive (true);
-        pCText.text = "Gaming PC\n I've wanted a gaming PC for a number of years.";
-    }*/
 }

@@ -34,7 +34,6 @@ public class Checkpoint : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    Debug.Log("Panel Active");
                     infoPanels[0].SetActive(true);
                     infoPanel1Activated = true;
                 }
@@ -45,7 +44,6 @@ public class Checkpoint : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
-                        Debug.Log("Panel Deactivated");
                         infoPanels[0].SetActive(false);
                         infoPanel1Activated = false;
                     }
