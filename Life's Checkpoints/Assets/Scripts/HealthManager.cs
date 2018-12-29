@@ -124,7 +124,7 @@ public class HealthManager : MonoBehaviour
             //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
             FindObjectOfType<GoldPickup>().DestroyGold();
             isFadefromBlack = true;
-            FindObjectOfType<GoldPickup>().GoldReset();
+            //FindObjectOfType<GoldPickup>().GoldReset();
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             thePlayer.transform.position = respawnPoint;

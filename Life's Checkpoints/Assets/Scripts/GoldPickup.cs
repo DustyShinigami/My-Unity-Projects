@@ -12,15 +12,15 @@ public class GoldPickup : MonoBehaviour
     public Checkpoint checkpoint;
 
     //private Quaternion goldPosition;
-    private Vector3 respawnPoint;
-    private Quaternion startPosition;
+    //private Vector3 respawnPoint;
+    //private Quaternion startPosition;
 
     void Start()
     //To reference a method from another script in a public function, an object reference must be used. In this case, 'checkpoint'.
     //Reference a method from another script using GetComponent.
     {
-        respawnPoint = transform.position;
-        startPosition = transform.rotation;
+        //respawnPoint = transform.position;
+        //startPosition = transform.rotation;
         checkpoint = FindObjectOfType<Checkpoint>();
         //To destroy multiple objects at once, use an Array. Then use 'GameObject.FindGameObjectsWithTag'.
         goldBar = GameObject.FindGameObjectsWithTag("Gold");
@@ -65,7 +65,7 @@ public IEnumerator GoldRespawnCo()*/
         }
     }
 
-    public void GoldReset()
+    /*public void GoldReset()
     {
         if (checkpoint.checkpoint1On == false)
         {
@@ -73,7 +73,7 @@ public IEnumerator GoldRespawnCo()*/
             transform.position = respawnPoint;
             transform.rotation = startPosition;
         }
-    }
+    }*/
 
         /*if (thePlayer.gameObject.activeInHierarchy == false)
         {
