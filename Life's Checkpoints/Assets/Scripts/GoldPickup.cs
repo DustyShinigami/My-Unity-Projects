@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldPickup : MonoBehaviour {
+public class GoldPickup : MonoBehaviour
+{
 
     public int value;
     public GameObject thePlayer;
@@ -38,40 +39,38 @@ public class GoldPickup : MonoBehaviour {
         }
     }
 
+    /*if(healthManager.isRespawning == true)
+    {
+        if (checkpoint.checkpoint1On == false)
+        {
+            StartCoroutine("GoldRespawnCo");
+        }
+    }
+
+    else if(_respawnCoroutine != null)
+    {
+        StopCoroutine(_respawnCoroutine);
+        _respawnCoroutine = StartCoroutine("GoldRespawnCo");
+    }
+}
+public IEnumerator GoldRespawnCo()*/
     public void GoldReset()
     {
-        if(healthManager.isRespawning == true)
+        Destroy(gameObject);
+        transform.position = respawnPoint;
+        transform.rotation = startPosition;
+        /*if (thePlayer.gameObject.activeInHierarchy == false)
         {
-            if (checkpoint.checkpoint1On == false)
-            {
-                StartCoroutine("GoldRespawnCo");
-            }
-        }
-
-        else if(_respawnCoroutine != null)
-        {
-            StopCoroutine(_respawnCoroutine);
-            _respawnCoroutine = StartCoroutine("GoldRespawnCo");
-        }
-
-        /*if (healthManager.isRespawning == true)
-        {
-            Destroy(goldBar);
-            Instantiate(goldBar, startPosition, goldPosition);
-            goldBar.transform.position = goldResp;
-            goldBar.transform.rotation = goldPosition;
-        }*/
-    }
-    public IEnumerator GoldRespawnCo()
-    {
-        if(thePlayer.gameObject.activeInHierarchy == false)
-        {
+            Destroy(gameObject);
             Instantiate(goldBar, transform.position, transform.rotation);
-            if(thePlayer.gameObject.activeInHierarchy == true)
+        }
+        else
+        {
+            if (thePlayer.gameObject.activeInHierarchy == true)
             {
                 transform.position = respawnPoint;
                 transform.rotation = startPosition;
             }
-        }
+        }*/
     }
 }

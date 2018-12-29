@@ -1940,6 +1940,7 @@ MonoBehaviour:
   postOn: {fileID: 2100000, guid: e40ec40b6083e2447997e3c843379dc4, type: 2}
   infoPanels:
   - {fileID: 2135086053}
+  checkpoint1On: 0
 --- !u!4 &1207333401
 Transform:
   m_ObjectHideFlags: 0
@@ -2376,8 +2377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldText: {fileID: 2095034548}
-  pCText: {fileID: 0}
-  panel1: {fileID: 2135086053}
   blinkSpeed: 2
 --- !u!4 &1677538673
 Transform:
@@ -2406,6 +2405,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   thePlayer: {fileID: 625384570}
+  goldPickup: {fileID: 0}
   invincibilityLength: 2
   playerRenderer: {fileID: 1996644896}
   flashLength: 0.1
@@ -2416,7 +2416,6 @@ MonoBehaviour:
   fadeSpeed: 2
   waitForFade: 0.5
   isRespawning: 0
-  goldPickup: {fileID: 0}
 --- !u!1 &1695185391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,6 +2845,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114862450749731036, guid: 891178ae382e4b742a72314c032a4cb6,
         type: 2}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 625384569}
+    - target: {fileID: 114862450749731036, guid: 891178ae382e4b742a72314c032a4cb6,
+        type: 2}
       propertyPath: goldBar
       value: 
       objectReference: {fileID: 1065704224}
@@ -2854,6 +2858,11 @@ Prefab:
       propertyPath: healthManager
       value: 
       objectReference: {fileID: 1677538674}
+    - target: {fileID: 114862450749731036, guid: 891178ae382e4b742a72314c032a4cb6,
+        type: 2}
+      propertyPath: checkpoint
+      value: 
+      objectReference: {fileID: 1207333400}
     - target: {fileID: 1987324934560360, guid: 891178ae382e4b742a72314c032a4cb6, type: 2}
       propertyPath: m_Name
       value: Gold Bar (1)

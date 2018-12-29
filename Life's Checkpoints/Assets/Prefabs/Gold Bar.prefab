@@ -157,7 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  thePlayer: {fileID: 0}
   goldBar: {fileID: 0}
   pickupEffect: {fileID: 1810419637844344, guid: 050b9ed3c4e05cd4b9edca1b0f257a10,
     type: 2}
   healthManager: {fileID: 0}
+  checkpoint: {fileID: 0}

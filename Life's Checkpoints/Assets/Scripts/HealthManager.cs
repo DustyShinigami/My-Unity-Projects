@@ -121,17 +121,12 @@ public class HealthManager : MonoBehaviour
         if (GameManager.currentGold < 5)
         {
             isRespawning = true;
-            //goldPickup.GoldReset();
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
-            //Instantiate(goldBar, goldRespawnPoint, goldPosition);
             isFadefromBlack = true;
-            GetComponent<GoldPickup>().GoldReset();
-            //goldBar.transform.position = goldRespawnPoint;
-            //goldBar.transform.rotation = goldPosition;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             thePlayer.transform.position = respawnPoint;
