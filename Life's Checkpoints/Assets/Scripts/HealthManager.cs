@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
     public bool isRespawning;
-    //public GoldPickup goldPickup;
+    //To reference another script's function, such as in the DeathTrigger script, make a public DeathTrigger, give it a reference name, and put it into the Start function. Use the reference name and assign it using GetComponent. Call another script's method by using the reference name, followed by a dot and the name of the method. Eg: deathTrigger.DestroyGold().
 
     private Quaternion startPosition;
     //private Quaternion goldPosition;
@@ -108,11 +108,6 @@ public class HealthManager : MonoBehaviour
         {
             StartCoroutine("RespawnCo");
         }
-        else if(_respawnCoroutine != null)
-        {
-            StopCoroutine(_respawnCoroutine);
-            _respawnCoroutine = StartCoroutine("RespawnCo");
-        }
     }
 
     //IEnumerators or Coroutines will execute the code separately at specified times while the rest of the code in a codeblock will carry on executing as normal
@@ -126,7 +121,10 @@ public class HealthManager : MonoBehaviour
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
+            //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
+            FindObjectOfType<GoldPickup>().DestroyGold();
             isFadefromBlack = true;
+            FindObjectOfType<GoldPickup>().GoldReset();
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             thePlayer.transform.position = respawnPoint;
@@ -137,6 +135,7 @@ public class HealthManager : MonoBehaviour
             flashCounter = flashLength;
             GameManager.currentGold = 0;
             GetComponent<GameManager>().SetCountText();
+            StopCoroutine("RespawnCo");
 
             /*isRespawning = true;
             thePlayer.gameObject.SetActive(false);
