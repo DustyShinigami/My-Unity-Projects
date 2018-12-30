@@ -14,7 +14,7 @@ public class Checkpoint : MonoBehaviour
     public Material postOff;
     public Material postOn;
     public GameObject[] infoPanels;
-    public bool checkpoint1On;
+    public static bool checkpoint1On;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1IsActivated;
@@ -57,6 +57,7 @@ public class Checkpoint : MonoBehaviour
         cpRenderer.material = cpOn;
         postRenderer.material = postOn;
         pcRenderer.color = new Color(1f, 1f, 1f, 1f);
+        checkpoint1On = true;
     }
 
     //[] makes a variable an Array (a list). The 'foreach' loop will check through all the Checkpoint objects
