@@ -10,6 +10,8 @@ public class HealthManager : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public PlayerController thePlayer;
+    //public GoldPickup goldPickup;
+    //public GoldPickup[] goldPickup;
     public float invincibilityLength;
     public Renderer playerRenderer;
     public float flashLength;
@@ -19,7 +21,7 @@ public class HealthManager : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
     public bool isRespawning;
-    public GameObject[] goldBars;
+    //public GameObject goldBar;
     //To reference another script's function, such as in the DeathTrigger script, make a public DeathTrigger, give it a reference name, and put it into the Start function. Use the reference name and assign it using GetComponent. Call another script's method by using the reference name, followed by a dot and the name of the method. Eg: deathTrigger.DestroyGold().
 
     private Quaternion startPosition;
@@ -30,15 +32,18 @@ public class HealthManager : MonoBehaviour
     //private Vector3 goldRespawnPoint;
     private bool isFadetoBlack;
     private bool isFadefromBlack;
-    private Coroutine _respawnCoroutine;
-    private Vector3 goldRespawnPoint;
-    private Quaternion goldStartPosition;
+    //private Coroutine _respawnCoroutine;
+    //private Vector3 goldRespawnPoint;
+    //private Quaternion goldStartPosition;
 
     void Start()
     {
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
         startPosition = thePlayer.transform.rotation;
+        //goldPickup = GetComponent<GoldPickup>();
+        //goldRespawnPoint = goldBar.transform.position;
+        //goldStartPosition = goldBar.transform.rotation;
         //goldRespawnPoint = transform.position;
         //goldStartPosition = transform.rotation;
         //goldPickup = FindObjectOfType<GoldPickup>();
@@ -115,7 +120,8 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    //IEnumerators or Coroutines will execute the code separately at specified times while the rest of the code in a codeblock will carry on executing as normal
+    //IEnumerators or Coroutines will execute the code separately at specified times while the rest of the code in a codeblock will carry on executing as normal.
+    //To prevent an error appearing below the name of the Coroutine, be sure to place a yield return somewhere within the code block. Either yield return null or a new WaitForSeconds.
     public IEnumerator RespawnCo()
     {
         if (GameManager.currentGold < 5)
@@ -127,11 +133,12 @@ public class HealthManager : MonoBehaviour
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
             //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
-            //FindObjectOfType<GoldPickup>().DestroyGold();
+            FindObjectOfType<GoldPickup>().DestroyGold();
+            //GetComponent<GoldPickup>().DestroyGold();
+            //Instantiate(goldBar, goldRespawnPoint, Quaternion.identity);
             isFadefromBlack = true;
-            Instantiate(goldBars[5], goldRespawnPoint, goldStartPosition);
-            goldRespawnPoint = transform.position;
-            goldStartPosition = transform.rotation;
+            //goldRespawnPoint = goldBar.transform.position;
+            //goldStartPosition = goldBar.transform.rotation;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             thePlayer.transform.position = respawnPoint;

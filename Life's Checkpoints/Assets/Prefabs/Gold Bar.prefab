@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4017587543748332}
   - component: {fileID: 65930965834771986}
-  - component: {fileID: 114862450749731036}
+  - component: {fileID: 114520875689400616}
   m_Layer: 0
   m_Name: Gold Bar
   m_TagString: Gold
@@ -145,7 +145,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114862450749731036
+--- !u!114 &114520875689400616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,9 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
-  thePlayer: {fileID: 0}
-  goldBar: {fileID: 0}
   pickupEffect: {fileID: 1810419637844344, guid: 050b9ed3c4e05cd4b9edca1b0f257a10,
     type: 2}
   healthManager: {fileID: 0}
   checkpoint: {fileID: 0}
+  goldPrefab: {fileID: 0}

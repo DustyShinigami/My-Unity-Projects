@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     public bool isGrounded;
+    public Vector3 respawnPosition;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        respawnPosition = transform.position;
     }
 
     void Update()
@@ -55,8 +57,11 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "KillPlane")
         {
-            Debug.Log("Player Died");
-            gameObject.SetActive (false);
+            transform.position = respawnPosition;
+        }
+        if(other.tag == "Checkpoint")
+        {
+            respawnPosition = transform.position;
         }
     }
 }
