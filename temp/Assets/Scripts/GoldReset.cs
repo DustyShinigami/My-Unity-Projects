@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoldReset : MonoBehaviour {
 
-    public GameObject[] goldBarArray;
+    [HideInInspector]public GameObject[] goldBarArray;
     public GameObject goldBarPrefab;
     public GameObject goldBarPrefabClone;
 
@@ -13,7 +13,7 @@ public class GoldReset : MonoBehaviour {
     public void Start()
     {
         goldBarArray = GameObject.FindGameObjectsWithTag("Gold");
-        startPosition = goldBarPrefab.transform.position;
+        startPosition = goldBarPrefabClone.transform.position;
     }
 
     public void DestroyGold()
@@ -35,6 +35,6 @@ public class GoldReset : MonoBehaviour {
 
     public void ResetGold()
     {
-        goldBarPrefabClone = Instantiate(goldBarPrefab, goldBarPrefab.transform.position, Quaternion.identity) as GameObject;
+        goldBarPrefabClone = Instantiate(goldBarPrefab, startPosition, Quaternion.identity) as GameObject;
     }
 }
