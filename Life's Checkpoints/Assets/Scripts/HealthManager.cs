@@ -117,7 +117,8 @@ public class HealthManager : MonoBehaviour
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
             //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
-            FindObjectOfType<DestroyGold>().ResetGold();
+            FindObjectOfType<GoldPickup>().ResetGold();
+            //FindObjectOfType<GoldPickup>().gameObject.SetActive(true);
             isFadefromBlack = true;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
