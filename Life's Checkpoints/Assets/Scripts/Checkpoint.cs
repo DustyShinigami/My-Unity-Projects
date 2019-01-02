@@ -14,7 +14,7 @@ public class Checkpoint : MonoBehaviour
     public Material postOff;
     public Material postOn;
     public bool checkpoint1On;
-    public GameObject[] infoPanels;
+    [HideInInspector] public GameObject[] infoPanels;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1IsActivated;
