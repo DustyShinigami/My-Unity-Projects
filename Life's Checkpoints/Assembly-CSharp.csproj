@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\DeathTrigger.cs" />
-     <Compile Include="Assets\Scripts\DestroyGold.cs" />
      <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GoldPickup.cs" />
@@ -126,11 +125,11 @@
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
@@ -350,9 +349,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>D:/Unity Projects/GitHub/My-Unity-Projects/Life&apos;s Checkpoints/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>F:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

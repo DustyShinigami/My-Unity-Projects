@@ -13,8 +13,8 @@ public class Checkpoint : MonoBehaviour
     public Material cpOn;
     public Material postOff;
     public Material postOn;
-    public bool checkpoint1On;
     [HideInInspector] public GameObject[] infoPanels;
+    [HideInInspector] public bool checkpoint1On;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1IsActivated;
@@ -28,9 +28,9 @@ public class Checkpoint : MonoBehaviour
     void Update()
     //Key presses are better handled in the Update function and will recognise keys being pressed once every frame.
     {
-        if (checkpoint1On == true)
+        if (checkpoint1On)
         {
-            if (infoPanel1Activated == false)
+            if (!infoPanel1Activated)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -40,7 +40,7 @@ public class Checkpoint : MonoBehaviour
             }
             else
             {
-                if (infoPanel1Activated == true)
+                if (!infoPanel1Activated)
                 {
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
@@ -84,15 +84,15 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (GameManager.currentGold >= 5)
+            if (GameManager.currentGold >= 5 && !checkpoint1On)
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     theHealthManager.SetSpawnPoint(transform.position);
-                    Checkpoint1On();
                     checkpoint1On = true;
                 }
             }
+
             else if (GameManager.currentGold <= 5)
             {
                 checkpoint1On = false;

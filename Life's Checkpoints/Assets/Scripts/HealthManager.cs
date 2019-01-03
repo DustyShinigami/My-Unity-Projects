@@ -18,6 +18,7 @@ public class HealthManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
+    //public Checkpoint checkpoint;
     //To reference another script's function, such as in the DeathTrigger script, make a public DeathTrigger, give it a reference name, and put it into the Start function. Use the reference name and assign it using GetComponent. Call another script's method by using the reference name, followed by a dot and the name of the method. Eg: deathTrigger.DestroyGold().
 
     private bool isRespawning;
@@ -108,8 +109,9 @@ public class HealthManager : MonoBehaviour
     //To prevent an error appearing below the name of the Coroutine, be sure to place a yield return somewhere within the code block. Either yield return null or a new WaitForSeconds.
     public IEnumerator RespawnCo()
     {
-        if (GameManager.currentGold < 5)
+        if (GameManager.currentGold <= 5)
         {
+            Debug.Log("Gold is less than 5 and the checkpoint is off");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
@@ -118,7 +120,6 @@ public class HealthManager : MonoBehaviour
             yield return new WaitForSeconds(waitForFade);
             //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
             FindObjectOfType<GoldPickup>().ResetGold();
-            //FindObjectOfType<GoldPickup>().gameObject.SetActive(true);
             isFadefromBlack = true;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
@@ -132,20 +133,9 @@ public class HealthManager : MonoBehaviour
             GetComponent<GameManager>().SetCountText();
             StopCoroutine("RespawnCo");
 
-            /*isRespawning = true;
-            thePlayer.gameObject.SetActive(false);
-            yield return new WaitForSeconds(respawnLength);
-            isFadetoBlack = true;
-            yield return new WaitForSeconds(waitForFade);
-            isFadefromBlack = true;
-            invincibilityCounter = invincibilityLength;
-            playerRenderer.enabled = false;
-            flashCounter = flashLength;
-            SceneManager.LoadScene("Level 1");
-            GameManager.currentGold = 0;*/
         }
 
-        else if(GameManager.currentGold >= 5)
+        else if (GameManager.currentGold == 5 && FindObjectOfType<Checkpoint>().checkpoint1On)
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
@@ -162,9 +152,32 @@ public class HealthManager : MonoBehaviour
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
+            StopCoroutine("RespawnCo");
         }
+        /*if (GameManager.currentGold == 5 && !FindObjectOfType<Checkpoint>().checkpoint1On)
+        {
+            Debug.Log("Gold is equal to 5 but the checkpoint isn't on");
+            isRespawning = true;
+            thePlayer.gameObject.SetActive(false);
+            Instantiate(deathEffect, respawnPoint, startPosition);
+            yield return new WaitForSeconds(respawnLength);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            FindObjectOfType<GoldPickup>().ResetGold();
+            isFadefromBlack = true;
+            isRespawning = false;
+            thePlayer.gameObject.SetActive(true);
+            thePlayer.transform.position = respawnPoint;
+            thePlayer.transform.rotation = startPosition;
+            currentHealth = maxHealth;
+            invincibilityCounter = invincibilityLength;
+            playerRenderer.enabled = false;
+            flashCounter = flashLength;
+            GameManager.currentGold = 0;
+            GetComponent<GameManager>().SetCountText();
+            StopCoroutine("RespawnCo");
+        }*/
     }
-
     /*public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;
