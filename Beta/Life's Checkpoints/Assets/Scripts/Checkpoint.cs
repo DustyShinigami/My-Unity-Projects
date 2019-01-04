@@ -15,6 +15,7 @@ public class Checkpoint : MonoBehaviour
     public Material postOn;
     [HideInInspector] public GameObject[] infoPanels;
     [HideInInspector] public bool checkpoint1On;
+    public Objectives objectives;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1IsActivated;
@@ -23,6 +24,7 @@ public class Checkpoint : MonoBehaviour
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
+        objectives = GetComponent<Objectives>();
     }
 
     public void OnTriggerStay(Collider other)
@@ -37,10 +39,6 @@ public class Checkpoint : MonoBehaviour
                     Checkpoint1On();
                     checkpoint1On = true;
                 }
-            }
-            else if (GameManager.currentGold <= 5)
-            {
-                checkpoint1On = false;
             }
         }
     }

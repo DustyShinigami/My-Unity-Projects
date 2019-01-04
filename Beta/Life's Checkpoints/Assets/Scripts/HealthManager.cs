@@ -18,8 +18,8 @@ public class HealthManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
-    public GoldPickup goldPickup;
-    public Checkpoint checkpoint;
+    [HideInInspector]public GoldPickup goldPickup;
+    [HideInInspector]public Checkpoint checkpoint;
     //To reference another script's function, such as in the DeathTrigger script, make a public DeathTrigger, give it a reference name, and put it into the Start function. Use the reference name and assign it using GetComponent. Call another script's method by using the reference name, followed by a dot and the name of the method. Eg: deathTrigger.DestroyGold().
 
     private bool isRespawning;
