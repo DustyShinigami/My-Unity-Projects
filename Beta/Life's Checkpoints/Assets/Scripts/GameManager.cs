@@ -6,16 +6,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text goldText;
-    //public Text pCText;
-    //public GameObject panel1;
     public static int currentGold;
-    public float blinkSpeed = 2.0f;
+    //public bool textBlink = true;
 
-    /*void Start()
+    void Start()
     {
-        goldText.color = Mathf.Round(Mathf.PingPong(Time.time * blinkSpeed, 1.0f));
-        StartCoroutine("FlashText");
-    }*/
+        //StartCoroutine("FlashText");
+    }
 
     public void AddGold(int goldtoAdd)
     {
@@ -29,4 +26,15 @@ public class GameManager : MonoBehaviour
         goldText.text = "Gold: " + currentGold.ToString();
         FindObjectOfType<Objectives>().Objective1();
     }
+
+    /*public IEnumerator FlashText()
+    {
+        while (textBlink)
+        {
+            goldText.enabled = false;
+            yield return new WaitForSeconds(.5f);
+            goldText.enabled = true;
+            yield return new WaitForSeconds(.5f);
+        }
+    }*/
 }

@@ -2372,7 +2372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldText: {fileID: 2095034548}
-  blinkSpeed: 2
 --- !u!4 &1677538673
 Transform:
   m_ObjectHideFlags: 0
@@ -2411,6 +2410,8 @@ MonoBehaviour:
   blackScreen: {fileID: 34495188}
   fadeSpeed: 2
   waitForFade: 0.5
+  goldPickup: {fileID: 0}
+  checkpoint: {fileID: 0}
 --- !u!1001 &1713569934
 PrefabInstance:
   m_ObjectHideFlags: 0
