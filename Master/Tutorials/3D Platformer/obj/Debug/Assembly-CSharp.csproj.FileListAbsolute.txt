@@ -1,0 +1,2 @@
+D:\Google Drive\Unity Tutorials\3D Platformer\Project\3D Platformer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Google Drive\Unity Tutorials\3D Platformer\Project\3D Platformer\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
