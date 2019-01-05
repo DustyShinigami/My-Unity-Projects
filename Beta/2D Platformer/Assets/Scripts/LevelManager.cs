@@ -12,10 +12,16 @@ public class LevelManager : MonoBehaviour {
     {
         thePlayer = FindObjectOfType<PlayerController>();
 	}
-	
-	public void Respawn()
+
+    public void Respawn()
+    {
+        StartCoroutine("RespawnCo");
+    }
+
+	public IEnumerator RespawnCo()
     {
         thePlayer.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitToSpawn);
         thePlayer.transform.position = thePlayer.respawnPosition;
         thePlayer.gameObject.SetActive(true);
     }
