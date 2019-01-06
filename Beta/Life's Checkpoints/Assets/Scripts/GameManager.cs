@@ -6,19 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text goldText;
-    public GameObject thePlayer;
     public static int currentGold;
-
-    /*public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("thePlayer"))
-        {
-            if(currentGold == 0)
-            {
-                StartCoroutine("FlashText");
-            }
-        }
-    }*/
 
     public void Start()
     {
@@ -34,8 +22,14 @@ public class GameManager : MonoBehaviour
 
     public void SetCountText()
     {
+        StartFlashText();
         goldText.text = "Gold: " + currentGold.ToString();
         FindObjectOfType<Objectives>().Objective1();
+    }
+
+    public void StartFlashText()
+    {
+        StartCoroutine ("FlashText");
     }
 
     public IEnumerator FlashText()
