@@ -27,7 +27,7 @@ public class DeathTrigger : MonoBehaviour
             Vector3 hitDirection = other.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
             FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
-            checkpoint.OnTriggerEnter(other);
+            checkpoint.OnTriggerStay(other);
         }
     }
 }

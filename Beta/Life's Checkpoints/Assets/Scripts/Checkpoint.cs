@@ -20,37 +20,33 @@ public class Checkpoint : MonoBehaviour
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1Unlocked;
     private bool infoPanel1Activated;
-    //private Vector3 checkpoint1PromptPosition;
+    private Vector3 checkpoint1PromptPosition;
 
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
         checkpoint1Prompt.enabled = false;
-        //checkpoint1PromptPosition = gameObject.transform.position;
+        checkpoint1PromptPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (GameManager.currentGold >= 5)
             {
                 checkpoint1Prompt.enabled = true;
+                gameObject.transform.position = checkpoint1PromptPosition;
                 checkpoint1Prompt.text = "Press Return to activate";
-                //gameObject.transform.position = checkpoint1PromptPosition;
-            }
-            else if (Input.GetKeyDown(KeyCode.Return))
-            {
-                theHealthManager.SetSpawnPoint(transform.position);
-                Checkpoint1On();
-                checkpoint1On = true;
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    theHealthManager.SetSpawnPoint(transform.position);
+                    Checkpoint1On();
+                    checkpoint1On = true;
+                    checkpoint1Prompt.enabled = false;
+                }
             }
         }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        checkpoint1Prompt.enabled = false;
     }
 
     void Update()
