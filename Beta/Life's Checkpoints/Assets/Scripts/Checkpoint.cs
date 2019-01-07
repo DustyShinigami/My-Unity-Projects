@@ -15,32 +15,42 @@ public class Checkpoint : MonoBehaviour
     public Material postOn;
     [HideInInspector] public GameObject[] infoPanels;
     [HideInInspector] public bool checkpoint1On;
-    public Objectives objectives;
+    public Text checkpoint1Prompt;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
-    //private bool checkpoint1IsActivated;
+    //private bool checkpoint1Unlocked;
     private bool infoPanel1Activated;
+    //private Vector3 checkpoint1PromptPosition;
 
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
-        objectives = GetComponent<Objectives>();
+        checkpoint1Prompt.enabled = false;
+        //checkpoint1PromptPosition = gameObject.transform.position;
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (GameManager.currentGold >= 5)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    theHealthManager.SetSpawnPoint(transform.position);
-                    Checkpoint1On();
-                    checkpoint1On = true;
-                }
+                checkpoint1Prompt.enabled = true;
+                checkpoint1Prompt.text = "Press Return to activate";
+                //gameObject.transform.position = checkpoint1PromptPosition;
+            }
+            else if (Input.GetKeyDown(KeyCode.Return))
+            {
+                theHealthManager.SetSpawnPoint(transform.position);
+                Checkpoint1On();
+                checkpoint1On = true;
             }
         }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        checkpoint1Prompt.enabled = false;
     }
 
     void Update()
