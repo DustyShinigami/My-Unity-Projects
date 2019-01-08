@@ -25,12 +25,6 @@ public class Objectives : MonoBehaviour {
         }
     }
 
-    /*public void ObjectiveComplete()
-    {
-        checkpointPrompt.enabled = true;
-        checkpointPrompt.text = "Press Return to activate";
-    }*/
-
     void Hide()
     {
         objective1.enabled = false;

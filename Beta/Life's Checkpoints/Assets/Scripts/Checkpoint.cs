@@ -33,12 +33,30 @@ public class Checkpoint : MonoBehaviour
         //checkpoint1PromptPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
+    //An OnTriggerEnter would only register a key press as the collider comes into contact with the trigger. A key would have to be held down if an input to work.
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (GameManager.currentGold >= 5)
             {
+                checkpoint1Prompt.enabled = true;
+                if (checkpoint1Prompt.enabled)
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        theHealthManager.SetSpawnPoint(transform.position);
+                        Checkpoint1On();
+                        checkpoint1Prompt.enabled = false;
+                    }
+                }
+                /*if (!checkpoint1Prompt.enabled)
+                {
+                    panel1Prompt.enabled = true;
+                }*/
+            }
+
+            /*{
                 checkpoint1Prompt.enabled = true;
                 //gameObject.transform.position = checkpoint1PromptPosition;
                 checkpoint1Prompt.text = "Press Return to activate";
@@ -47,7 +65,31 @@ public class Checkpoint : MonoBehaviour
                     theHealthManager.SetSpawnPoint(transform.position);
                     Checkpoint1On();
                 }
-            }
+            }*/
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (checkpoint1Prompt.enabled)
+        {
+            checkpoint1Prompt.text = "Press Return to activate";
+        }
+        else if (panel1Prompt.enabled)
+        {
+            panel1Prompt.text = "Press Space for more information";
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (checkpoint1Prompt.enabled)
+        {
+            checkpoint1Prompt.enabled = false;
+        }
+        if (panel1Prompt.enabled)
+        {
+            panel1Prompt.enabled = false;
         }
     }
 
@@ -58,24 +100,23 @@ public class Checkpoint : MonoBehaviour
         {
             checkpoint1Prompt.enabled = false;
             panel1Prompt.enabled = true;
-            panel1Prompt.text = "Press Space for more information";
-            if (!infoPanel1Activated)
+        }
+        if (!infoPanel1Activated)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                infoPanels[0].SetActive(true);
+                infoPanel1Activated = true;
+            }
+        }
+        else
+        {
+            if (infoPanel1Activated)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    infoPanels[0].SetActive(true);
-                    infoPanel1Activated = true;
-                }
-            }
-            else
-            {
-                if (infoPanel1Activated)
-                {
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        infoPanels[0].SetActive(false);
-                        infoPanel1Activated = false;
-                    }
+                    infoPanels[0].SetActive(false);
+                    infoPanel1Activated = false;
                 }
             }
         }
@@ -84,10 +125,10 @@ public class Checkpoint : MonoBehaviour
 
     public void Checkpoint1On()
     {
+        checkpoint1On = true;
         cpRenderer.material = cpOn;
         postRenderer.material = postOn;
         pcRenderer.color = new Color(1f, 1f, 1f, 1f);
-        checkpoint1On = true;
     }
 
     //[] makes a variable an Array (a list). The 'foreach' loop will check through all the Checkpoint objects

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine("FlashText");
+        StartFlashText();
     }
 
     public void AddGold(int goldtoAdd)
@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     public void SetCountText()
     {
-        StartFlashText();
         goldText.text = "Gold: " + currentGold.ToString();
         FindObjectOfType<Objectives>().Objective1();
     }
