@@ -15,18 +15,22 @@ public class Checkpoint : MonoBehaviour
     public Material postOn;
     [HideInInspector] public GameObject[] infoPanels;
     [HideInInspector] public bool checkpoint1On;
+    //public TextMesh checkpoint1Prompt;
     public Text checkpoint1Prompt;
+    public Text panel1Prompt;
 
     //Make sure to assign a value to a bool with '=' and in an 'if' statement somewhere in the code to prevent warnings.
     //private bool checkpoint1Unlocked;
     private bool infoPanel1Activated;
-    private Vector3 checkpoint1PromptPosition;
+    //private Vector3 checkpoint1PromptPosition;
 
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
+        //checkpoint1Prompt = FindObjectOfType<TextMesh>();
         checkpoint1Prompt.enabled = false;
-        checkpoint1PromptPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        panel1Prompt.enabled = false;
+        //checkpoint1PromptPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     public void OnTriggerStay(Collider other)
@@ -36,14 +40,12 @@ public class Checkpoint : MonoBehaviour
             if (GameManager.currentGold >= 5)
             {
                 checkpoint1Prompt.enabled = true;
-                gameObject.transform.position = checkpoint1PromptPosition;
+                //gameObject.transform.position = checkpoint1PromptPosition;
                 checkpoint1Prompt.text = "Press Return to activate";
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     theHealthManager.SetSpawnPoint(transform.position);
                     Checkpoint1On();
-                    checkpoint1On = true;
-                    checkpoint1Prompt.enabled = false;
                 }
             }
         }
@@ -54,6 +56,9 @@ public class Checkpoint : MonoBehaviour
     {
         if (checkpoint1On)
         {
+            checkpoint1Prompt.enabled = false;
+            panel1Prompt.enabled = true;
+            panel1Prompt.text = "Press Space for more information";
             if (!infoPanel1Activated)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -82,6 +87,7 @@ public class Checkpoint : MonoBehaviour
         cpRenderer.material = cpOn;
         postRenderer.material = postOn;
         pcRenderer.color = new Color(1f, 1f, 1f, 1f);
+        checkpoint1On = true;
     }
 
     //[] makes a variable an Array (a list). The 'foreach' loop will check through all the Checkpoint objects
@@ -103,4 +109,12 @@ public class Checkpoint : MonoBehaviour
         pcRenderer.color = new Color(1f, 1f, 1f, 5f);
         checkpoint1On = false;
     }
+
+    /*public void OnReturnEnter()
+    {
+        if (checkpoint1On == true)
+        {
+            checkpoint1Prompt.enabled = false;
+        }
+    }*/
 }
