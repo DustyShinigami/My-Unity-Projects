@@ -18,9 +18,10 @@ public class HealthManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
-    [HideInInspector]public GoldPickup goldPickup;
-    [HideInInspector]public Checkpoint checkpoint;
-    public GameManager theGameManager;
+    [HideInInspector] public GoldPickup goldPickup;
+    [HideInInspector] public Checkpoint checkpoint;
+    [HideInInspector] public GameManager theGameManager;
+    [HideInInspector] public Objectives objectives;
     //To reference another script's function, such as in the DeathTrigger script, make a public DeathTrigger, give it a reference name, and put it into the Start function. Use the reference name and assign it using GetComponent. Call another script's method by using the reference name, followed by a dot and the name of the method. Eg: deathTrigger.DestroyGold().
 
     private bool isRespawning;
@@ -39,6 +40,7 @@ public class HealthManager : MonoBehaviour
         //To avoid NullReferences saying object reference is not set to an instance of an object, be sure to give things like GetComponent and FindObjectOfType an object name, such as below, and then call it when needed by using the object name, followed by .(method).
         //To reference another script's function quickly and just the once, use the FindObjectOfType function. This is considered to be slow however.
         goldPickup = FindObjectOfType<GoldPickup>();
+        objectives = FindObjectOfType<Objectives>();
         checkpoint = FindObjectOfType<Checkpoint>();
         theGameManager = GetComponent<GameManager>();
     }
@@ -135,17 +137,25 @@ public class HealthManager : MonoBehaviour
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
-            //Using static variables will still require the Type name of the script being used.
-            GameManager.currentGold = 0;
-            //When calling another script's function, use the GetComponent in the Start function and assign an object reference.
-            theGameManager.StartFlashText();
-            theGameManager.SetCountText();
+            if (!checkpoint.checkpoint1On)
+            {
+                //Using static variables will still require the Type name of the script being used.
+                GameManager.currentGold = 0;
+                //When calling another script's function, use the GetComponent in the Start function and assign an object reference.
+                theGameManager.StartFlashText();
+                theGameManager.SetCountText();
+            }
+            else if (checkpoint.checkpoint1On)
+            {
+                GameManager.currentGold = 5;
+                theGameManager.SetCountText();
+                objectives.checkpoint1Unlock.enabled = false;
+            }
             
             StopCoroutine("RespawnCo");
-
         }
 
-        else if (GameManager.currentGold >= 5)
+        /*if (checkpoint.checkp)
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
@@ -162,13 +172,10 @@ public class HealthManager : MonoBehaviour
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
-            if (checkpoint.checkpoint1On)
-            {
-                GameManager.currentGold = 5;
-                theGameManager.SetCountText();
-            }
+            GameManager.currentGold = 5;
+            theGameManager.SetCountText();
             StopCoroutine("RespawnCo");
-        }
+        }*/
     }
     /*public void HealPlayer(int healAmount)
     {

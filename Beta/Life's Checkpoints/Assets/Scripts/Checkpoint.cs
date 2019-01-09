@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Checkpoint : MonoBehaviour
 {
     public HealthManager theHealthManager;
+    public GameManager theGameManager;
     public Renderer cpRenderer;
     public Renderer postRenderer;
     public SpriteRenderer pcRenderer;
@@ -27,9 +28,11 @@ public class Checkpoint : MonoBehaviour
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
+        theGameManager = FindObjectOfType<GameManager>();
         //checkpoint1Prompt = FindObjectOfType<TextMesh>();
         checkpoint1Prompt.enabled = false;
         panel1Prompt.enabled = false;
+        infoPanel1Activated = false;
         //checkpoint1PromptPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
@@ -47,8 +50,12 @@ public class Checkpoint : MonoBehaviour
                     {
                         theHealthManager.SetSpawnPoint(transform.position);
                         Checkpoint1On();
-                        checkpoint1Prompt.enabled = false;
                     }
+                }
+                if (checkpoint1On)
+                {
+                    checkpoint1Prompt.enabled = false;
+                    panel1Prompt.enabled = true;
                 }
                 /*if (!checkpoint1Prompt.enabled)
                 {
@@ -71,11 +78,19 @@ public class Checkpoint : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (checkpoint1Prompt.enabled)
+        if (!checkpoint1Prompt.enabled)
         {
+            checkpoint1Prompt.enabled = true;
             checkpoint1Prompt.text = "Press Return to activate";
         }
-        else if (panel1Prompt.enabled)
+        if (checkpoint1On)
+        {
+            checkpoint1Prompt.enabled = false;
+            panel1Prompt.enabled = true;
+            //GameManager.currentGold = 5;
+            //theGameManager.SetCountText();
+        }
+        if (panel1Prompt.enabled)
         {
             panel1Prompt.text = "Press Space for more information";
         }
@@ -96,11 +111,6 @@ public class Checkpoint : MonoBehaviour
     void Update()
     //Key presses are better handled in the Update function and will recognise keys being pressed once every frame.
     {
-        if (checkpoint1On)
-        {
-            checkpoint1Prompt.enabled = false;
-            panel1Prompt.enabled = true;
-        }
         if (!infoPanel1Activated)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -109,6 +119,7 @@ public class Checkpoint : MonoBehaviour
                 infoPanel1Activated = true;
             }
         }
+
         else
         {
             if (infoPanel1Activated)
