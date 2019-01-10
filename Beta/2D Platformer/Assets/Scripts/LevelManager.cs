@@ -21,8 +21,8 @@ public class LevelManager : MonoBehaviour {
 	public IEnumerator RespawnCo()
     {
         thePlayer.gameObject.SetActive(false);
-        GameObject particlesGameObject = Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
-        particlesGameObject.GetComponent<ParticleSystem>().Play();
+        Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+        //particlesGameObject.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(waitToSpawn);
         thePlayer.transform.position = thePlayer.respawnPosition;
         thePlayer.gameObject.SetActive(true);
