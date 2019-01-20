@@ -7,8 +7,9 @@ public class LevelManager : MonoBehaviour {
     public PlayerController thePlayer;
     public float waitToSpawn;
     public GameObject deathEffect;
+    public int coinCount;
 
-	void Start ()
+    void Start ()
     {
         thePlayer = FindObjectOfType<PlayerController>();
 	}
@@ -25,5 +26,10 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(waitToSpawn);
         thePlayer.transform.position = thePlayer.respawnPosition;
         thePlayer.gameObject.SetActive(true);
+    }
+
+    public void AddCoins(int coinsToAdd)
+    {
+        coinCount += coinsToAdd;
     }
 }
