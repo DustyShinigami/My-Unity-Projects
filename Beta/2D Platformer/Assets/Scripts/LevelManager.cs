@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour {
     public float waitToSpawn;
     public GameObject deathEffect;
     public int coinCount;
+    public Text coinText;
 
     void Start ()
     {
@@ -31,5 +33,7 @@ public class LevelManager : MonoBehaviour {
     public void AddCoins(int coinsToAdd)
     {
         coinCount += coinsToAdd;
+        //The text UI line needs to be added after coins have been added
+        coinText.text = "Coins: " + coinCount;
     }
 }
