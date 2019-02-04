@@ -9,6 +9,9 @@ public class DestroyOverTime : MonoBehaviour
     void Update()
     {
         lifeTime = lifeTime - Time.deltaTime;
-        Destroy(gameObject);
+        if(lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

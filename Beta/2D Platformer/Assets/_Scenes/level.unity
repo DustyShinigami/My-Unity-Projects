@@ -2006,6 +2006,12 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 338903790}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 8568607404179763068, guid: 5e01ebea65a3b0041bcd9730071ef685,
+        type: 3}
     - target: {fileID: 5556940987620019426, guid: cace91220aac57f459c3c0df6c1674ae,
         type: 3}
       propertyPath: m_LocalPosition.x
