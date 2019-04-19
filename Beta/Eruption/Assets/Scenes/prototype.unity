@@ -209,12 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1923185119}
-  groundCheck: {fileID: 234193165}
-  groundCheckRadius: 0.25
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  isGrounded: 0
   moveSpeed: 5
   jumpForce: 12
   jumped: 0
