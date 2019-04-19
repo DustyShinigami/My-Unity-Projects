@@ -19,13 +19,16 @@ from Jump to Idle.
 13. Make sure to leave Loop Time ticked in order for idle animations to reloop. Also, the reloop needs to be consistent, so this is down to how the animation is made. The times
 can be edited under the Animations tab in the Inspector if the end needs to be shortened etc.
 
-isGrounded and the animation transitions may not work once set up. If this happens, try to add a Ground Layer.
+isGrounded and the animation transitions may not work once set up. The trigger box may not tick and none of the animations will show a blue bar. If this happens, try to add a
+Ground Layer.
 
-1. Create an Empty Game Object and call it GroundCheck. Place it on the Player parent object.
-2. Click the Layer drop-down list and select Add Layer...
-3. Click on an empty field and call it Ground.
-4. Select Ground from the Layer drop-down list.
-5. In the PlayerController script, add the variables related to 'Ground'. Whether a 2D or 2.5D game, Physics2D should work.
+1. Create an Empty Game Object and call it GroundCheck.
+2. Reset the Transform, select the Player's parent object and reset the Transform for that.
+3. Place it on the Player parent object.
+4. Select a platform and click the Layer drop-down list and select Add Layer...
+5. Click on an empty field and call it Ground.
+6. Select Ground from the Layer drop-down list.
+7. In the PlayerController script, add the variables related to 'Ground'. Whether a 2D or 2.5D game, Physics2D should work.
 
 If the isGrounded trigger box starts to work, it might be safe to delete the above steps. After doing this once before, the trigger still worked correctly. It may be a bug with Unity.
 

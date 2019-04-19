@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Animator anim;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    public bool isGrounded;
     public float moveSpeed;
     public float jumpForce;
     public bool jumped;
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         if (knockBackCounter <= 0)
         {
@@ -50,7 +55,7 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded)
             {
                 moveDirection.y = -1f;
-                if (Input.GetKey(KeyCode.KeypadPlus))
+                if (Input.GetKey(KeyCode.KeypadPlus) && isGrounded)
                 {
                     moveDirection.y = jumpForce;
                     jumped = true;
