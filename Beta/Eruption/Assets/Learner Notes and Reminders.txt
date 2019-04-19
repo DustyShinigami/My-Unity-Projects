@@ -14,7 +14,20 @@ involve getting a 3D model's animations working correctly and transition from on
 9. Do the same from the transitioned animation to the first.
 10. Parameters will need to be set, such as a float, bool, int etc. Add one by clicking on the + icon in the top right corner. These will be controlled via a script.
 11. Select a transition. Usually it's best to untick Has Exit Time, click on Settings, untick Fixed Duration and keep the Duration and Offset at 0.
-12. At the bottom, add a condition or two. From Idle to Jump, a bool such as isGrounded might be created, which needs to be selected and set to false. This will be the opposite from Jump to Idle.
+12. At the bottom, add a condition or two. From Idle to Jump, a bool such as isGrounded might be created, which needs to be selected and set to false. This will be the opposite
+from Jump to Idle.
+13. Make sure to leave Loop Time ticked in order for idle animations to reloop. Also, the reloop needs to be consistent, so this is down to how the animation is made. The times
+can be edited under the Animations tab in the Inspector if the end needs to be shortened etc.
+
+isGrounded and the animation transitions may not work once set up. If this happens, try to add a Ground Layer.
+
+1. Create an Empty Game Object and call it GroundCheck. Place it on the Player parent object.
+2. Click the Layer drop-down list and select Add Layer...
+3. Click on an empty field and call it Ground.
+4. Select Ground from the Layer drop-down list.
+5. In the PlayerController script, add the variables related to 'Ground'. Whether a 2D or 2.5D game, Physics2D should work.
+
+If the isGrounded trigger box starts to work, it might be safe to delete the above steps. After doing this once before, the trigger still worked correctly. It may be a bug with Unity.
 
 A platform the character stands on must be recognised as a ground and for isGrounded to be ticked. This will ensure the character remains in the idle state. From experimenting,
 the player character needs to have a Character Controller assigned and for it to be neatly set around it. If the bottom of it goes through the platform, the player could fall
@@ -23,3 +36,4 @@ surface of the platform.
 
 It's recommended to create an Empty Game Object to use as the player object's parent. Once created, reset the Transform and then reset the Transform of the player model. This way,
 the model will be aligned with the parent. When the parent is moved, the model will move with it. Place components on the parent object. Only the Animator will be on the model.
+

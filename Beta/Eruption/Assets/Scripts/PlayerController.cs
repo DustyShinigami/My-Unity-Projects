@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         if (knockBackCounter <= 0)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
@@ -53,7 +54,11 @@ public class PlayerController : MonoBehaviour
                 {
                     moveDirection.y = jumpForce;
                     jumped = true;
-                    StartCoroutine(SpamBlockco());
+                    //StartCoroutine(SpamBlockco());
+                }
+                else if(!Input.GetKey(KeyCode.KeypadPlus))
+                {
+                    jumped = false;
                 }
             }
         }
@@ -78,7 +83,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = knockBackForce;
     }
 
-    public IEnumerator SpamBlockco()
+    /*public IEnumerator SpamBlockco()
     {
         if (moveDirection.y == jumpForce)
         {
@@ -86,5 +91,5 @@ public class PlayerController : MonoBehaviour
         }
         yield return null;
         jumped = false;
-    }
+    }*/
 }
