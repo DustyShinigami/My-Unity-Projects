@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 1180
     height: 510
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -385,7 +385,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 68fbffff6afbffff6cfbffff6efbffff70fbffff72fbffff74fbffff76fbffff78fbffff7afbffff7cfbffff7efbffff9cfbffffa2fbffffb4fbffffd0fbffffa6280000
+      m_ExpandedIDs: d0fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -440,9 +440,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.263837, y: 1.8357612, z: -0.9453125}
+    m_Target: {x: -10.367892, y: 1.6834042, z: -2.5992968}
     speed: 2
-    m_Value: {x: -9.263837, y: 1.8357612, z: -0.9453125}
+    m_Value: {x: -10.367892, y: 1.6834042, z: -2.5992968}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -474,15 +474,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.328624
+    m_Target: 4.943036
     speed: 2
-    m_Value: 5.328624
+    m_Value: 4.943036
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.041974362, y: -0.1231728, z: 0.0052145584, w: 0.9914835}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -509,7 +509,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2286
+    x: 366
     y: 73
     width: 1176
     height: 490
@@ -544,14 +544,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 1107125900763538128, guid: 8284da9dfa511f24ab179b7d57f3461f, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1.0362799
+    - e00: 0.82270914
       e01: 0
       e02: 0
-      e03: -238.10974
+      e03: -150.0108
       e10: 0
-      e11: 1.0362799
+      e11: 0.82270914
       e12: 0
-      e13: 94.29346
+      e13: 138.01027
       e20: 0
       e21: 0
       e22: 1
@@ -642,20 +642,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3D Models/Erif/Animations
+    - Assets/3D Models/Erif
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/3D Models/Erif/Animations
+  - Assets/3D Models/Erif
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\GitHub Repositories\My-Unity-Projects\Beta\Eruption
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4e260000
-    m_LastClickedID: 9806
-    m_ExpandedIDs: 000000001826000086270000ba270000062800002028000000ca9a3b
+    m_SelectedIDs: 12280000
+    m_LastClickedID: 10258
+    m_ExpandedIDs: 000000000826000078270000ac270000f82700001228000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -683,7 +683,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001826000086270000ba2700000628000020280000
+    m_ExpandedIDs: 000000000826000078270000ac270000f827000012280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -711,7 +711,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300005c2a000066e4feff0488fcfff82800000cabfeff4429000000000000aa22feff
+    m_ExpandedInstanceIDs: c62300005c2a000066e4feff0488fcfff82800000cabfeff4429000000000000aa22feff62270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1074
+  m_LastSelectedObjectID: -14504
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
