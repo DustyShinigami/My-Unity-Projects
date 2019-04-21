@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);
-        //anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Horizontal"))));
+        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
     }
 
