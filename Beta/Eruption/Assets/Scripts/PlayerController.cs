@@ -82,6 +82,11 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = knockBackForce;
     }
 
+    /*public Vector3 GetTravelDirection()
+    {
+        return moveDirection.normalized;
+    }*/
+
     /*public IEnumerator SpamBlockco()
     {
         if (moveDirection.y == jumpForce)

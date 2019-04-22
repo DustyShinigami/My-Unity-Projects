@@ -50,9 +50,9 @@ TagManager:
   - name: Mid-Ground
     uniqueID: 3382719745
     locked: 0
-  - name: Foreground
-    uniqueID: 778398191
-    locked: 0
   - name: Background
     uniqueID: 859454619
+    locked: 0
+  - name: Foreground
+    uniqueID: 3194096197
     locked: 0
