@@ -10,7 +10,9 @@ public class CameraController : MonoBehaviour
 
     //public PlayerController playerController;
 
-    //private Vector3 smoothedForward;
+    private float minPosition = -9.37f;
+    private float maxPosition = 4.68f;
+    private Vector3 cameraClamp;
 
     const float m_minY = 2f;
     Vector3 targetPosition;
@@ -21,12 +23,14 @@ public class CameraController : MonoBehaviour
         cameraOffset = transform.position - player.transform.position;
     }
 
-    private void Update()
+    void Update()
     {
         targetPosition = (player.transform.position + (player.transform.forward * followAhead)) + cameraOffset;
         //smoothedForward = Vector3.MoveTowards(smoothedForward, playerController.GetTravelDirection(), 0.5f * Time.deltaTime);
         //targetPosition = (player.transform.position + (smoothedForward * followAhead));
+        //transform.position = player.transform.position + cameraOffset;
         targetPosition.y = Mathf.Min(targetPosition.y, m_minY);
         transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
+        cameraClamp.x = Mathf.Clamp(transform.position.x, -9.37f, 4.68f);
     }
 }
