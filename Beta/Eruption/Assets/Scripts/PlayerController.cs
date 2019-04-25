@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (moveHorizontal < 0)
             {
-                transform.eulerAngles = new Vector3(0, -100);
+                transform.eulerAngles = new Vector3(0, -90);
             }
 
             if (controller.isGrounded)

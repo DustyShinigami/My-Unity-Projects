@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
 
     //public PlayerController playerController;
 
-    private float minPosition = -9.37f;
-    private float maxPosition = 4.68f;
+    //private float minPosition = -9.37f;
+   // private float maxPosition = 4.68f;
     private Vector3 cameraClamp;
 
     const float m_minY = 2f;
