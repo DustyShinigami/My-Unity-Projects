@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public float knockBackForce;
     public float knockBackTime;
     public float invincibilityLength;
+    public PlayerController model1;
+    public PlayerController model2;
 
     private float jumpDelay;
     private Vector3 moveDirection;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
+    private bool attackIsPressed;
 
     void Start()
     {
@@ -81,6 +84,20 @@ public class PlayerController : MonoBehaviour
         moveDirection = direction * knockBackForce;
         moveDirection.y = knockBackForce;
     }
+
+    public void ChangeModel()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            attackIsPressed = true;
+            StartCoroutine("AttackModelCo");
+        }
+    }
+
+    /*public IEnumerator AttackModelCo
+    {
+
+    }*/
 
     /*public Vector3 GetTravelDirection()
     {
