@@ -8,19 +8,17 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool jumped;
+    public bool attacked;
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
     public float invincibilityLength;
-    public PlayerController model1;
-    public PlayerController model2;
 
     private float jumpDelay;
     private Vector3 moveDirection;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private bool attackIsPressed;
 
     void Start()
     {
@@ -63,6 +61,18 @@ public class PlayerController : MonoBehaviour
                     jumped = false;
                 }
             }
+
+            if (controller.isAttacking)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    attacked = true;
+                }
+                else if (!Input.GetKey(KeyCode.Space))
+                {
+                    attacked = false;
+                }
+            }
         }
         else
         {
@@ -74,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+        anim.SetBool("isAttacking", controller.isAttacking);
 
     }
 
@@ -84,20 +95,6 @@ public class PlayerController : MonoBehaviour
         moveDirection = direction * knockBackForce;
         moveDirection.y = knockBackForce;
     }
-
-    public void ChangeModel()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            attackIsPressed = true;
-            StartCoroutine("AttackModelCo");
-        }
-    }
-
-    /*public IEnumerator AttackModelCo
-    {
-
-    }*/
 
     /*public Vector3 GetTravelDirection()
     {
