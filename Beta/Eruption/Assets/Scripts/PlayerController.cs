@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool jumped;
-    public bool attacked;
+    public bool attack;
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
     public float invincibilityLength;
+    public Renderer playerRenderer;
+    public Material textureChange;
+    public Material textureDefault;
 
     private float jumpDelay;
     private Vector3 moveDirection;
@@ -56,21 +59,19 @@ public class PlayerController : MonoBehaviour
                     jumped = true;
                     //StartCoroutine(SpamBlockco());
                 }
-                else if(!Input.GetKey(KeyCode.KeypadPlus))
+                else if (!Input.GetKey(KeyCode.KeypadPlus))
                 {
                     jumped = false;
                 }
-            }
-
-            if (controller.isAttacking)
-            {
                 if (Input.GetKey(KeyCode.Space))
                 {
-                    attacked = true;
+                    attack = true;
+                    playerRenderer.material = textureChange;
                 }
                 else if (!Input.GetKey(KeyCode.Space))
                 {
-                    attacked = false;
+                    attack = false;
+                    playerRenderer.material = textureDefault;
                 }
             }
         }
@@ -84,8 +85,11 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
-        anim.SetBool("isAttacking", controller.isAttacking);
-
+        if (attack)
+        {
+            anim.SetTrigger("Attack");
+        }
+        //anim.SetBool("Attack", controller.isGrounded, controller.isAttacking);
     }
 
     public void Knockback(Vector3 direction)
