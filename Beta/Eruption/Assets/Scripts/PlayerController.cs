@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Renderer playerRenderer;
     public Material textureChange;
     public Material textureDefault;
+    public bool allowCombat = false;
 
     private float jumpDelay;
     private Vector3 moveDirection;
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
+        {
+            allowCombat = true;
+        }
+        else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
+        {
+            allowCombat = false;
+        }
         /*jumped = false;
         if(jumpDelay <= 0)
         {
@@ -63,12 +73,20 @@ public class PlayerController : MonoBehaviour
                 {
                     jumped = false;
                 }
-                if (Input.GetKey(KeyCode.Space))
+                if (allowCombat)
                 {
-                    attack = true;
-                    playerRenderer.material = textureChange;
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        attack = true;
+                        playerRenderer.material = textureChange;
+                    }
+                    else if (!Input.GetKey(KeyCode.Space))
+                    {
+                        attack = false;
+                        playerRenderer.material = textureDefault;
+                    }
                 }
-                else if (!Input.GetKey(KeyCode.Space))
+                else if (!allowCombat)
                 {
                     attack = false;
                     playerRenderer.material = textureDefault;
@@ -85,36 +103,11 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
-
         if (attack)
         {
             anim.SetTrigger("Attack");
         }
     }
-
-    /*public void Level1()
-    {
-        if (LevelManager.levelLoaded)
-        {
-            if (attack)
-            {
-                anim.SetTrigger("Attack");
-            }
-            if (controller.isGrounded)
-            {
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    attack = true;
-                    playerRenderer.material = textureChange;
-                }
-                else if (!Input.GetKey(KeyCode.Space))
-                {
-                    attack = false;
-                    playerRenderer.material = textureDefault;
-                }
-            }
-        }
-    }*/
 
     public void Knockback(Vector3 direction)
     {

@@ -18,9 +18,6 @@ public class LevelManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             levelLoaded = true;
-            Debug.Log("Level loaded");
-            //Level1();
-            Debug.Log("Level 1 method called");
         }
     }
 }
