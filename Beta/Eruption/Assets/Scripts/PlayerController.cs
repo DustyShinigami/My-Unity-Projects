@@ -85,12 +85,36 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+
         if (attack)
         {
             anim.SetTrigger("Attack");
         }
-        //anim.SetBool("Attack", controller.isGrounded, controller.isAttacking);
     }
+
+    /*public void Level1()
+    {
+        if (LevelManager.levelLoaded)
+        {
+            if (attack)
+            {
+                anim.SetTrigger("Attack");
+            }
+            if (controller.isGrounded)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    attack = true;
+                    playerRenderer.material = textureChange;
+                }
+                else if (!Input.GetKey(KeyCode.Space))
+                {
+                    attack = false;
+                    playerRenderer.material = textureDefault;
+                }
+            }
+        }
+    }*/
 
     public void Knockback(Vector3 direction)
     {
