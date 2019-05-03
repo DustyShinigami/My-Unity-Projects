@@ -62,14 +62,14 @@ public class PlayerController : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             moveDirection = new Vector3(moveHorizontal * moveSpeed, moveDirection.y);
 
-            if (moveHorizontal > 0)
+            /*if (moveHorizontal > 0)
             {
                 transform.eulerAngles = new Vector3(0, 90);
             }
             else if (moveHorizontal < 0)
             {
                 transform.eulerAngles = new Vector3(0, -90);
-            }
+            }*/
             if (controller.isGrounded)
             {
                 moveDirection.y = -1f;
@@ -101,11 +101,11 @@ public class PlayerController : MonoBehaviour
                     attack = false;
                     playerRenderer.material = textureDefault;
                 }
-                if (multipleDirections)
+                /*if (multipleDirections)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * Input.GetAxis("Vertical") * moveSpeed);
                     transform.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * moveSpeed);
-                }
+                }*/
 
             }
         }
