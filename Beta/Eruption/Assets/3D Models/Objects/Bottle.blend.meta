@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 71e3f2a43e4352a4eacb6364feb0dcf1
+guid: 69e6314a9e98ccf49a6dff1c80398a8c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: bottle__bottle_texture_psd
+    2100000: bottle
     2300000: //RootNode
     3300000: //RootNode
     4300000: Bottle
