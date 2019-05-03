@@ -18,9 +18,12 @@ public class PlayerController : MonoBehaviour
     public Material textureChange;
     public Material textureDefault;
     public bool allowCombat = false;
+    public bool multipleDirections = false;
+    public float rotateSpeed;
 
     private float jumpDelay;
     private Vector3 moveDirection;
+    private Vector3 extraDirections;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
@@ -29,20 +32,28 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
         {
             allowCombat = true;
+            multipleDirections = false;
         }
-        else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
+            multipleDirections = false;
         }
-        /*jumped = false;
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+        {
+            allowCombat = false;
+            multipleDirections = true;
+        }
+    }
+
+    /*jumped = false;
         if(jumpDelay <= 0)
         {
             jumpDelay = 5;
         }*/
-    }
 
     void Update()
     {
@@ -59,7 +70,6 @@ public class PlayerController : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, -90);
             }
-
             if (controller.isGrounded)
             {
                 moveDirection.y = -1f;
@@ -91,6 +101,12 @@ public class PlayerController : MonoBehaviour
                     attack = false;
                     playerRenderer.material = textureDefault;
                 }
+                if (multipleDirections)
+                {
+                    transform.Translate(Vector3.forward * Time.deltaTime * Input.GetAxis("Vertical") * moveSpeed);
+                    transform.Translate(Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * moveSpeed);
+                }
+
             }
         }
         else

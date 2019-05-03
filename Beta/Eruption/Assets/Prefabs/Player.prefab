@@ -93,6 +93,7 @@ MonoBehaviour:
   playerRenderer: {fileID: 0}
   textureChange: {fileID: 0}
   textureDefault: {fileID: 0}
+  allowCombat: 0
 --- !u!135 &5723789302876801529
 SphereCollider:
   m_ObjectHideFlags: 0
