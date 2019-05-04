@@ -49,12 +49,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*jumped = false;
-        if(jumpDelay <= 0)
-        {
-            jumpDelay = 5;
-        }*/
-
     void Update()
     {
         if (knockBackCounter <= 0)
@@ -73,24 +67,24 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded)
             {
                 moveDirection.y = -1f;
-                if (Input.GetKey(KeyCode.KeypadPlus))
+                //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
+                if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 1"))
                 {
                     moveDirection.y = jumpForce;
                     jumped = true;
-                    //StartCoroutine(SpamBlockco());
                 }
-                else if (!Input.GetKey(KeyCode.KeypadPlus))
+                else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 1"))
                 {
                     jumped = false;
                 }
                 if (allowCombat)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 7"))
                     {
                         attack = true;
                         playerRenderer.material = textureChange;
                     }
-                    else if (!Input.GetKey(KeyCode.Space))
+                    else if (!Input.GetKey(KeyCode.Space) || !Input.GetKey("joystick button 7"))
                     {
                         attack = false;
                         playerRenderer.material = textureDefault;
@@ -131,15 +125,5 @@ public class PlayerController : MonoBehaviour
     /*public Vector3 GetTravelDirection()
     {
         return moveDirection.normalized;
-    }*/
-
-    /*public IEnumerator SpamBlockco()
-    {
-        if (moveDirection.y == jumpForce)
-        {
-            yield return new WaitForSeconds(jumpDelay);
-        }
-        yield return null;
-        jumped = false;
     }*/
 }

@@ -50,3 +50,6 @@ TagManager:
   - name: Foreground Layer
     uniqueID: 3483140097
     locked: 0
+  - name: Player's Level
+    uniqueID: 498223017
+    locked: 0
