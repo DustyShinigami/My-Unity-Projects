@@ -40,3 +40,6 @@ surface of the platform.
 It's recommended to create an Empty Game Object to use as the player object's parent. Once created, reset the Transform and then reset the Transform of the player model. This way,
 the model will be aligned with the parent. When the parent is moved, the model will move with it. Place components on the parent object. Only the Animator will be on the model.
 
+When using a sprite/image in a text box/prompt, such as a controller button, don't drop the image or make it a parent of the text box. Instead, create an Image via the Hierarchy > UI > Image and drop
+the image into the Source Image box.
+

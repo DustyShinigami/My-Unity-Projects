@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat = false;
     public bool multipleDirections = false;
     public float rotateSpeed;
+    public HutTrigger hutTrigger;
 
     private float jumpDelay;
     private Vector3 moveDirection;
@@ -112,6 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Attack");
         }
+
     }
 
     public void Knockback(Vector3 direction)
