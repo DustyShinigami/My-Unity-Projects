@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 448}
   m_MaxSize: {x: 12008, y: 8048}
   vertical: 0
-  controlID: 2099
+  controlID: 1569
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 448}
   m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
-  controlID: 2100
+  controlID: 1570
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 2101
+  controlID: 1546
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,7 +212,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d6fbffffd00f000034100000
+      m_ExpandedIDs: dcf9ffffd6fbffffe82e00000e2f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -296,9 +296,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.0921917, y: 2.2487936, z: -0.6477305}
+    m_Target: {x: -5.274195, y: 5.3530474, z: -0.31640625}
     speed: 2
-    m_Value: {x: 2.0921917, y: 2.2487936, z: -0.6477305}
+    m_Value: {x: -5.274195, y: 5.3530474, z: -0.31640625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -330,15 +330,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.547482
+    m_Target: 14.8610525
     speed: 2
-    m_Value: 10.547482
+    m_Value: 14.8610525
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.16754457, y: -0.12884212, z: 0.02209137, w: 0.97715944}
+  m_LastSceneViewRotation: {x: 0.41506588, y: -0.41089383, z: 0.21927343, w: 0.78154063}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -543,20 +543,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Sprites/Hut
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Sprites/Hut
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\GitHub Repositories\My-Unity-Projects\Beta\Eruption
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 45}
-    m_SelectedIDs: 620a0000
-    m_LastClickedID: 2658
-    m_ExpandedIDs: 00000000c6090000a00a0000ba0b0000ae0c0000200d0000aa0d0000dc0d0000a42e0000
+    m_SelectedIDs: ae0c0000
+    m_LastClickedID: 3246
+    m_ExpandedIDs: 00000000c6090000a00a0000ba0b0000ae0c0000200d0000aa0d0000dc0d0000a62e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -584,7 +584,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c6090000a00a0000ba0b0000ae0c0000200d0000aa0d0000dc0d0000a42e0000
+    m_ExpandedIDs: 00000000c6090000a00a0000ba0b0000ae0c0000200d0000aa0d0000dc0d0000a62e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -609,9 +609,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 34c3ffff
+    m_LastClickedInstanceID: -15564
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300005c2a000066e4feff0488fcfff82800000cabfeff4429000000000000aa22feff62270000a82a0000d60b000006300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 4134
+  m_LastSelectedObjectID: -5448
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
