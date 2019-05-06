@@ -97,7 +97,6 @@ public class HutTrigger : MonoBehaviour
     public void PCPrompts()
     {
         buttonPrompts[0].SetActive(true);
-        Debug.Log("PC control prompt");
         Invoke("Hide", 3f);
     }
 
@@ -132,17 +131,24 @@ public class HutTrigger : MonoBehaviour
                 ps4Controller = 0;
                 xbox360Controller = 0;
             }
-            if (!string.IsNullOrEmpty(names[x]))
+
+            if(xbox360Controller == 0 && ps4Controller == 0)
+            {
+                Debug.Log("No controllers detected");
+            }
+
+            /*if (!string.IsNullOrEmpty(names[x]))
             {
                 xbox360Controller = 1;
                 ps4Controller = 1;
             }
 
-            else
+            else if(string.IsNullOrEmpty(names[x]))
             {
                 xbox360Controller = 0;
                 ps4Controller = 0;
-            }
+                Debug.Log("Controllers not detected");
+            }*/
         }
     }
 }
