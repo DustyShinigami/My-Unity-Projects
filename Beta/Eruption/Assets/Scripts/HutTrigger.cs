@@ -24,14 +24,31 @@ public class HutTrigger : MonoBehaviour
         {
             entranceVicinity = true;
             ControllerDetection();
+            if (entranceVicinity && ps4Controller == 1)
+            {
+                PS4Prompts();
+            }
+            else if(entranceVicinity && xbox360Controller == 1)
+            {
+                Xbox360Prompts();
+            }
+            else
+            {
+                PCPrompts();
+            }
         }
     }
 
-    void Update()
+    public void OnTriggerExit(Collider other)
+    {
+        entranceVicinity = false;
+    }
+
+    public void Update()
     {
         if (entranceVicinity)
         {
-            if(xbox360Controller == 1)
+            if (xbox360Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 2"))
                 {
@@ -39,7 +56,7 @@ public class HutTrigger : MonoBehaviour
                     hutLoaded = true;
                 }
             }
-            else if(ps4Controller == 1)
+            else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
@@ -80,6 +97,7 @@ public class HutTrigger : MonoBehaviour
     public void PCPrompts()
     {
         buttonPrompts[0].SetActive(true);
+        Debug.Log("PC control prompt");
         Invoke("Hide", 3f);
     }
 
@@ -94,39 +112,36 @@ public class HutTrigger : MonoBehaviour
                 //print("PS4 CONTROLLER IS CONNECTED");
                 ps4Controller = 1;
                 xbox360Controller = 0;
+                if (ps4Controller == 1)
+                {
+                    Debug.Log("PS4 controller detected");
+                }
             }
-            if (names[x].Length == 33)
+            else if (names[x].Length == 33)
             {
                 //print("XBOX 360 CONTROLLER IS CONNECTED");
                 ps4Controller = 0;
                 xbox360Controller = 1;
+                if (xbox360Controller == 1)
+                {
+                    Debug.Log("Xbox 360 controller detected");
+                }
             }
-
-            //Checks if the controller has been disconnected or not.
-
+            else
+            {
+                ps4Controller = 0;
+                xbox360Controller = 0;
+            }
             if (!string.IsNullOrEmpty(names[x]))
             {
-
+                xbox360Controller = 1;
+                ps4Controller = 1;
             }
 
             else
             {
                 xbox360Controller = 0;
                 ps4Controller = 0;
-                PCPrompts();
-            }
-
-            if (xbox360Controller == 1)
-            {
-                Xbox360Prompts();
-            }
-            else if (ps4Controller == 1)
-            {
-                PS4Prompts();
-            }
-            else
-            {
-                PCPrompts();
             }
         }
     }

@@ -18,13 +18,8 @@ public class PlayerController : MonoBehaviour
     public Material textureChange;
     public Material textureDefault;
     public bool allowCombat = false;
-    public bool multipleDirections = false;
-    public float rotateSpeed;
-    public HutTrigger hutTrigger;
 
-    private float jumpDelay;
     private Vector3 moveDirection;
-    private Vector3 extraDirections;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
@@ -36,17 +31,14 @@ public class PlayerController : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
         {
             allowCombat = true;
-            multipleDirections = false;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
-            multipleDirections = false;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             allowCombat = false;
-            multipleDirections = true;
         }
     }
 

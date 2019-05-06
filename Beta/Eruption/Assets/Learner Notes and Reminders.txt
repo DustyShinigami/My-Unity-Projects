@@ -43,3 +43,8 @@ the model will be aligned with the parent. When the parent is moved, the model w
 When using a sprite/image in a text box/prompt, such as a controller button, don't drop the image or make it a parent of the text box. Instead, create an Image via the Hierarchy > UI > Image and drop
 the image into the Source Image box.
 
+To avoid getting the error saying 'object not set to a reference of an object', make sure that you add a public variable of a GameObject type that has the component you're trying to reference in another
+script. For instance, if you want to access the player's PlayerController script, make sure to create a public GameObject called player before using the GetComponent in the Start function. Alternatively,
+you can supposedly avoid the GetComponent function altogether and just have the player's GameObject, drop the player object in the correct box within the Inspector, and Unity will access all of its
+components.
+
