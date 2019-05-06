@@ -11,7 +11,12 @@ ModelImporter:
     4300000: Hut
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hut__test_png
+    second: {fileID: 2100000, guid: 42aa137ba44362740bcf71207ff5a8c9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

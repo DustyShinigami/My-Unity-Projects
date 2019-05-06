@@ -60,7 +60,7 @@ public class HutTrigger : MonoBehaviour
 
     public void Hide()
     {
-        buttonPrompts[0].SetActive (false);
+        buttonPrompts[0].SetActive(false);
         buttonPrompts[1].SetActive(false);
         buttonPrompts[2].SetActive(false);
     }
@@ -101,6 +101,21 @@ public class HutTrigger : MonoBehaviour
                 ps4Controller = 0;
                 xbox360Controller = 1;
             }
+
+            //Checks if the controller has been disconnected or not.
+
+            if (!string.IsNullOrEmpty(names[x]))
+            {
+
+            }
+
+            else
+            {
+                xbox360Controller = 0;
+                ps4Controller = 0;
+                PCPrompts();
+            }
+
             if (xbox360Controller == 1)
             {
                 Xbox360Prompts();

@@ -11,7 +11,12 @@ ModelImporter:
     4300000: Drawer
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drawer
+    second: {fileID: 2100000, guid: 0d3040032a7c5824abb4714f61249292, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
