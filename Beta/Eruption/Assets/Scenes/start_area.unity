@@ -939,8 +939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343.94598, y: -216.253}
-  m_SizeDelta: {x: 320.47, y: 89.59}
+  m_AnchoredPosition: {x: -343.94598, y: -216.274}
+  m_SizeDelta: {x: 420.1468, y: 91.1102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736855607
 MonoBehaviour:
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_text: Press       to enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1249,7 +1249,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -343.94598, y: -194.256}
-  m_SizeDelta: {x: 320.47, y: 89.59}
+  m_SizeDelta: {x: 379.269, y: 89.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927503444
 MonoBehaviour:
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_text: Press       to enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1348,7 +1348,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3091,8 +3091,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343.94598, y: -245.258}
-  m_SizeDelta: {x: 320.47, y: 89.59}
+  m_AnchoredPosition: {x: -343.967, y: -245.279}
+  m_SizeDelta: {x: 399.9522, y: 89.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1745621201
 MonoBehaviour:
@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_text: Press       to enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3546,6 +3546,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3498164569595064994, guid: dccfa830524f9a94b828e38201cc3989,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498164569595064994, guid: dccfa830524f9a94b828e38201cc3989,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3498164569595064995, guid: dccfa830524f9a94b828e38201cc3989,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3611,16 +3621,6 @@ PrefabInstance:
       propertyPath: boundBox
       value: 
       objectReference: {fileID: 1916999358}
-    - target: {fileID: 3498164569595064994, guid: dccfa830524f9a94b828e38201cc3989,
-        type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498164569595064994, guid: dccfa830524f9a94b828e38201cc3989,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dccfa830524f9a94b828e38201cc3989, type: 3}
 --- !u!1001 &5723789303266635679
@@ -3720,6 +3720,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 733851466}
+    - target: {fileID: 5723789302876801531, guid: 502516c0f5bd28d40a9f12ea98f7c79e,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5723789302876801533, guid: 502516c0f5bd28d40a9f12ea98f7c79e,
         type: 3}
       propertyPath: m_Center.y
