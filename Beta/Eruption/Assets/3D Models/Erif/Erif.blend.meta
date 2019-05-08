@@ -75,7 +75,27 @@ ModelImporter:
     7400008: Walk
     9500000: //RootNode
     13700000: Body
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Character
+    second: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyeball
+    second: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Iris
+    second: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pupil
+    second: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

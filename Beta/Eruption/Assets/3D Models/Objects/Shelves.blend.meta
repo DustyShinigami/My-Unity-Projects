@@ -12,7 +12,12 @@ ModelImporter:
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shelves__Hut_Group
+    second: {fileID: 2100000, guid: 0a9ef5d627a63b34db32b9c19ad90a2a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

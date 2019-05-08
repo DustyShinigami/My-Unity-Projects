@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Material textureChange;
     public Material textureDefault;
     public bool allowCombat = false;
+    public bool allowJump;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
@@ -32,14 +33,17 @@ public class PlayerController : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
         {
             allowCombat = true;
+            allowJump = true;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
+            allowJump = true;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             allowCombat = false;
+            allowJump = false;
         }
     }
 
@@ -73,17 +77,25 @@ public class PlayerController : MonoBehaviour
             }
             if (controller.isGrounded)
             {
-                moveDirection.y = -1f;
-                //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
-                if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 1"))
+                if (allowJump)
                 {
-                    moveDirection.y = jumpForce;
-                    jumped = true;
+                    moveDirection.y = -1f;
+                    //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
+                    if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 1"))
+                    {
+                        moveDirection.y = jumpForce;
+                        jumped = true;
+                    }
+                    else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 1"))
+                    {
+                        jumped = false;
+                    }
                 }
-                else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 1"))
+                else
                 {
-                    jumped = false;
+                    allowJump = false;
                 }
+
                 if (allowCombat)
                 {
                     if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 7"))
