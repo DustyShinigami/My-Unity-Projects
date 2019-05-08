@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat = false;
 
     private Vector3 moveDirection;
+    private Vector3 extraDirections;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
@@ -47,7 +48,9 @@ public class PlayerController : MonoBehaviour
         if (knockBackCounter <= 0)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
             moveDirection = new Vector3(moveHorizontal * moveSpeed, moveDirection.y);
+            extraDirections = new Vector3(moveVertical * moveSpeed, extraDirections.y);
 
             if (moveHorizontal > 0)
             {
@@ -56,6 +59,17 @@ public class PlayerController : MonoBehaviour
             else if (moveHorizontal < 0)
             {
                 transform.eulerAngles = new Vector3(0, -90);
+            }
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+            {
+                if (moveVertical > 0)
+                {
+                    transform.eulerAngles = new Vector3(0, 0);
+                }
+                else if (moveVertical < 0)
+                {
+                    transform.eulerAngles = new Vector3(0, 180);
+                }
             }
             if (controller.isGrounded)
             {
