@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Entrance
+  - Exit
+  - Pickup
+  - Entrance Trigger
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - 
   - 
   - 
   - 
@@ -41,15 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Lava Layer
-    uniqueID: 4184796297
+  - name: Lava
+    uniqueID: 674386197
     locked: 0
-  - name: Mid-Ground Layer
-    uniqueID: 3724793975
+  - name: Mid-ground
+    uniqueID: 3482667641
     locked: 0
-  - name: Foreground Layer
-    uniqueID: 3483140097
+  - name: Foreground
+    uniqueID: 875146623
     locked: 0
-  - name: Player's Level
-    uniqueID: 498223017
+  - name: Background
+    uniqueID: 501474183
     locked: 0

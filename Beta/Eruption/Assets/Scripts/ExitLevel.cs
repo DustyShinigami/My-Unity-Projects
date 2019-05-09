@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class ExitLevel : MonoBehaviour
 {
-    public static bool levelLoaded;
-
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            levelLoaded = true;
         }
     }
 }

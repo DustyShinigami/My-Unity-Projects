@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class HutTrigger : MonoBehaviour
 {
-    public static bool hutLoaded;
     public GameObject[] buttonPrompts;
     public bool entranceVicinity;
+    public bool exitVicinity;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
@@ -23,12 +23,13 @@ public class HutTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             entranceVicinity = true;
+            exitVicinity = false;
             ControllerDetection();
             if (entranceVicinity && ps4Controller == 1)
             {
                 PS4Prompts();
             }
-            else if(entranceVicinity && xbox360Controller == 1)
+            else if (entranceVicinity && xbox360Controller == 1)
             {
                 Xbox360Prompts();
             }
@@ -37,11 +38,31 @@ public class HutTrigger : MonoBehaviour
                 PCPrompts();
             }
         }
+
+        /*if (other.gameObject.CompareTag("Player") && other.gameObject.CompareTag("Pickup"))
+        {
+            entranceVicinity = false;
+            exitVicinity = false;
+            ControllerDetection();
+            if (entranceVicinity && ps4Controller == 1)
+            {
+                PS4Prompts();
+            }
+            else if (entranceVicinity && xbox360Controller == 1)
+            {
+                Xbox360Prompts();
+            }
+            else
+            {
+                PCPrompts();
+            }
+        }*/
     }
 
     public void OnTriggerExit(Collider other)
     {
         entranceVicinity = false;
+        exitVicinity = false;
     }
 
     public void Update()
@@ -53,7 +74,6 @@ public class HutTrigger : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 2"))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-                    hutLoaded = true;
                 }
             }
             else if (ps4Controller == 1)
@@ -61,7 +81,6 @@ public class HutTrigger : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 0"))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-                    hutLoaded = true;
                 }
             }
             else
@@ -69,7 +88,6 @@ public class HutTrigger : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-                    hutLoaded = true;
                 }
             }
         }

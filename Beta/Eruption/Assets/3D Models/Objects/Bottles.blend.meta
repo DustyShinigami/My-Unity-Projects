@@ -49,7 +49,42 @@ ModelImporter:
     4300012: Bottle
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cork
+    second: {fileID: 2100000, guid: d5713190d25d78744b7f0cbe758f2780, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 20a1a9c3e4f5521439fe8560c105f661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion
+    second: {fileID: 2100000, guid: be0eea8a4a203ab45b8291db6ecc4b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion_2
+    second: {fileID: 2100000, guid: e66d30449bce9be4dbcf06e3df0e7914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion_3
+    second: {fileID: 2100000, guid: 8b1a51ea423816c48b7fa4716d761fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rack
+    second: {fileID: 2100000, guid: 692e5c5878025624684170ccb455449d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Test_Tube
+    second: {fileID: 2100000, guid: 20a1a9c3e4f5521439fe8560c105f661, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
