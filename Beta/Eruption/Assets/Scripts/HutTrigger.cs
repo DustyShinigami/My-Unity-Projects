@@ -20,7 +20,7 @@ public class HutTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.tag.Equals("Player"))
         {
             entranceVicinity = true;
             exitVicinity = false;
