@@ -15,11 +15,11 @@ public class EntranceTrigger : MonoBehaviour
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
     private bool outsideHut;
-    private PlayerController thePlayer;
+    private Player thePlayer;
 
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerController>();
+        thePlayer = FindObjectOfType<Player>();
         theHealthManager = FindObjectOfType<HealthManager>();
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {

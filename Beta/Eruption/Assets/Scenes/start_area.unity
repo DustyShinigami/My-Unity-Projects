@@ -541,6 +541,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b64b82fb43a8849877a8f9d51e5f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  invincibilityLength: 0
+  playerRenderer: {fileID: 0}
+  flashLength: 0
+  respawnLength: 0
+  deathEffect: {fileID: 0}
+  blackScreen: {fileID: 0}
+  fadeSpeed: 0
+  waitForFade: 0
   thePlayer: {fileID: 0}
 --- !u!1 &438716307
 GameObject:
@@ -1500,6 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4baa5a3fda4654082baa8fdf0b8030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 423913057}
 --- !u!4 &937386909
 Transform:
   m_ObjectHideFlags: 0
