@@ -66,7 +66,8 @@ public class PlayerController : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, -90);
             }
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+            //To possibly prevent diagonal movement with some control setups, try adding 'else if'
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
             {
                 if (moveVertical > 0)
                 {
