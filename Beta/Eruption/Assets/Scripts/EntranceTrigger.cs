@@ -7,20 +7,24 @@ using UnityEngine.UI;
 public class EntranceTrigger : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
-    public HealthManager theHealthManager;
+    public GameManager gameManager;
+    //public HealthManager theHealthManager;
     public bool entranceVicinity;
+    //public PlayerController thePlayer;
+    //public float reloadLength;
     //public bool exitVicinity;
     //public bool allowInteraction = false;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
     private bool outsideHut;
-    private Player thePlayer;
+    //private Vector3 respawnPoint;
+    //private bool playerReloading;
 
     void Start()
     {
-        thePlayer = FindObjectOfType<Player>();
-        theHealthManager = FindObjectOfType<HealthManager>();
+        gameManager = FindObjectOfType<GameManager>();
+        //theHealthManager = FindObjectOfType<HealthManager>();
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
@@ -36,6 +40,8 @@ public class EntranceTrigger : MonoBehaviour
     {
         if (outsideHut)
         {
+            gameManager.SetSpawnPoint(transform.position);
+            //respawnPoint = thePlayer.transform.position;
             if (other.gameObject.CompareTag("Player"))
             {
                 entranceVicinity = true;
@@ -90,6 +96,27 @@ public class EntranceTrigger : MonoBehaviour
             }
         }
     }
+
+    /*public void PlayerReload()
+    {
+        if (playerReloading)
+        {
+            StartCoroutine("ReloadingCo");
+        }
+    }
+
+    public IEnumerator ReloadingCo()
+    {
+        Instantiate(thePlayer, thePlayer.transform.position, thePlayer.transform.rotation);
+        yield return new WaitForSeconds(reloadLength);
+        playerReloading = false;
+        thePlayer.transform.position = respawnPoint;
+    }
+
+    public void SetSpawnPoint(Vector3 newPosition)
+    {
+        respawnPoint = newPosition;
+    }*/
 
     public void Hide()
     {

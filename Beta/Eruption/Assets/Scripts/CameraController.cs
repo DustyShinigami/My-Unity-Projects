@@ -26,7 +26,6 @@ public class CameraController : MonoBehaviour
         maxBounds = boundBox.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
-        DontDestroyOnLoad(gameObject.transform);
     }
 
     void Update()

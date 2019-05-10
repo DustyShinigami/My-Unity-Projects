@@ -8,15 +8,19 @@ public class ExitTrigger : MonoBehaviour
     public GameObject[] buttonPrompts;
     public bool exitVicinity;
     public GameObject thePlayer;
+    public GameObject entranceObject;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
     private bool insideHut;
-    private HealthManager theHealthManager;
+    private EntranceTrigger entranceTrigger;
+    private GameManager theGameManager;
+    //private EntranceTrigger entranceTrigger;
 
     void Start()
     {
-        theHealthManager = FindObjectOfType<HealthManager>();
+        theGameManager = FindObjectOfType<GameManager>();
+        entranceTrigger = GetComponent<EntranceTrigger>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             insideHut = true;
@@ -76,6 +80,7 @@ public class ExitTrigger : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene("start_area");
+                    theGameManager.PlayerReload();
                 }
             }
         }
