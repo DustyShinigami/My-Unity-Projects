@@ -48,3 +48,6 @@ script. For instance, if you want to access the player's PlayerController script
 you can supposedly avoid the GetComponent function altogether and just have the player's GameObject, drop the player object in the correct box within the Inspector, and Unity will access all of its
 components.
 
+GetComponent will only work if you're trying to access a component that's on the GameObject the script is attached to. This doesn't include GameObjects though, just components, such as scripts,
+renderers etc. If you want to access a component on another GameObject, a public GameObject reference will need to be set and then dropped into the Inspector.
+

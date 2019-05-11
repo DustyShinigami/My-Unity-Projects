@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
     <Compile Include="Assets\Scripts\ExitLevel.cs" />
     <Compile Include="Assets\Scripts\ExitPoint.cs" />
     <Compile Include="Assets\Scripts\ExitTrigger.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\Scripts\PickupTrigger.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

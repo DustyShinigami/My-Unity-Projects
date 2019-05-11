@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
+    private bool playerExists;
 
     void Start()
     {
@@ -41,11 +42,29 @@ public class PlayerController : MonoBehaviour
         {
             allowCombat = false;
             allowJump = true;
+            /*if (!playerExists)
+            {
+                playerExists = true;
+                DontDestroyOnLoad(transform.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }*/
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             allowCombat = false;
             allowJump = false;
+            /*if (!playerExists)
+            {
+                playerExists = true;
+                DontDestroyOnLoad(transform.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }*/
         }
     }
 

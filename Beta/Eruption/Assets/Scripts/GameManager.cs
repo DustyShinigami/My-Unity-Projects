@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerController thePlayer;
+    /*public PlayerController thePlayer;
     public float reloadLength;
 
     private Vector3 respawnPoint;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         /*Player player = new Player();
         player.SetPosition(new Vector3(0, 0, 0));
         player.SetRotation(new Vector3(0, 0, 0));
-        player.SetControl(true);*/
+        player.SetControl(true);
     }
 
     void Update()
@@ -45,5 +45,5 @@ public class GameManager : MonoBehaviour
     public void SetSpawnPoint(Vector3 newPosition)
     {
         respawnPoint = newPosition;
-    }
+    }*/
 }
