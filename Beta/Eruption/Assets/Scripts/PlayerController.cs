@@ -21,18 +21,28 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat = false;
     public bool allowJump;
     public bool allowInteract;
+    public string startPoint;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private bool playerExists;
+    private static bool playerExists;
 
     void Start()
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
         {
             allowCombat = true;
@@ -42,29 +52,11 @@ public class PlayerController : MonoBehaviour
         {
             allowCombat = false;
             allowJump = true;
-            /*if (!playerExists)
-            {
-                playerExists = true;
-                DontDestroyOnLoad(transform.gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }*/
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             allowCombat = false;
             allowJump = false;
-            /*if (!playerExists)
-            {
-                playerExists = true;
-                DontDestroyOnLoad(transform.gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }*/
         }
     }
 

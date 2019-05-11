@@ -7,31 +7,21 @@ using UnityEngine.UI;
 public class SceneManagement : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
-    public Transform spawnPoint;
     public GameObject player;
-    //public GameManager gameManager;
-    //public HealthManager theHealthManager;
     public bool entranceVicinity;
-    //public float reloadLength;
     public bool exitVicinity;
     public string levelToLoad;
-    //public bool allowInteraction = false;
-
-    //public PlayerController thePlayerController;
+    public string exitPoint;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
     private bool outsideHut;
     private bool insideHut;
-    //private Vector3 respawnPoint;
-    //private bool playerReloading;
+    private PlayerController thePlayer;
 
     void Start()
     {
-        //gameManager = FindObjectOfType<GameManager>();
-        //theHealthManager = FindObjectOfType<HealthManager>();
-        //player = GameObject.Find("Player");
-        //thePlayerController = GetComponent<PlayerController>();
+        thePlayer = FindObjectOfType<PlayerController>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
@@ -47,7 +37,6 @@ public class SceneManagement : MonoBehaviour
     {
         if (outsideHut)
         {
-            //respawnPoint = thePlayer.transform.position;
             if (other.gameObject.CompareTag("Player"))
             {
                 entranceVicinity = true;
@@ -71,7 +60,6 @@ public class SceneManagement : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                //SetSpawnPoint(transform.position);
                 entranceVicinity = false;
                 exitVicinity = true;
                 ControllerDetection();
@@ -120,6 +108,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
         }
@@ -143,34 +132,11 @@ public class SceneManagement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    //SceneManager.LoadScene(levelToLoad);
-                    player.transform.position = spawnPoint.position;
-                    //PlayerReload();
+                    SceneManager.LoadScene(levelToLoad);
                 }
             }
         }
     }
-
-    /*public void PlayerReload()
-    {
-        if (!playerReloading)
-        {
-            StartCoroutine("ReloadingCo");
-        }
-    }
-
-    public IEnumerator ReloadingCo()
-    {
-        Instantiate(player, player.transform.position, player.transform.rotation);
-        yield return new WaitForSeconds(reloadLength);
-        playerReloading = false;
-        player.transform.position = respawnPoint;
-    }
-
-    public void SetSpawnPoint(Vector3 newPosition)
-    {
-        respawnPoint = newPosition;
-    }*/
 
     public void Hide()
     {
