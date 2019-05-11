@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        //Every bool starts on false
         if (!playerExists)
         {
             playerExists = true;

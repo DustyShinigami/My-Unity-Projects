@@ -37,8 +37,9 @@ public class SceneManagement : MonoBehaviour
     {
         if (outsideHut)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.name == "Player")
             {
+                thePlayer.startPoint = exitPoint;
                 entranceVicinity = true;
                 exitVicinity = false;
                 ControllerDetection();
@@ -58,7 +59,7 @@ public class SceneManagement : MonoBehaviour
         }
         else if (insideHut)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.name == "Player")
             {
                 entranceVicinity = false;
                 exitVicinity = true;
