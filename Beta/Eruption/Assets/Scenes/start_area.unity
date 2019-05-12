@@ -539,8 +539,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.826, y: -0.53, z: 0.584}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children:
-  - {fileID: 1387131670}
+  m_Children: []
   m_Father: {fileID: 622422337}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2340,9 +2339,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387131670}
+  - component: {fileID: 1387131672}
   - component: {fileID: 1387131671}
   m_Layer: 0
-  m_Name: Hut Entrance
+  m_Name: Start Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2356,12 +2356,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387131669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0064148903, y: -0.48414183, z: -0.22733203}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 7235574107631881526}
-  m_Father: {fileID: 438716308}
-  m_RootOrder: 0
+  m_LocalPosition: {x: 3.28, y: 0.706, z: -0.94}
+  m_LocalScale: {x: 1, y: 0.09, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1387131671
 MonoBehaviour:
@@ -2375,7 +2374,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bd46e7c33bf004b89f709190e686e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointName: Hut Entrance
+  pointName: Hut Out
+--- !u!65 &1387131672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387131669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1405441884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,7 +2864,7 @@ GameObject:
   - component: {fileID: 1584233009}
   - component: {fileID: 1584233008}
   m_Layer: 0
-  m_Name: Entrance Trigger
+  m_Name: Exit Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2878,7 +2890,7 @@ MonoBehaviour:
   entranceVicinity: 0
   exitVicinity: 0
   levelToLoad: hut_interior
-  exitPoint: Hut Entrance
+  exitPoint: Hut In
 --- !u!65 &1584233009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3727,11 +3739,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584233007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.034830093, y: -0.01228714, z: -0.07533592}
+  m_LocalPosition: {x: 2.3948298, y: 0.64771295, z: -1.0153359}
   m_LocalScale: {x: 0.72, y: 2.467, z: 0.87}
   m_Children: []
-  m_Father: {fileID: 1387131670}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8111411263757027590
 PrefabInstance:

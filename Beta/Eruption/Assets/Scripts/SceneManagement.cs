@@ -39,7 +39,6 @@ public class SceneManagement : MonoBehaviour
         {
             if (other.gameObject.name == "Player")
             {
-                thePlayer.startPoint = exitPoint;
                 entranceVicinity = true;
                 exitVicinity = false;
                 ControllerDetection();
@@ -95,6 +94,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 2"))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
             else if (ps4Controller == 1)
@@ -102,6 +102,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 0"))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
             else
@@ -120,6 +121,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 2"))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
             else if (ps4Controller == 1)
@@ -127,6 +129,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown("joystick button 0"))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
             else
@@ -134,6 +137,7 @@ public class SceneManagement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
                 }
             }
         }

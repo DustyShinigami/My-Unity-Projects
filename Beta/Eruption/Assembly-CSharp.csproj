@@ -64,13 +64,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\ExitLevel.cs" />
-    <Compile Include="Assets\Scripts\ExitPoint.cs" />
-    <Compile Include="Assets\Scripts\ExitTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />
     <Compile Include="Assets\Scripts\ParallaxController.cs" />
     <Compile Include="Assets\Scripts\PickupTrigger.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerStartPoints.cs" />
     <Compile Include="Assets\Scripts\SceneManagement.cs" />
