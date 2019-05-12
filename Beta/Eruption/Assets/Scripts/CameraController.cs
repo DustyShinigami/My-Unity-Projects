@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     private Camera theCamera;
     private float halfHeight;
     private float halfWidth;
+    private static bool cameraExists;
 
     const float m_minY = 2f;
     Vector3 targetPosition;
@@ -26,6 +27,15 @@ public class CameraController : MonoBehaviour
         maxBounds = boundBox.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
+        if (!cameraExists)
+        {
+            cameraExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

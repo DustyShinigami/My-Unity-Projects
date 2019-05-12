@@ -8,6 +8,7 @@ public class PlayerStartPoints : MonoBehaviour
     public string pointName;
 
     private PlayerController thePlayer;
+    private CameraController theCamera;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class PlayerStartPoints : MonoBehaviour
         {
             thePlayer.transform.position = transform.position;
         }
-        //thePlayer.transform.position = transform.position;
-        //thePlayer.lastMove = startDirection;
+
+        theCamera = FindObjectOfType<CameraController>();
+        theCamera.transform.position = new Vector3(theCamera.transform.position.x, theCamera.transform.position.y, transform.transform.position.z);
     }
 }
