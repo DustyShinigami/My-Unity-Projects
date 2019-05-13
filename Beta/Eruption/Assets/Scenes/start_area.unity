@@ -929,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343.94598, y: -216.274}
+  m_AnchoredPosition: {x: -343.968, y: -216.283}
   m_SizeDelta: {x: 420.1468, y: 91.1102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736855607
@@ -1312,7 +1312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343.94598, y: -194.256}
+  m_AnchoredPosition: {x: -343.967, y: -194.282}
   m_SizeDelta: {x: 379.269, y: 89.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927503444
@@ -2888,6 +2888,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8c13158c32f84469bc1cb51be16f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPrompts:
+  - {fileID: 1745621199}
+  - {fileID: 736855605}
+  - {fileID: 736855605}
   player: {fileID: 423913057}
   entranceVicinity: 0
   exitVicinity: 0
