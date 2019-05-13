@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class SceneManagement : MonoBehaviour
 {
-    public GameObject[] buttonPrompts;
+    public static GameObject[] buttonPrompts;
     public GameObject player;
     public bool entranceVicinity;
     public bool exitVicinity;
     public string levelToLoad;
     public string exitPoint;
 
-    private int xbox360Controller = 0;
-    private int ps4Controller = 0;
+    private static int xbox360Controller = 0;
+    private static int ps4Controller = 0;
     private bool outsideHut;
     private bool insideHut;
     private PlayerController thePlayer;

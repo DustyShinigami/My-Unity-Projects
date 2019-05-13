@@ -51,3 +51,5 @@ components.
 GetComponent will only work if you're trying to access a component that's on the GameObject the script is attached to. This doesn't include GameObjects though, just components, such as scripts,
 renderers etc. If you want to access a component on another GameObject, a public GameObject reference will need to be set and then dropped into the Inspector.
 
+It doesn't look to be wise to make an Animator variable static, even if it's public, as it removes it from the Inspector and can no longer find the Animator Controller.
+

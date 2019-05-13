@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public bool jumped;
     public bool attack;
-    public bool interact;
+    public static bool interact = false;
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
@@ -129,15 +129,6 @@ public class PlayerController : MonoBehaviour
                     attack = false;
                     playerRenderer.material = textureDefault;
                 }
-
-                if (allowInteract)
-                {
-                    if (Input.GetKeyDown(KeyCode.Return))
-                    {
-                        interact = true;
-                    }
-                }
-
             }
         }
         else
@@ -155,11 +146,17 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Attack");
         }
+
         if (interact)
         {
-            anim.SetBool("keyPressed", controller.isGrounded);
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                anim.SetTrigger("buttonPressed");
+                anim.SetBool("Interact", controller.isGrounded);
+            }
         }
     }
+
 
     public void Knockback(Vector3 direction)
     {
@@ -167,16 +164,5 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = direction * knockBackForce;
         moveDirection.y = knockBackForce;
-    }
-
-    public void Pickup()
-    {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            if(gameObject.name == "Pickup Trigger")
-            {
-                interact = true;
-            }
-        }
     }
 }

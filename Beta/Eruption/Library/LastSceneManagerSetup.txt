@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/start_area.unity
+- path: Assets/Scenes/hut_interior.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
