@@ -7,18 +7,16 @@ using UnityEngine.UI;
 public class SceneManagement : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
-    public GameObject player;
     public bool entranceVicinity;
     public bool exitVicinity;
     public string levelToLoad;
     public string exitPoint;
-    public static int xbox360Controller = 0;
-    public static int ps4Controller = 0;
-    public bool characterVicinity;
 
     private bool outsideHut;
     private bool insideHut;
     private PlayerController thePlayer;
+    private int xbox360Controller = 0;
+    private int ps4Controller = 0;
 
     void Start()
     {
@@ -128,14 +126,6 @@ public class SceneManagement : MonoBehaviour
             else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
-                {
-                    SceneManager.LoadScene(levelToLoad);
-                    thePlayer.startPoint = exitPoint;
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene(levelToLoad);
                     thePlayer.startPoint = exitPoint;

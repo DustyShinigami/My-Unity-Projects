@@ -8,6 +8,7 @@ TagManager:
   - Exit
   - Pickup
   - Entrance Trigger
+  - Pickup Light
   layers:
   - Default
   - TransparentFX

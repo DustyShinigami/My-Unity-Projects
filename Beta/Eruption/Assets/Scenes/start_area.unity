@@ -2892,7 +2892,6 @@ MonoBehaviour:
   - {fileID: 1745621199}
   - {fileID: 736855605}
   - {fileID: 736855605}
-  player: {fileID: 423913057}
   entranceVicinity: 0
   exitVicinity: 0
   levelToLoad: hut_interior
@@ -3740,6 +3739,21 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1144363930}
+    - target: {fileID: 1295466606537528445, guid: 502516c0f5bd28d40a9f12ea98f7c79e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295466606537528445, guid: 502516c0f5bd28d40a9f12ea98f7c79e,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295466606537528445, guid: 502516c0f5bd28d40a9f12ea98f7c79e,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 502516c0f5bd28d40a9f12ea98f7c79e, type: 3}
 --- !u!4 &7235574107631881526
