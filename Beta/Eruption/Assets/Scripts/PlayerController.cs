@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool jumped;
     public bool attack;
     public static bool interact = false;
+    public static bool allowInteract = false;
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
@@ -20,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public Material textureDefault;
     public bool allowCombat = false;
     public bool allowJump;
-    public bool allowInteract;
     public string startPoint;
 
     private Vector3 moveDirection;
@@ -129,6 +129,31 @@ public class PlayerController : MonoBehaviour
                     attack = false;
                     playerRenderer.material = textureDefault;
                 }
+                if (allowInteract)
+                {
+                    if (SceneManagement.xbox360Controller == 1)
+                    {
+                        if (Input.GetKeyDown("joystick button 2"))
+                        {
+                            interact = true;
+                        }
+                    }
+                    else if (SceneManagement.ps4Controller == 1)
+                    {
+                        if (Input.GetKeyDown("joystick button 0"))
+                        {
+                            interact = true;
+                        }
+                    }
+                    else
+                    {
+                        interact = true;
+                    }
+                }
+                else if (!allowInteract)
+                {
+                    interact = false;
+                }
             }
         }
         else
@@ -151,8 +176,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                anim.SetTrigger("buttonPressed");
                 anim.SetBool("Interact", controller.isGrounded);
+                FindObjectOfType<Pickup>().ObjectActivation();
             }
         }
     }
