@@ -19,9 +19,10 @@ public class PlayerController : MonoBehaviour
     public Renderer playerRenderer;
     public Material textureChange;
     public Material textureDefault;
-    public bool allowCombat = false;
+    public bool allowCombat;
     public bool allowJump;
     public string startPoint;
+    public bool notDestroyed;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
@@ -39,25 +40,16 @@ public class PlayerController : MonoBehaviour
         {
             playerExists = true;
             DontDestroyOnLoad(transform.gameObject);
+            notDestroyed = true;
         }
         else
         {
             Destroy(gameObject);
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
-        {
-            allowCombat = true;
-            allowJump = true;
-        }
-        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
             allowJump = true;
-        }
-        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            allowCombat = false;
-            allowJump = false;
         }
     }
 
@@ -106,10 +98,6 @@ public class PlayerController : MonoBehaviour
                         jumped = false;
                     }
                 }
-                else
-                {
-                    allowJump = false;
-                }
 
                 if (allowCombat)
                 {
@@ -124,6 +112,7 @@ public class PlayerController : MonoBehaviour
                     attack = false;
                     playerRenderer.material = textureDefault;
                 }
+
                 if (allowInteract)
                 {
                     if (SceneManagement.xbox360Controller == 1)
@@ -144,10 +133,6 @@ public class PlayerController : MonoBehaviour
                     {
                         interact = true;
                     }
-                }
-                else if (!allowInteract)
-                {
-                    interact = false;
                 }
             }
         }
@@ -174,6 +159,11 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("Interact", controller.isGrounded);
                 FindObjectOfType<Pickup>().ObjectActivation();
             }
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+        {
+            allowCombat = false;
+            allowJump = false;
         }
     }
 

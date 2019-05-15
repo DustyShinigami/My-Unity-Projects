@@ -5,11 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class ExitLevel : MonoBehaviour
 {
+    public string levelToLoad;
+    public Transform startPoint;
+
+    private PlayerController thePlayer;
+
+    void Start()
+    {
+        thePlayer = GetComponent<PlayerController>();
+    }
+    
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(levelToLoad);
+            thePlayer.transform.position = startPoint.transform.position;
         }
     }
 }

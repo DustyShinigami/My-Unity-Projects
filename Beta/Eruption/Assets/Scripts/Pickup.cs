@@ -34,6 +34,20 @@ public class Pickup : MonoBehaviour
                 PCPrompts();
             }
         }
+        else
+        {
+            if (objectsDisabled)
+            {
+                PlayerController.allowInteract = false;
+                PlayerController.interact = false;
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        PlayerController.allowInteract = false;
+        PlayerController.interact = false;
     }
 
     public void ObjectActivation()

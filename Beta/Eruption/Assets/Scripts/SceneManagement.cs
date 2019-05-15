@@ -17,12 +17,12 @@ public class SceneManagement : MonoBehaviour
     private bool outsideHut;
     private bool insideHut;
     private PlayerController thePlayer;
-    //private int xbox360Controller = 0;
-    //private int ps4Controller = 0;
+    private CameraController theCamera;
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
+        theCamera = FindObjectOfType<CameraController>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
@@ -38,7 +38,7 @@ public class SceneManagement : MonoBehaviour
     {
         if (outsideHut)
         {
-            if (other.gameObject.name == "Player")
+            if (other.gameObject.CompareTag("Player"))
             {
                 entranceVicinity = true;
                 exitVicinity = false;
@@ -59,7 +59,7 @@ public class SceneManagement : MonoBehaviour
         }
         else if (insideHut)
         {
-            if (other.gameObject.name == "Player")
+            if (other.gameObject.CompareTag("Player"))
             {
                 entranceVicinity = false;
                 exitVicinity = true;
@@ -133,7 +133,20 @@ public class SceneManagement : MonoBehaviour
                     thePlayer.startPoint = exitPoint;
                 }
             }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    SceneManager.LoadScene(levelToLoad);
+                    thePlayer.startPoint = exitPoint;
+                }
+            }
         }
+    }
+
+    public void Level1()
+    {
+        thePlayer.startPoint = exitPoint;
     }
 
     public void Hide()

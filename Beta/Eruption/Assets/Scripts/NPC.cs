@@ -7,13 +7,14 @@ public class NPC : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
     public bool characterVicinity = false;
+    public TypeWriterText typeWriter;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
 
     void Start()
     {
-
+        typeWriter = FindObjectOfType<TypeWriterText>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -65,6 +66,7 @@ public class NPC : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     Debug.Log("characters are talking");
+                    //typeWriter.StartCoroutine("PlayText");
                 }
             }
         }

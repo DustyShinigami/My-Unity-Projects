@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] GameObject player = null;
 
     public BoxCollider boundBox;
+    public Transform startPoint;
 
     private Vector3 minBounds;
     private Vector3 maxBounds;
