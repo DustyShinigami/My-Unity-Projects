@@ -118,11 +118,6 @@ public class PlayerController : MonoBehaviour
                         attack = true;
                         playerRenderer.material = textureChange;
                     }
-                    else if (!Input.GetKey(KeyCode.Space) || !Input.GetKey("joystick button 7"))
-                    {
-                        attack = false;
-                        playerRenderer.material = textureDefault;
-                    }
                 }
                 else if (!allowCombat)
                 {
@@ -133,14 +128,14 @@ public class PlayerController : MonoBehaviour
                 {
                     if (SceneManagement.xbox360Controller == 1)
                     {
-                        if (Input.GetKeyDown("joystick button 2"))
+                        //if (Input.GetKeyDown("joystick button 2"))
                         {
                             interact = true;
                         }
                     }
                     else if (SceneManagement.ps4Controller == 1)
                     {
-                        if (Input.GetKeyDown("joystick button 0"))
+                        //if (Input.GetKeyDown("joystick button 0"))
                         {
                             interact = true;
                         }
@@ -181,7 +176,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 
     public void Knockback(Vector3 direction)
     {

@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
     public GameObject[] buttonPrompts;
     public GameObject rayGun;
     public GameObject pickupLight;
+    public bool objectsDisabled = false;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class Pickup : MonoBehaviour
     {
         rayGun.SetActive(false);
         pickupLight.SetActive(false);
+        objectsDisabled = true;
     }
 
     public void Hide()
@@ -52,18 +54,30 @@ public class Pickup : MonoBehaviour
     {
         buttonPrompts[1].SetActive(true);
         Invoke("Hide", 3f);
+        if (objectsDisabled)
+        {
+            buttonPrompts[1].SetActive(false);
+        }
     }
 
     public void PS4Prompts()
     {
         buttonPrompts[2].SetActive(true);
         Invoke("Hide", 3f);
+        if (objectsDisabled)
+        {
+            buttonPrompts[2].SetActive(false);
+        }
     }
 
     public void PCPrompts()
     {
         buttonPrompts[0].SetActive(true);
         Invoke("Hide", 3f);
+        if (objectsDisabled)
+        {
+            buttonPrompts[0].SetActive(false);
+        }
     }
 
     public void ControllerDetection()
@@ -79,7 +93,7 @@ public class Pickup : MonoBehaviour
                 SceneManagement.xbox360Controller = 0;
                 if (SceneManagement.ps4Controller == 1)
                 {
-                    Debug.Log("PS4 controller detected");
+                    //Debug.Log("PS4 controller detected");
                 }
             }
             else if (names[x].Length == 33)
@@ -89,7 +103,7 @@ public class Pickup : MonoBehaviour
                 SceneManagement.xbox360Controller = 1;
                 if (SceneManagement.xbox360Controller == 1)
                 {
-                    Debug.Log("Xbox 360 controller detected");
+                    //Debug.Log("Xbox 360 controller detected");
                 }
             }
             else
@@ -100,7 +114,7 @@ public class Pickup : MonoBehaviour
 
             if (SceneManagement.xbox360Controller == 0 && SceneManagement.ps4Controller == 0)
             {
-                Debug.Log("No controllers detected");
+                //Debug.Log("No controllers detected");
             }
         }
     }
