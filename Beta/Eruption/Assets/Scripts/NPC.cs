@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 public class NPC : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
-    public bool characterVicinity = false;
-    public TypeWriterText typeWriter;
+    public GameObject[] dialogueBoxes;
+    public static bool characterVicinity = false;
+    public static bool charactersTalking = false;
+    //public TypeWriterText typeWriter;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
+    private DialogueController theDialogue;
 
     void Start()
     {
-        typeWriter = FindObjectOfType<TypeWriterText>();
+        //typeWriter = FindObjectOfType<TypeWriterText>();
+        theDialogue = FindObjectOfType<DialogueController>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -36,6 +40,27 @@ public class NPC : MonoBehaviour
                 PCPrompts();
             }
         }
+        if (charactersTalking)
+        {
+            ControllerDetection();
+            if (ps4Controller == 1)
+            {
+                PS4Prompts();
+            }
+            else if (xbox360Controller == 1)
+            {
+                Xbox360Prompts();
+            }
+            else
+            {
+                PCPrompts();
+            }
+                /*if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+                {
+                    dialogueBoxes[1].SetActive(false);
+                }
+            }*/
+        }
     }
 
     public void OnTriggerExit(Collider other)
@@ -51,28 +76,24 @@ public class NPC : MonoBehaviour
             {
                 if (Input.GetKeyDown("joystick button 2"))
                 {
-
+                    //theDialogue.Dialogue();
                 }
             }
             else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
-
+                    //theDialogue.Dialogue();
                 }
             }
             else
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    Debug.Log("characters are talking");
-                    //typeWriter.StartCoroutine("PlayText");
+                    charactersTalking = true;
+                    //theDialogue.Dialogue();
                 }
             }
-        }
-        else if (!characterVicinity)
-        {
-
         }
     }
 

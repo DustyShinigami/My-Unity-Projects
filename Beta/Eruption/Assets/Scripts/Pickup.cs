@@ -34,14 +34,14 @@ public class Pickup : MonoBehaviour
                 PCPrompts();
             }
         }
-        else
+        /*else if (other.gameObject.CompareTag("Player"))
         {
             if (objectsDisabled)
             {
                 PlayerController.allowInteract = false;
                 PlayerController.interact = false;
             }
-        }
+        }*/
     }
 
     public void OnTriggerExit(Collider other)
@@ -55,6 +55,7 @@ public class Pickup : MonoBehaviour
         rayGun.SetActive(false);
         pickupLight.SetActive(false);
         objectsDisabled = true;
+        GetComponent<Collider>().enabled = false;
     }
 
     public void Hide()

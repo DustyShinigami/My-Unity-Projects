@@ -160,7 +160,8 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("Interact", controller.isGrounded);
                 FindObjectOfType<Pickup>().ObjectActivation();
                 interact = false;
-                DisableInteract();
+                allowInteract = false;
+                //DisableInteract();
             }
         }
 
@@ -171,13 +172,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void DisableInteract()
+    /*public void DisableInteract()
     {
         if (!interact)
         {
             allowInteract = false;
         }
-    }
+    }*/
 
     public void Knockback(Vector3 direction)
     {
