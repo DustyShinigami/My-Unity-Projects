@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/start_area.unity
     guid: aeb65d279299e4c41a6bf4163e302fbf
   - enabled: 1
-    path: Assets/Scenes/level 1.unity
-    guid: 9772bb6460ff63a4cae0bf31bbda9efe
-  - enabled: 1
     path: Assets/Scenes/hut_interior.unity
     guid: c10ebd6f3cd6e99468538e4f95eff8d4
+  - enabled: 1
+    path: Assets/Scenes/start_area 2.unity
+    guid: 75f1114ff064e7142a55b4c2ffc1df7f
+  - enabled: 1
+    path: Assets/Scenes/level 1.unity
+    guid: 9772bb6460ff63a4cae0bf31bbda9efe
   m_configObjects: {}

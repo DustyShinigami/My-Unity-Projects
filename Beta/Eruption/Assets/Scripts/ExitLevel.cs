@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class ExitLevel : MonoBehaviour
 {
     public string levelToLoad;
-    public Transform startPoint;
 
     private PlayerController thePlayer;
 
@@ -20,7 +19,6 @@ public class ExitLevel : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(levelToLoad);
-            thePlayer.transform.position = startPoint.transform.position;
         }
     }
 }

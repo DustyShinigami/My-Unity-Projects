@@ -13,7 +13,8 @@ public class CameraController : MonoBehaviour
     private Camera theCamera;
     private float halfHeight;
     private float halfWidth;
-    private static bool cameraExists;
+    private PlayerController thePlayer;
+    //private static bool cameraExists;
 
     const float m_minY = 2f;
     Vector3 targetPosition;
@@ -22,12 +23,13 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         theCamera = GetComponent<Camera>();
+        thePlayer = GetComponent<PlayerController>();
         cameraOffset = transform.position - player.transform.position;
         minBounds = boundBox.bounds.min;
         maxBounds = boundBox.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
-        if (!cameraExists)
+        /*if (!cameraExists)
         {
             cameraExists = true;
             DontDestroyOnLoad(transform.gameObject);
@@ -35,7 +37,7 @@ public class CameraController : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     void Update()

@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
     public GameObject[] buttonPrompts;
     public GameObject rayGun;
     public GameObject pickupLight;
-    public bool objectsDisabled = false;
+    public static bool objectsDisabled = false;
 
     void Start()
     {

@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public Material textureDefault;
     public bool allowCombat;
     public bool allowJump;
-    public string startPoint;
     public bool notDestroyed;
 
     private Vector3 moveDirection;
@@ -29,26 +28,24 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private static bool playerExists;
 
     void Start()
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
-        //Every bool starts on false
-        if (!playerExists)
-        {
-            playerExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-            notDestroyed = true;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
+            allowJump = true;
+        }
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
+        {
+            allowCombat = false;
+            allowJump = true;
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
+        {
+            allowCombat = true;
             allowJump = true;
         }
     }
@@ -150,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
         if (attack)
         {
-            anim.SetTrigger("Attack");
+            anim.SetBool("Attack", controller.isGrounded);
         }
 
         if (interact)
@@ -161,7 +158,6 @@ public class PlayerController : MonoBehaviour
                 FindObjectOfType<Pickup>().ObjectActivation();
                 interact = false;
                 allowInteract = false;
-                //DisableInteract();
             }
         }
 
@@ -171,14 +167,6 @@ public class PlayerController : MonoBehaviour
             allowJump = false;
         }
     }
-
-    /*public void DisableInteract()
-    {
-        if (!interact)
-        {
-            allowInteract = false;
-        }
-    }*/
 
     public void Knockback(Vector3 direction)
     {
