@@ -77,10 +77,11 @@ public class PlayerController : MonoBehaviour
                 {
                     transform.eulerAngles = new Vector3(0, 0);
                 }
-                else if (moveVertical < 0)
+                //Use this to make the character face towards the camera.
+                /*else if (moveVertical < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180);
-                }
+                }*/
             }
             if (controller.isGrounded)
             {
@@ -158,12 +159,23 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("Interact", controller.isGrounded);
                 FindObjectOfType<Pickup>().ObjectActivation();
+                interact = false;
+                DisableInteract();
             }
         }
+
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             allowCombat = false;
             allowJump = false;
+        }
+    }
+
+    public void DisableInteract()
+    {
+        if (!interact)
+        {
+            allowInteract = false;
         }
     }
 
