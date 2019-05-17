@@ -9008,7 +9008,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Gun
+    path: Erif_Rig/C_Root/Torso/Shoulder_R/Arm_R/Forearm_R/Hand_R/Gun
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -9244,7 +9244,7 @@ AnimationClip:
       customType: 20
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1926661051
+      path: 925488957
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -39264,7 +39264,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Gun
+    path: Erif_Rig/C_Root/Torso/Shoulder_R/Arm_R/Forearm_R/Hand_R/Gun
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:

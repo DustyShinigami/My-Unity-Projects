@@ -38,7 +38,12 @@ public class PlayerController : MonoBehaviour
             allowCombat = false;
             allowJump = true;
         }
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+        {
+            allowCombat = false;
+            allowJump = false;
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
         {
             allowCombat = false;
             allowJump = true;
@@ -99,30 +104,34 @@ public class PlayerController : MonoBehaviour
 
                 if (allowCombat)
                 {
-                    if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 7"))
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 7"))
                     {
                         attack = true;
+                        anim.SetTrigger("Attack");
                         playerRenderer.material = textureChange;
                     }
-                }
-                else if (!allowCombat)
-                {
-                    attack = false;
-                    playerRenderer.material = textureDefault;
+                    if (!attack)
+                    {
+                        if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 7"))
+                        {
+                            attack = false;
+                            playerRenderer.material = textureDefault;
+                        }
+                    }
                 }
 
                 if (allowInteract)
                 {
                     if (SceneManagement.xbox360Controller == 1)
                     {
-                        //if (Input.GetKeyDown("joystick button 2"))
+                        if (Input.GetKeyDown("joystick button 2"))
                         {
                             interact = true;
                         }
                     }
                     else if (SceneManagement.ps4Controller == 1)
                     {
-                        //if (Input.GetKeyDown("joystick button 0"))
+                        if (Input.GetKeyDown("joystick button 0"))
                         {
                             interact = true;
                         }
@@ -145,11 +154,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
-        if (attack)
-        {
-            anim.SetBool("Attack", controller.isGrounded);
-        }
-
         if (interact)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -159,12 +163,6 @@ public class PlayerController : MonoBehaviour
                 interact = false;
                 allowInteract = false;
             }
-        }
-
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            allowCombat = false;
-            allowJump = false;
         }
     }
 
