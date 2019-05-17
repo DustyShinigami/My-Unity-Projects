@@ -7,23 +7,23 @@ public class NPC : MonoBehaviour
 {
     public GameObject[] buttonPrompts;
     public GameObject[] dialogueBoxes;
-    public static bool characterVicinity = false;
-    public static bool charactersTalking = false;
+    public bool characterVicinity = false;
+    public bool charactersTalking = false;
     //public TypeWriterText typeWriter;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
-    private DialogueController theDialogue;
+    private CharacterController characterController;
 
     void Start()
     {
+        characterController = FindObjectOfType<CharacterController>();
         //typeWriter = FindObjectOfType<TypeWriterText>();
-        theDialogue = FindObjectOfType<DialogueController>();
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.CompareTag ("Player"))
         {
             characterVicinity = true;
             ControllerDetection();
@@ -40,27 +40,6 @@ public class NPC : MonoBehaviour
                 PCPrompts();
             }
         }
-        if (charactersTalking)
-        {
-            ControllerDetection();
-            if (ps4Controller == 1)
-            {
-                PS4Prompts();
-            }
-            else if (xbox360Controller == 1)
-            {
-                Xbox360Prompts();
-            }
-            else
-            {
-                PCPrompts();
-            }
-                /*if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
-                {
-                    dialogueBoxes[1].SetActive(false);
-                }
-            }*/
-        }
     }
 
     public void OnTriggerExit(Collider other)
@@ -76,14 +55,14 @@ public class NPC : MonoBehaviour
             {
                 if (Input.GetKeyDown("joystick button 2"))
                 {
-                    //theDialogue.Dialogue();
+                    charactersTalking = true;
                 }
             }
             else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
-                    //theDialogue.Dialogue();
+                    charactersTalking = true;
                 }
             }
             else
@@ -91,10 +70,61 @@ public class NPC : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     charactersTalking = true;
-                    //theDialogue.Dialogue();
+                    Dialogue();
+                }
+            }
+            if(Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+            {
+                Hide();
+            }
+        }
+    }
+
+    public void Dialogue()
+    {
+        if (charactersTalking)
+        {
+            dialogueBoxes[0].SetActive(true);
+            PCPrompts();
+            if (!dialogueBoxes[0].activeSelf)
+            {
+                dialogueBoxes[1].SetActive(true);
+            }
+        }
+
+    }
+            /*if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+            {
+                dialogueBoxes[0].SetActive(false);
+                buttonPrompts[3].SetActive(false);
+            }
+        })
+            if (buttonPrompts[0].activeSelf)
+            {
+                if(Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+                {
+                    dialogueBoxes[0].SetActive(false);
+                    buttonPrompts[3].SetActive(false);
+                }
+            }
+            {
+                if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+                {
+                    dialogueBoxes[0].SetActive(false);
+                    Debug.Log("dialogue box 1 disabled");
+                    dialogueBoxes[1].SetActive(true);
                 }
             }
         }
+        {
+            /*if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+            {
+                dialogueBoxes[1].SetActive(false);
+            }*/
+
+    public void Timer()
+    {
+        buttonPrompts[3].SetActive(true);
     }
 
     public void Hide()
@@ -102,6 +132,10 @@ public class NPC : MonoBehaviour
         buttonPrompts[0].SetActive(false);
         buttonPrompts[1].SetActive(false);
         buttonPrompts[2].SetActive(false);
+        if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
+        {
+            buttonPrompts[3].SetActive(false);
+        }
     }
 
     public void Xbox360Prompts()
@@ -120,6 +154,16 @@ public class NPC : MonoBehaviour
     {
         buttonPrompts[0].SetActive(true);
         Invoke("Hide", 3f);
+        if (charactersTalking)
+        {
+            //Turn off the button prompt completely whilst the player is talking
+            buttonPrompts[0].SetActive(false);
+            if (dialogueBoxes[0].activeSelf)
+            {
+                //Timer until a button prompt appears to skip to the next dialogue box
+                Invoke("Timer", 3f);
+            }
+        }
     }
 
     public void ControllerDetection()

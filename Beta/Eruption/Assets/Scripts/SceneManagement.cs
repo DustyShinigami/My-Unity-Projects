@@ -18,18 +18,22 @@ public class SceneManagement : MonoBehaviour
     private bool insideHut;
     private PlayerController thePlayer;
 
+    void Awake()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+        {
+            insideHut = true;
+            outsideHut = false;
+            exitLight.SetActive(false);
+        }
+    }
+
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
-        }
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            insideHut = true;
-            outsideHut = false;
-            exitLight.SetActive(false);
         }
     }
 
