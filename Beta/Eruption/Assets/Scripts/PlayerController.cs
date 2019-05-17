@@ -104,20 +104,21 @@ public class PlayerController : MonoBehaviour
 
                 if (allowCombat)
                 {
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 7"))
+                    if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 7"))
                     {
                         attack = true;
-                        anim.SetTrigger("Attack");
                         playerRenderer.material = textureChange;
                     }
-                    if (!attack)
+                    else if (!Input.GetKey(KeyCode.Space) || !Input.GetKey("joystick button 7"))
                     {
-                        if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 7"))
-                        {
-                            attack = false;
-                            playerRenderer.material = textureDefault;
-                        }
+                        attack = false;
+                        playerRenderer.material = textureDefault;
                     }
+                }
+                else if (!allowCombat)
+                {
+                    attack = false;
+                    playerRenderer.material = textureDefault;
                 }
 
                 if (allowInteract)
@@ -163,6 +164,10 @@ public class PlayerController : MonoBehaviour
                 interact = false;
                 allowInteract = false;
             }
+        }
+        if (attack)
+        {
+            anim.SetTrigger("Attack");
         }
     }
 
