@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180);
                 }*/
             }
-            if (NPC.charactersTalking)
+            if (InteractionController.charactersTalking)
             {
                 canMove = false;
             }
@@ -164,10 +164,12 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);
+        //If the character can't move, then the Speed is set to 0. Otherwise it'll use the horizontal input value.
         anim.SetFloat("Speed",
             !canMove
             ? 0f
             : Mathf.Abs(Input.GetAxis("Horizontal")));
+
         //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         if (interact)
