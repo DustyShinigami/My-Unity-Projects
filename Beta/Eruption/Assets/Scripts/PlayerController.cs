@@ -92,6 +92,11 @@ public class PlayerController : MonoBehaviour
             {
                 canMove = false;
             }
+            else
+            {
+                canMove = true;
+            }
+
             if (controller.isGrounded)
             {
                 if (allowJump)
@@ -159,7 +164,11 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);
-        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+        anim.SetFloat("Speed",
+            !canMove
+            ? 0f
+            : Mathf.Abs(Input.GetAxis("Horizontal")));
+        //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         if (interact)
         {

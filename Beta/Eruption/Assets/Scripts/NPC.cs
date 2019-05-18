@@ -74,7 +74,9 @@ public class NPC : MonoBehaviour
                     {
                         if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
                         {
-                            DialogueBoxes();
+                            dialogueBoxes[0].SetActive(false);
+                            //charactersTalking = false;
+                            //DialogueBoxes();
                             //buttonPrompts[3].SetActive(false);
                             //dialogueBoxes[0].SetActive(false);
                             //dialogueBoxes[1].SetActive(true);
@@ -92,18 +94,24 @@ public class NPC : MonoBehaviour
             dialogueBoxes[0].SetActive(true);
             PCPrompts();
         }
-        else if (!dialogueBoxes[1].activeSelf)
+        /*else if (!dialogueBoxes[1].activeSelf)
         {
-            dialogueBoxes[0].SetActive(false);
             buttonPrompts[3].SetActive(false);
             dialogueBoxes[1].SetActive(true);
             PCPrompts();
-        }
+        }*/
     }
 
     public void Timer()
     {
-        buttonPrompts[3].SetActive(true);
+        if (!buttonPrompts[3].activeSelf)
+        {
+            buttonPrompts[3].SetActive(true);
+        }
+        else
+        {
+            buttonPrompts[3].SetActive(false);
+        }
     }
 
     public void Hide()
