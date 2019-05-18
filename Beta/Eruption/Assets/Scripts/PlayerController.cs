@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public bool notDestroyed;
+    public bool canMove;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        canMove = true;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
@@ -57,33 +59,38 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (knockBackCounter <= 0)
+        if (knockBackCounter <= 0 && canMove)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            moveDirection = new Vector3(moveHorizontal * moveSpeed, moveDirection.y);
-            extraDirections = new Vector3(moveVertical * moveSpeed, extraDirections.y);
+            moveDirection = new Vector2(moveHorizontal * moveSpeed, moveDirection.y);
+            extraDirections = new Vector2(moveVertical * moveSpeed, extraDirections.y);
+            controller.Move(moveDirection * Time.deltaTime);
 
             if (moveHorizontal > 0)
             {
-                transform.eulerAngles = new Vector3(0, 90);
+                transform.eulerAngles = new Vector2(0, 90);
             }
             else if (moveHorizontal < 0)
             {
-                transform.eulerAngles = new Vector3(0, -90);
+                transform.eulerAngles = new Vector2(0, -90);
             }
             //To possibly prevent diagonal movement with some control setups, try adding 'else if'
             else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
             {
                 if (moveVertical > 0)
                 {
-                    transform.eulerAngles = new Vector3(0, 0);
+                    transform.eulerAngles = new Vector2(0, 0);
                 }
                 //Use this to make the character face towards the camera.
                 /*else if (moveVertical < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180);
                 }*/
+            }
+            if (NPC.charactersTalking)
+            {
+                canMove = false;
             }
             if (controller.isGrounded)
             {
@@ -150,7 +157,6 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
