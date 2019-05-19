@@ -7,7 +7,7 @@ public class InteractionController : MonoBehaviour
     public GameObject[] buttonPrompts;
     public GameObject[] dialogueBoxes;
     public bool characterVicinity = false;
-    public static bool charactersTalking = false;
+    public bool charactersTalking = false;
 
     private int xbox360Controller = 0;
     private int ps4Controller = 0;
@@ -35,22 +35,51 @@ public class InteractionController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     charactersTalking = true;
-                    DialogueBoxes();
+                    PlayerController.canMove = false;
+                    DialogueBox1();
                     if (buttonPrompts[3].activeSelf)
                     {
                         if (Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
                         {
                             dialogueBoxes[0].SetActive(false);
-                            charactersTalking = false;
-                            //DialogueBoxes();
-                            //buttonPrompts[3].SetActive(false);
-                            //dialogueBoxes[0].SetActive(false);
-                            //dialogueBoxes[1].SetActive(true);
+                            DialogueBox2();
                         }
                     }
+                    else
+                    {
+                        if (Input.GetKey("joystick button 2") || Input.GetKey("joystick button 0") || Input.GetKey(KeyCode.Return))
+                        {
+                            dialogueBoxes[1].SetActive(false);
+                            charactersTalking = false;
+                            characterVicinity = false;
+                            PlayerController.canMove = true;
+                            GetComponent<Collider>().enabled = false;
+                        }
+                    }
+                    /*else if (Input.GetKey("joystick button 2") || Input.GetKey("joystick button 0") || Input.GetKey(KeyCode.Return))
+                    {
+                        buttonPrompts[3].SetActive(false);
+                        dialogueBoxes[1].SetActive(false);
+                        charactersTalking = false;
+                        characterVicinity = false;
+                        PlayerController.canMove = true;
+                        GetComponent<Collider>().enabled = false;
+                    }*/
                 }
             }
         }
+    }
+
+    public void DialogueBox1()
+    {
+        dialogueBoxes[0].SetActive(true);
+        PCPrompts();
+    }
+
+    public void DialogueBox2()
+    {
+        dialogueBoxes[1].SetActive(true);
+        PCPrompts();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -79,31 +108,9 @@ public class InteractionController : MonoBehaviour
         characterVicinity = false;
     }
 
-    public void DialogueBoxes()
-    {
-        if (!dialogueBoxes[0].activeSelf)
-        {
-            dialogueBoxes[0].SetActive(true);
-            PCPrompts();
-        }
-        /*else if (!dialogueBoxes[1].activeSelf)
-        {
-            buttonPrompts[3].SetActive(false);
-            dialogueBoxes[1].SetActive(true);
-            PCPrompts();
-        }*/
-    }
-
     public void Timer()
     {
-        if (!buttonPrompts[3].activeSelf)
-        {
-            buttonPrompts[3].SetActive(true);
-        }
-        else
-        {
-            buttonPrompts[3].SetActive(false);
-        }
+        buttonPrompts[3].SetActive(true);
     }
 
     public void Hide()

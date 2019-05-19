@@ -656,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150442036}
   m_Layer: 5
-  m_Name: PC Prompt
+  m_Name: Prompt 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,12 +675,12 @@ RectTransform:
   m_Children:
   - {fileID: 42858552}
   - {fileID: 1602069000}
-  m_Father: {fileID: 2083677211}
-  m_RootOrder: 5
+  m_Father: {fileID: 893838411}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -1.1}
+  m_AnchoredPosition: {x: 35, y: -38.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &183999615
@@ -1797,7 +1797,7 @@ RectTransform:
   - {fileID: 2083677211}
   - {fileID: 2083665265}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2788,8 +2788,9 @@ RectTransform:
   - {fileID: 1210378144}
   - {fileID: 1001083236}
   - {fileID: 952798767}
+  - {fileID: 150442036}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3062,7 +3063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996054444}
   m_Layer: 5
-  m_Name: Xbox Prompt
+  m_Name: Prompt 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3081,12 +3082,12 @@ RectTransform:
   m_Children:
   - {fileID: 1749334074}
   - {fileID: 1892950160}
-  m_Father: {fileID: 2083677211}
+  m_Father: {fileID: 1942346150}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 25, y: 14.0000305}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1001083235
@@ -4035,8 +4036,9 @@ RectTransform:
   - {fileID: 2044245424}
   - {fileID: 59072172}
   - {fileID: 1028373915}
+  - {fileID: 2057013924}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4894,10 +4896,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 579356375}
   - {fileID: 893838411}
   - {fileID: 1942346150}
   - {fileID: 1127588536}
-  - {fileID: 579356375}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5143,7 +5145,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602068999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -17.3}
+  m_LocalPosition: {x: 0, y: 0, z: -0.9}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 150442036}
@@ -5961,8 +5963,9 @@ RectTransform:
   - {fileID: 195843524}
   - {fileID: 847878813}
   - {fileID: 1561716618}
+  - {fileID: 996054444}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6053,7 +6056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057013924}
   m_Layer: 5
-  m_Name: PS4 Prompt
+  m_Name: Prompt 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6072,12 +6075,12 @@ RectTransform:
   m_Children:
   - {fileID: 798216660}
   - {fileID: 211148836}
-  m_Father: {fileID: 2083677211}
-  m_RootOrder: 3
+  m_Father: {fileID: 1127588536}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -91.899994, y: -8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2071441425
@@ -6247,9 +6250,6 @@ RectTransform:
   - {fileID: 1141768267}
   - {fileID: 1792699624}
   - {fileID: 80125990}
-  - {fileID: 2057013924}
-  - {fileID: 996054444}
-  - {fileID: 150442036}
   m_Father: {fileID: 579356375}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public bool notDestroyed;
-    public bool canMove;
+    public static bool canMove;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
@@ -88,15 +88,6 @@ public class PlayerController : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180);
                 }*/
             }
-            if (InteractionController.charactersTalking)
-            {
-                canMove = false;
-            }
-            else
-            {
-                canMove = true;
-            }
-
             if (controller.isGrounded)
             {
                 if (allowJump)

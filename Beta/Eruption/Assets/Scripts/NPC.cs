@@ -62,7 +62,7 @@ public class NPC : MonoBehaviour
             {
                 transform.eulerAngles = new Vector2(0, -90);
             }
-            if (!InteractionController.charactersTalking)
+            //if (!InteractionController.charactersTalking)
             {
                 isWalking = true;
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
