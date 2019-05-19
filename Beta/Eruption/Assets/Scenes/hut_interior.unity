@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &80125990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &150442036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1822,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639940872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5115,9 +5115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6ab3bf902a32640ad50a7341987508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrompts: []
-  dialogueBoxes: []
-  characterVicinity: 0
   moveSpeed: 2
   isWalking: 0
   walkTime: 1
@@ -5522,6 +5519,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749334073}
   m_CullTransparentMesh: 0
+--- !u!1 &1785594809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785594810}
+  - component: {fileID: 1785594811}
+  m_Layer: 0
+  m_Name: Dialogue Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1785594810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785594809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785594811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785594809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67415f18bb0e434189c7e96ffd2a494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 80125991}
+  dialogueText: {fileID: 80125991}
 --- !u!1 &1792699623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,7 +5581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1792699624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5706,9 +5748,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794646411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada6c7aff8340f2479f516ff76385074, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ed985aafc12304599b85215f304cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue:
+    name: Elder Flame
+    sentences:
+    - Ahh, Erif, my boy. So glad you came. I've been expecting you. The strangest
+      thing... Some hooded figure passed by and left something for you. It's over
+      there on the table. It looks powerful enough to help you as you make your way
+      through the lower caverns.
+    - Please take care of yourself. I'll open the way for you.
   buttonPrompts:
   - {fileID: 1210378143}
   - {fileID: 195843523}
@@ -6105,7 +6155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67415f18bb0e434189c7e96ffd2a494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxes: []
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
 --- !u!1 &2083677210
 GameObject:
   m_ObjectHideFlags: 0

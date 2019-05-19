@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour
                 isWalking = false;
             }
 
-            switch (WalkDirection)
+            /*switch (WalkDirection)
             {
                 case 0:
                     myRigidbody.velocity = new Vector2(moveSpeed, 0);
@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
                 case 1:
                     myRigidbody.velocity = new Vector2(-moveSpeed, 0);
                     break;
-            }
+            }*/
         }
     }
 
