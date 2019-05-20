@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueActive;
     public bool characterVicinity;
     public float typingSpeed;
+    public bool endDialogue;
 
     public int xbox360Controller = 0;
     public int pS4Controller = 0;
@@ -39,7 +40,7 @@ public class DialogueManager : MonoBehaviour
     public void NextSentence()
     {
         //If Index has less than the number of elements in the 'sentences' array by -1
-        if(index < sentences.Length - 1)
+        if (index < sentences.Length - 1)
         {
             index++;
             //Resets textDisplay so sentences don't stack
@@ -49,6 +50,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             textDisplay.text = "";
+            endDialogue = true;
         }
     }
 
@@ -82,9 +84,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (characterVicinity)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyUp(KeyCode.Return))
             {
                 dialogueActive = true;
+                endDialogue = false;
                 buttonPrompts[0].SetActive(false);
                 nameDisplay.enabled = true;
                 dialogueBox.SetActive(true);
@@ -93,6 +96,16 @@ public class DialogueManager : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 NextSentence();
+            }
+            else if (endDialogue)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    dialogueActive = false;
+                    nameDisplay.enabled = false;
+                    dialogueBox.SetActive(false);
+                    PlayerController.canMove = true;
+                }
             }
         }
 
