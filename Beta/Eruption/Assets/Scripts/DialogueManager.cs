@@ -6,18 +6,19 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    //public GameObject[] dialogueBoxes;
+    public GameObject dialogueBox;
+    public TextMeshProUGUI nameDisplay;
     public GameObject[] buttonPrompts;
-    //public Text dialogueText;
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
+    public string[] characterName;
     public bool dialogueActive;
     public bool characterVicinity;
     public float typingSpeed;
 
     public int xbox360Controller = 0;
     public int pS4Controller = 0;
-    private int Index;
+    private int index;
 
     public void Start()
     {
@@ -26,12 +27,28 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator Type()
     {
-        foreach(char letter in sentences[Index].ToCharArray())
+        foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
             dialogueActive = true;
             PlayerController.canMove = false;
+        }
+    }
+
+    public void NextSentence()
+    {
+        //If Index has less than the number of elements in the 'sentences' array by -1
+        if(index < sentences.Length - 1)
+        {
+            index++;
+            //Resets textDisplay so sentences don't stack
+            textDisplay.text = "";
+            StartCoroutine(Type());
+        }
+        else
+        {
+            textDisplay.text = "";
         }
     }
 
@@ -63,21 +80,21 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+        if (characterVicinity)
         {
-            buttonPrompts[0].SetActive(false);
-            //dialogueBoxes[0].SetActive(false);
-            //dialogueActive = false;
-            //PlayerController.canMove = true;
-            //currentLine++;
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                dialogueActive = true;
+                buttonPrompts[0].SetActive(false);
+                nameDisplay.enabled = true;
+                dialogueBox.SetActive(true);
+                StartCoroutine("Type");
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                NextSentence();
+            }
         }
-
-        /*if (currentLine >= dialogueLines.Length)
-        {
-            currentLine = 0;
-        }*/
-
-        //dialogueText.text = dialogueLines[currentLine];
 
         if (xbox360Controller == 1)
         {
@@ -96,17 +113,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-
-    /*public void DialogueBoxes(string dialogue)
-    {
-        dialogueActive = true;
-        dialogueBoxes[0].SetActive(true);
-        dialogueBoxes[0] = dialogue;
-        if (dialogueBoxes[0].activeSelf)
-        {
-            buttonPrompts[0].SetActive(false);
-        }
-    }*/
 
     public void Timer()
     {
@@ -136,16 +142,6 @@ public class DialogueManager : MonoBehaviour
     {
         buttonPrompts[0].SetActive(true);
         Invoke("Hide", 3f);
-        /*if (dialogueActive)
-        {
-            //Turn off the button prompt completely whilst the player is talking
-            buttonPrompts[0].SetActive(false);
-            if (dialogueBoxes[0].activeSelf)
-            {
-                //Timer until a button prompt appears to skip to the next dialogue box
-                Invoke("Timer", 3f);
-            }
-        }*/
     }
 
     public void ControllerDetection()
