@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &80125990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -467,18 +467,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80125989}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2083677211}
-  m_RootOrder: 2
+  m_Father: {fileID: 1395610908}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.1, y: -9.2}
-  m_SizeDelta: {x: 299.56, y: 199.9}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20.299988, y: -441.09988}
+  m_SizeDelta: {x: 1880, y: -902.65466}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &80125991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,14 +530,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 272
+  m_textAlignment: 264
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.5775146, y: 11.685333, z: 18.355347, w: 90.2119}
+  m_margin: {x: 7.5775146, y: 11.685333, z: 18.355347, w: 12.206237}
   m_textInfo:
     textComponent: {fileID: 80125991}
     characterCount: 256
@@ -576,7 +576,7 @@ MonoBehaviour:
     spaceCount: 46
     wordCount: 47
     linkCount: 0
-    lineCount: 6
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1708,7 +1708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &579356375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1723,7 +1723,7 @@ RectTransform:
   - {fileID: 2083677211}
   - {fileID: 2083665265}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2493,7 +2493,7 @@ RectTransform:
   - {fileID: 952798767}
   - {fileID: 150442036}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3741,7 +3741,7 @@ RectTransform:
   - {fileID: 1028373915}
   - {fileID: 2057013924}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3819,8 +3819,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.82, y: 21.18}
-  m_SizeDelta: {x: 123.24, y: 104.09}
+  m_AnchoredPosition: {x: 2.78, y: -405}
+  m_SizeDelta: {x: 768.7, y: 171.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141768268
 MonoBehaviour:
@@ -4557,10 +4557,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4599,6 +4599,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 80125990}
   - {fileID: 579356375}
   - {fileID: 893838411}
   - {fileID: 1942346150}
@@ -5271,10 +5272,10 @@ RectTransform:
   m_Father: {fileID: 2083677211}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146.4, y: 38.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -800, y: -320}
+  m_SizeDelta: {x: 68.9, y: 33.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792699625
 MonoBehaviour:
@@ -5324,14 +5325,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5362,7 +5363,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 164.49333, w: 42.647648}
+  m_margin: {x: 0, y: 0, z: 3.6008472, w: 0.16027021}
   m_textInfo:
     textComponent: {fileID: 1792699625}
     characterCount: 11
@@ -5423,15 +5424,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794646411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2305e0639a0c3cd488f937b3d4eaba9d, type: 3}
+  m_Script: {fileID: 11500000, guid: f67415f18bb0e434189c7e96ffd2a494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - Ahh, Erif, my boy. So glad you came. I've been expecting you. The strangest thing...
-    Some hooded figure passed by and left something for you. It's over there on the
-    table. It looks powerful enough to help you as you make your way through the lower
-    caverns.
-  - Please take care of yourself. I'll open the way for you.
+  buttonPrompts:
+  - {fileID: 1210378143}
+  - {fileID: 195843523}
+  - {fileID: 2044245423}
+  - {fileID: 150442035}
+  textDisplay: {fileID: 80125991}
+  sentences:
+  - Ahh, Erif, my boy. So glad you came.
+  - I've been expecting you.
+  - The strangest thing... Some hooded figure passed by and left something for you.
+  - It looks powerful enough to help you as you make your way through the lower caverns.
+  dialogueActive: 0
+  characterVicinity: 0
+  typingSpeed: 0.02
+  xbox360Controller: 0
+  pS4Controller: 0
 --- !u!65 &1794646413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5443,8 +5454,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6019114, y: 1, z: 1}
+  m_Center: {x: 0.0009890526, y: 0, z: 0}
 --- !u!4 &1794646414
 Transform:
   m_ObjectHideFlags: 0
@@ -5566,7 +5577,7 @@ RectTransform:
   - {fileID: 1561716618}
   - {fileID: 996054444}
   m_Father: {fileID: 1395610908}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5582,7 +5593,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034243129}
-  - component: {fileID: 2034243130}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -5604,31 +5614,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034243130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034243128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67415f18bb0e434189c7e96ffd2a494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueBoxes:
-  - {fileID: 2083677210}
-  - {fileID: 2083665264}
-  buttonPrompts:
-  - {fileID: 1210378143}
-  - {fileID: 195843523}
-  - {fileID: 2044245423}
-  - {fileID: 150442035}
-  dialogueText: {fileID: 80125991}
-  dialogueActive: 0
-  characterVicinity: 0
-  xbox360Controller: 0
-  ps4Controller: 0
 --- !u!1 &2044245423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,13 +5861,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67415f18bb0e434189c7e96ffd2a494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxes: []
   buttonPrompts: []
-  dialogueText: {fileID: 0}
+  textDisplay: {fileID: 0}
+  sentences: []
   dialogueActive: 0
   characterVicinity: 0
+  typingSpeed: 0
   xbox360Controller: 0
-  ps4Controller: 0
+  pS4Controller: 0
 --- !u!1 &2083677210
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,12 +5879,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2083677211}
   m_Layer: 5
-  m_Name: Speech Box 1
+  m_Name: Speech 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2083677211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5912,7 +5898,6 @@ RectTransform:
   m_Children:
   - {fileID: 1141768267}
   - {fileID: 1792699624}
-  - {fileID: 80125990}
   m_Father: {fileID: 579356375}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

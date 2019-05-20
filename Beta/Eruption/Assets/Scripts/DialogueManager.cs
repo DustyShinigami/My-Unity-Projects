@@ -6,56 +6,107 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject[] dialogueBoxes;
+    //public GameObject[] dialogueBoxes;
     public GameObject[] buttonPrompts;
-    public TextMeshProUGUI dialogueText;
+    //public Text dialogueText;
+    public TextMeshProUGUI textDisplay;
+    public string[] sentences;
     public bool dialogueActive;
     public bool characterVicinity;
+    public float typingSpeed;
 
-    [SerializeField] public int xbox360Controller = 0;
-    [SerializeField] public int ps4Controller = 0;
+    public int xbox360Controller = 0;
+    public int pS4Controller = 0;
+    private int Index;
 
     public void Start()
     {
 
     }
 
-    public void Update()
+    IEnumerator Type()
     {
-        if (characterVicinity)
+        foreach(char letter in sentences[Index].ToCharArray())
         {
-            if(dialogueActive && Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
-            {
-                dialogueBoxes[0].SetActive(false);
-                dialogueActive = false;
-                PlayerController.canMove = true;
-            }
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+            dialogueActive = true;
+            PlayerController.canMove = false;
+        }
+    }
 
-            if (xbox360Controller == 1)
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            characterVicinity = true;
+            ControllerDetection();
+            if (pS4Controller == 1)
             {
-                if (Input.GetKeyDown("joystick button 2"))
-                {
-                    dialogueActive = true;
-                    PlayerController.canMove = false;
-                }
+                PS4Prompts();
             }
-            else if (ps4Controller == 1)
+            else if (xbox360Controller == 1)
             {
-                if (Input.GetKeyDown("joystick button 0"))
-                {
-                    dialogueActive = true;
-                    PlayerController.canMove = false;
-                }
+                Xbox360Prompts();
+            }
+            else
+            {
+                PCPrompts();
             }
         }
     }
 
-    public void DialogueBoxes(string dialogue)
+    public void OnTriggerExit(Collider other)
+    {
+        characterVicinity = false;
+    }
+
+    public void Update()
+    {
+        if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+        {
+            buttonPrompts[0].SetActive(false);
+            //dialogueBoxes[0].SetActive(false);
+            //dialogueActive = false;
+            //PlayerController.canMove = true;
+            //currentLine++;
+        }
+
+        /*if (currentLine >= dialogueLines.Length)
+        {
+            currentLine = 0;
+        }*/
+
+        //dialogueText.text = dialogueLines[currentLine];
+
+        if (xbox360Controller == 1)
+        {
+            if (Input.GetKeyDown("joystick button 2"))
+            {
+                dialogueActive = true;
+                PlayerController.canMove = false;
+            }
+        }
+        else if (pS4Controller == 1)
+        {
+            if (Input.GetKeyDown("joystick button 0"))
+            {
+                dialogueActive = true;
+                PlayerController.canMove = false;
+            }
+        }
+    }
+
+    /*public void DialogueBoxes(string dialogue)
     {
         dialogueActive = true;
         dialogueBoxes[0].SetActive(true);
-        dialogueText.text = dialogue;
-    }
+        dialogueBoxes[0] = dialogue;
+        if (dialogueBoxes[0].activeSelf)
+        {
+            buttonPrompts[0].SetActive(false);
+        }
+    }*/
 
     public void Timer()
     {
@@ -85,7 +136,7 @@ public class DialogueManager : MonoBehaviour
     {
         buttonPrompts[0].SetActive(true);
         Invoke("Hide", 3f);
-        if (dialogueActive)
+        /*if (dialogueActive)
         {
             //Turn off the button prompt completely whilst the player is talking
             buttonPrompts[0].SetActive(false);
@@ -94,7 +145,7 @@ public class DialogueManager : MonoBehaviour
                 //Timer until a button prompt appears to skip to the next dialogue box
                 Invoke("Timer", 3f);
             }
-        }
+        }*/
     }
 
     public void ControllerDetection()
@@ -106,9 +157,9 @@ public class DialogueManager : MonoBehaviour
             if (names[x].Length == 19)
             {
                 //print("PS4 CONTROLLER IS CONNECTED");
-                ps4Controller = 1;
+                pS4Controller = 1;
                 xbox360Controller = 0;
-                if (ps4Controller == 1)
+                if (pS4Controller == 1)
                 {
                     //Debug.Log("PS4 controller detected");
                 }
@@ -116,7 +167,7 @@ public class DialogueManager : MonoBehaviour
             else if (names[x].Length == 33)
             {
                 //print("XBOX 360 CONTROLLER IS CONNECTED");
-                ps4Controller = 0;
+                pS4Controller = 0;
                 xbox360Controller = 1;
                 if (xbox360Controller == 1)
                 {
@@ -125,11 +176,11 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                ps4Controller = 0;
+                pS4Controller = 0;
                 xbox360Controller = 0;
             }
 
-            if (xbox360Controller == 0 && ps4Controller == 0)
+            if (xbox360Controller == 0 && pS4Controller == 0)
             {
                 //Debug.Log("No controllers detected");
             }

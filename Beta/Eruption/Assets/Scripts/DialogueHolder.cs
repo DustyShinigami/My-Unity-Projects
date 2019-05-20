@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class DialogueHolder : MonoBehaviour
 {
-    [TextArea(3, 10)]
-    public string[] dialogue;
-
-    private DialogueManager theDialogueManager;
+    /*private DialogueManager theDialogueManager;
 
     void Start()
     {
         theDialogueManager = FindObjectOfType<DialogueManager>();
-    }
-
-    void Update()
-    {
-
     }
 
     public void OnTriggerStay(Collider other)
@@ -25,11 +17,7 @@ public class DialogueHolder : MonoBehaviour
         {
             theDialogueManager.characterVicinity = true;
             theDialogueManager.ControllerDetection();
-            if(Input.GetKeyDown("joystick button 2") || Input.GetKeyDown("joystick button 0") || Input.GetKeyDown(KeyCode.Return))
-            {
-                theDialogueManager.DialogueBoxes(dialogue[0]);
-            }
-            /*if (theDialogueManager.ps4Controller == 1)
+            if (theDialogueManager.pS4Controller == 1)
             {
                 theDialogueManager.PS4Prompts();
             }
@@ -40,11 +28,11 @@ public class DialogueHolder : MonoBehaviour
             else
             {
                 theDialogueManager.PCPrompts();
-            }*/
+            }
         }
     }
 
-    /*public void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         theDialogueManager.characterVicinity = false;
     }*/
