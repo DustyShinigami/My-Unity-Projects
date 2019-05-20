@@ -16,20 +16,17 @@ public class DialogueManager : MonoBehaviour
     public bool characterVicinity;
     public float typingSpeed;
     public bool endDialogue;
+    public bool continueAllowed;
 
     public int xbox360Controller = 0;
     public int pS4Controller = 0;
     private int index;
 
-    public void Start()
-    {
-
-    }
-
     IEnumerator Type()
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
+            continueAllowed = false;
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
             dialogueActive = true;
@@ -45,6 +42,10 @@ public class DialogueManager : MonoBehaviour
             index++;
             //Resets textDisplay so sentences don't stack
             textDisplay.text = "";
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                continueAllowed = true;
+            }
             StartCoroutine(Type());
         }
         else
@@ -93,20 +94,25 @@ public class DialogueManager : MonoBehaviour
                 dialogueBox.SetActive(true);
                 StartCoroutine("Type");
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (textDisplay.text == sentences[index])
             {
+                buttonPrompts[3].SetActive(true);
+                continueAllowed = true;
+            }
+            if (!buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
+            {
+                continueAllowed = false;
                 NextSentence();
             }
-            else if (endDialogue)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    dialogueActive = false;
-                    nameDisplay.enabled = false;
-                    dialogueBox.SetActive(false);
-                    PlayerController.canMove = true;
-                }
-            }
+        }
+        else if (endDialogue)
+        {
+            dialogueActive = false;
+            nameDisplay.enabled = false;
+            dialogueBox.SetActive(false);
+            characterVicinity = false;
+            continueAllowed = false;
+            PlayerController.canMove = true;
         }
 
         if (xbox360Controller == 1)
