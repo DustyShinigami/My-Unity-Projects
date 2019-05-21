@@ -17,6 +17,8 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed;
     public bool endDialogue;
     public bool continueAllowed;
+    public bool returnPressed;
+    public bool spacePressed;
 
     public int xbox360Controller = 0;
     public int pS4Controller = 0;
@@ -26,32 +28,26 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
-            continueAllowed = false;
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
-            dialogueActive = true;
-            PlayerController.canMove = false;
         }
     }
 
     public void NextSentence()
     {
+        buttonPrompts[3].SetActive(false);
+        //spacePressed = false;
         //If Index has less than the number of elements in the 'sentences' array by -1
         if (index < sentences.Length - 1)
         {
             index++;
             //Resets textDisplay so sentences don't stack
             textDisplay.text = "";
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                continueAllowed = true;
-            }
             StartCoroutine(Type());
         }
         else
         {
             textDisplay.text = "";
-            endDialogue = true;
         }
     }
 
@@ -85,35 +81,56 @@ public class DialogueManager : MonoBehaviour
     {
         if (characterVicinity)
         {
+            dialogueActive = false;
             if (Input.GetKeyUp(KeyCode.Return))
             {
+                PlayerController.canMove = false;
+                returnPressed = true;
+                if (returnPressed)
+                {
+                    continueAllowed = false;
+                    nameDisplay.enabled = true;
+                    dialogueBox.SetActive(true);
+                    StartCoroutine("Type");
+                }
+            }
+            if (nameDisplay.enabled && dialogueBox.activeSelf)
+            {
                 dialogueActive = true;
-                endDialogue = false;
-                buttonPrompts[0].SetActive(false);
-                nameDisplay.enabled = true;
-                dialogueBox.SetActive(true);
-                StartCoroutine("Type");
             }
             if (textDisplay.text == sentences[index])
             {
                 buttonPrompts[3].SetActive(true);
                 continueAllowed = true;
-            }
-            if (!buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
-            {
-                continueAllowed = false;
-                NextSentence();
+                //Placing this 'if' statement here within the previous one will stop the button from being spammed.
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    spacePressed = true;
+                    continueAllowed = false;
+                    NextSentence();
+                }
+                else
+                {
+                    spacePressed = false;
+                }
             }
         }
-        else if (endDialogue)
+        /*if(sentences.Length > index)
         {
-            dialogueActive = false;
-            nameDisplay.enabled = false;
-            dialogueBox.SetActive(false);
-            characterVicinity = false;
-            continueAllowed = false;
-            PlayerController.canMove = true;
-        }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                endDialogue = true;
+                if (endDialogue)
+                {
+                    dialogueActive = false;
+                    nameDisplay.enabled = false;
+                    dialogueBox.SetActive(false);
+                    characterVicinity = false;
+                    continueAllowed = false;
+                    PlayerController.canMove = true;
+                }
+            }
+        }*/
 
         if (xbox360Controller == 1)
         {
