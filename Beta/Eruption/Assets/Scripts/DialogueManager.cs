@@ -12,17 +12,24 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     public string[] characterName;
-    public bool dialogueActive;
-    public bool characterVicinity;
     public float typingSpeed;
-    public bool endDialogue;
-    public bool continueAllowed;
-    public bool returnPressed;
-    public bool spacePressed;
 
-    public int xbox360Controller = 0;
-    public int pS4Controller = 0;
+    private int xbox360Controller = 0;
+    private int pS4Controller = 0;
     private int index;
+    private BoxCollider dialogueTrigger;
+    private int currentLine;
+    private bool returnPressed;
+    private bool spacePressed;
+    private bool endDialogue;
+    private bool continueAllowed;
+    private bool characterVicinity;
+    private bool dialogueActive;
+
+    void Start()
+    {
+        dialogueTrigger = GetComponent<BoxCollider>();
+    }
 
     IEnumerator Type()
     {
@@ -36,7 +43,6 @@ public class DialogueManager : MonoBehaviour
     public void NextSentence()
     {
         buttonPrompts[3].SetActive(false);
-        //spacePressed = false;
         //If Index has less than the number of elements in the 'sentences' array by -1
         if (index < sentences.Length - 1)
         {
@@ -82,7 +88,8 @@ public class DialogueManager : MonoBehaviour
         if (characterVicinity)
         {
             dialogueActive = false;
-            if (Input.GetKeyUp(KeyCode.Return))
+            //Set conditions to prevent button spamming. The Return key will only work if the dialogue box isn't active. If it is, it won't do anything.
+            if (Input.GetKeyUp(KeyCode.Return) && !dialogueBox.activeSelf)
             {
                 PlayerController.canMove = false;
                 returnPressed = true;
@@ -97,6 +104,21 @@ public class DialogueManager : MonoBehaviour
             if (nameDisplay.enabled && dialogueBox.activeSelf)
             {
                 dialogueActive = true;
+                //The button prompt must be active in conjunction with the Space bar being pressed before the next line will show.
+                if(buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
+                {
+                    currentLine++;
+                }
+                if(currentLine >= sentences.Length)
+                {
+                    nameDisplay.enabled = false;
+                    dialogueBox.SetActive(false);
+                    dialogueActive = false;
+                    endDialogue = true;
+                    PlayerController.canMove = true;
+                    characterVicinity = false;
+                    dialogueTrigger.enabled = false;
+                }
             }
             if (textDisplay.text == sentences[index])
             {
@@ -115,22 +137,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
-        /*if(sentences.Length > index)
-        {
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                endDialogue = true;
-                if (endDialogue)
-                {
-                    dialogueActive = false;
-                    nameDisplay.enabled = false;
-                    dialogueBox.SetActive(false);
-                    characterVicinity = false;
-                    continueAllowed = false;
-                    PlayerController.canMove = true;
-                }
-            }
-        }*/
 
         if (xbox360Controller == 1)
         {
