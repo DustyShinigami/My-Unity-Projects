@@ -7,18 +7,17 @@ public class NPC : MonoBehaviour
 {
     public Animator anim;
     public float moveSpeed;
-    public float gravityScale;
     public bool canMove;
     public static bool interact = false;
     public static bool allowInteract = false;
-    public Transform[] target;
+    public Transform target;
+    public bool targetReached;
 
     private CharacterController controller;
-    private Vector3 moveDirection;
-    private int current;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         canMove = false;
     }
@@ -32,15 +31,19 @@ public class NPC : MonoBehaviour
     {
         if (canMove)
         {
-            if (transform.position != target[current].position)
+            transform.eulerAngles = new Vector2(0, 90);
+            target.transform.position = new Vector3(-12.45f, 12.005f, -0.695f);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            anim.Play("Walk");
+            if (transform.position == target.position)
             {
-                Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, moveSpeed * Time.deltaTime);
-                controller.Move(moveDirection * Time.deltaTime);
-                transform.eulerAngles = new Vector2(0, 90);
-                anim.SetBool("isGrounded", controller.isGrounded);
-                anim.SetFloat("Speed", moveSpeed);
+                targetReached = true;
+                if (targetReached)
+                {
+                    allowInteract = true;
+                    anim.SetBool("Interact", controller.isGrounded);
+                }
             }
-            else current = (current + 1) % target.Length;
         }
     }
 }
