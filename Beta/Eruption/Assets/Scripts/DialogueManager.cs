@@ -25,10 +25,12 @@ public class DialogueManager : MonoBehaviour
     private bool continueAllowed;
     private bool characterVicinity;
     private bool dialogueActive;
+    private NPC theNPC;
 
     void Start()
     {
         dialogueTrigger = GetComponent<BoxCollider>();
+        theNPC = FindObjectOfType<NPC>();
     }
 
     IEnumerator Type()
@@ -118,6 +120,8 @@ public class DialogueManager : MonoBehaviour
                     PlayerController.canMove = true;
                     characterVicinity = false;
                     dialogueTrigger.enabled = false;
+                    theNPC.Walk();
+                    //theNPC.StartCoroutine("Walk");
                 }
             }
             if (textDisplay.text == sentences[index])
