@@ -120,7 +120,6 @@ public class DialogueManager : MonoBehaviour
                     characterVicinity = false;
                     dialogueTrigger.enabled = false;
                     theNPC.Walk();
-                    //theNPC.StartCoroutine("Walk");
                 }
             }
             if (textDisplay.text == sentences[index])
