@@ -20,6 +20,16 @@ public class NPC : MonoBehaviour
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         canMove = false;
+        Idle();
+    }
+
+    public void Idle()
+    {
+        anim.SetBool("isMoving", false);
+        if (anim.GetBool("isMoving") == false)
+        {
+            anim.SetTrigger("Idle");
+        }
     }
 
     public void Walk()
@@ -34,15 +44,28 @@ public class NPC : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 90);
             target.transform.position = new Vector3(-12.45f, 12.005f, -0.695f);
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            anim.Play("Walk");
+            anim.SetBool("isMoving", true);
+            anim.ResetTrigger("Idle");
+            anim.SetFloat("Speed", 0.2f);
+            anim.SetTrigger("Walk");
             if (transform.position == target.position)
             {
+                anim.SetFloat("Speed", 0f);
+                anim.ResetTrigger("Walk");
                 targetReached = true;
                 if (targetReached)
                 {
+                    //anim.ResetTrigger("Walk");
+                    Idle();
                     allowInteract = true;
-                    anim.SetBool("Interact", controller.isGrounded);
                 }
+                /*allowInteract = true;
+                if (targetReached && allowInteract)
+                {
+                    Idle();
+                    interact = true;
+                    //anim.SetTrigger("Interact");
+                }*/
             }
         }
     }

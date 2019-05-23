@@ -117,7 +117,6 @@ public class DialogueManager : MonoBehaviour
                     dialogueBox.SetActive(false);
                     dialogueActive = false;
                     endDialogue = true;
-                    PlayerController.canMove = true;
                     characterVicinity = false;
                     dialogueTrigger.enabled = false;
                     theNPC.Walk();
