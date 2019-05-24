@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 136459090951579392}
   - component: {fileID: 136459090951579398}
   m_Layer: 0
-  m_Name: pick_up_animation
+  m_Name: Erif
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1077,8 +1077,7 @@ MonoBehaviour:
   textureDefault: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
   allowCombat: 0
   allowJump: 0
-  allowInteract: 0
-  startPoint: 
+  notDestroyed: 0
 --- !u!1 &9221193725431708034
 GameObject:
   m_ObjectHideFlags: 0
