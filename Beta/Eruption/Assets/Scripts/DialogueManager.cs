@@ -119,6 +119,7 @@ public class DialogueManager : MonoBehaviour
                     endDialogue = true;
                     characterVicinity = false;
                     dialogueTrigger.enabled = false;
+                    //theNPC.currentState = NPC.NPCState.MovingRight;
                     theNPC.MoveRight();
                 }
             }
