@@ -8,72 +8,76 @@ public class NPC : MonoBehaviour
     public Animator anim;
     public float moveSpeed;
     public bool moveRight;
-    public bool moveLeft;
-    public bool nPCMoving;
-    public bool nPCIdle;
-    public bool interact = false;
+    public bool interact;
     public Transform target;
     public Transform startPoint;
 
     private CharacterController controller;
-    private bool leverPulled;
-    //private bool playerIdle;
+
+    /*enum NPCState
+    {
+        moveRight,
+        Idle,
+        Interact
+    }
+
+    NPCState currentState = NPCState.Idle;*/
 
     void Start()
     {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        moveRight = false;
-        moveLeft = false;
-        nPCIdle = true;
         Idle();
     }
 
-    public void Idle()
+    /*public void NPCStates()
     {
-        if (nPCIdle)
+
+        if (currentState == NPCState.moveRight)
+        {
+            anim.ResetTrigger("Idle");
+            anim.SetBool("isMoving", true);
+            anim.SetFloat("Speed", 0.2f);
+            anim.SetTrigger("Walk");
+        }
+        else if (currentState == NPCState.Idle)
         {
             anim.ResetTrigger("Walk");
             anim.SetBool("isMoving", false);
             anim.SetFloat("Speed", 0f);
             anim.SetTrigger("Idle");
         }
-    }
-
-    public void Walk()
-    {
-        moveRight = true;
-        if (moveRight)
-        {
-            if (nPCMoving)
-            {
-                anim.ResetTrigger("Idle");
-                anim.SetBool("isMoving", true);
-                anim.SetFloat("Speed", 0.2f);
-                anim.SetTrigger("Walk");
-            }
-        }
-        if (moveLeft)
-        {
-            if (nPCMoving)
-            {
-                anim.ResetTrigger("Idle");
-                anim.SetBool("isMoving", true);
-                anim.SetFloat("Speed", 0.2f);
-                anim.SetTrigger("Walk");
-            }
-        }
-    }
-
-    public void Interact()
-    {
-        if (interact)
+        else if (currentState == NPCState.Interact)
         {
             anim.ResetTrigger("Walk");
             anim.SetBool("isMoving", false);
             anim.SetFloat("Speed", 0f);
             anim.SetTrigger("Interact");
         }
+    }*/
+
+    public void Idle()
+    {
+        anim.ResetTrigger("Interact");
+        anim.SetBool("isWalking", false);
+        anim.SetFloat("Speed", 0f);
+        anim.SetTrigger("Idle");
+    }
+
+    public void MoveRight()
+    {
+        moveRight = true;
+        anim.ResetTrigger("Idle");
+        anim.SetBool("isWalking", true);
+        anim.SetFloat("Speed", 0.2f);
+    }
+
+    public void Interact()
+    {
+        interact = true;
+        anim.SetBool("isWalking", false);
+        anim.SetFloat("Speed", 0f);
+        anim.SetTrigger("Interact");
     }
 
     public void Update()
@@ -83,43 +87,22 @@ public class NPC : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 90);
             target.transform.position = new Vector3(-12.45f, 12.005f, -0.695f);
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            nPCMoving = true;
-            if (nPCMoving)
-            {
-                nPCIdle = false;
-                Walk();
-            }
         }
+        /*if (!moveRight)
+        {
+            transform.eulerAngles = new Vector2(0, -90);
+            target.transform.position = new Vector3(-14.5f, 11.98f, -0.606f);
+            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, moveSpeed * Time.deltaTime);
+        }*/
         if (transform.position == target.position)
         {
             moveRight = false;
-            nPCMoving = false;
-            interact = true;
-            if (interact)
-            {
-                Interact();
-            }
+            Interact();
         }
-        if (leverPulled)
+        /*else if(transform.position == startPoint.position)
         {
-            nPCMoving = true;
-            moveLeft = true;
-            if (nPCMoving && moveLeft)
-            {
-                Walk();
-            }
-        }
-        if (moveLeft)
-        {
-            transform.eulerAngles = new Vector2(0, -90);
-            startPoint.transform.position = new Vector3(-14.5f, 11.98f, -0.606f);
-            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, moveSpeed * Time.deltaTime);
-        }
-        if (transform.position == startPoint.position)
-        {
-            moveLeft = true;
-            nPCMoving = false;
+            moveRight = false;
             transform.eulerAngles = new Vector2(0, -180);
-        }
+        }*/
     }
 }

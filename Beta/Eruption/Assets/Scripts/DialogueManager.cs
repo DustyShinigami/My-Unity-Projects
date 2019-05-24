@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
                     endDialogue = true;
                     characterVicinity = false;
                     dialogueTrigger.enabled = false;
-                    theNPC.Walk();
+                    theNPC.MoveRight();
                 }
             }
             if (textDisplay.text == sentences[index])
