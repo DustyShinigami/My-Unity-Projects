@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NPC : MonoBehaviour
 {
     public Animator anim;
+    public Animator leverAnim;
     public float moveSpeed;
     public bool moveRight;
     //public bool isMoving;
@@ -102,7 +103,9 @@ public class NPC : MonoBehaviour
 
     IEnumerator ReturnToStart()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
+        leverAnim.SetTrigger("Lever Pushed");
+        leverAnim.SetBool("Lever Activated", true);
         anim.ResetTrigger("Interact");
         leverActivated = true;
         interact = false;
@@ -133,6 +136,8 @@ public class NPC : MonoBehaviour
         anim.SetBool("isWalking", false);
         anim.SetFloat("Speed", 0f);
         anim.SetTrigger("Interact");
+        //leverAnim.SetTrigger("Lever Pushed");
+        //leverAnim.SetBool("Lever Activated", true);
         StartCoroutine("ReturnToStart");
     }
 
