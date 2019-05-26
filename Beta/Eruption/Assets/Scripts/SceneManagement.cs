@@ -13,20 +13,11 @@ public class SceneManagement : MonoBehaviour
     public static int xbox360Controller = 0;
     public static int ps4Controller = 0;
     public GameObject exitLight;
+    public bool backOutsideHut;
 
     private bool outsideHut;
     private bool insideHut;
     private PlayerController thePlayer;
-
-    void Awake()
-    {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            insideHut = true;
-            outsideHut = false;
-            exitLight.SetActive(false);
-        }
-    }
 
     void Start()
     {
@@ -34,6 +25,16 @@ public class SceneManagement : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+        {
+            insideHut = true;
+            outsideHut = false;
+            exitLight.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
+        {
+            backOutsideHut = true;
         }
     }
 
@@ -79,6 +80,13 @@ public class SceneManagement : MonoBehaviour
                 {
                     PCPrompts();
                 }
+            }
+        }
+        else if(backOutsideHut)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(levelToLoad);
             }
         }
     }
@@ -138,10 +146,6 @@ public class SceneManagement : MonoBehaviour
                     SceneManager.LoadScene(levelToLoad);
                 }
             }
-        }
-        if (Pickup.objectsDisabled)
-        {
-            exitLight.SetActive(true);
         }
     }
 
