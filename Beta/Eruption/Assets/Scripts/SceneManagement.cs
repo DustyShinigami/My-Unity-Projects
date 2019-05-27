@@ -13,17 +13,21 @@ public class SceneManagement : MonoBehaviour
     public static int xbox360Controller = 0;
     public static int ps4Controller = 0;
     public GameObject exitLight;
-    public bool backOutsideHut;
+    public bool newArea;
+    public bool nextArea;
+    public Transform endPoint;
+    public Transform newStartPoint;
+    public PlayerController thePlayer;
+    public Camera theCamera;
 
     private bool outsideHut;
     private bool insideHut;
-    private PlayerController thePlayer;
-    private ScreenFader theScreenFader;
+    private bool backOutsideHut;
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        theScreenFader = FindObjectOfType<ScreenFader>();
+        theCamera = FindObjectOfType<Camera>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
@@ -37,6 +41,10 @@ public class SceneManagement : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
         {
             backOutsideHut = true;
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
+        {
+            newArea = true;
         }
     }
 
@@ -90,6 +98,13 @@ public class SceneManagement : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 SceneManager.LoadScene(levelToLoad);
+            }
+        }
+        else if (newArea)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                nextArea = true;
             }
         }
     }
@@ -149,6 +164,10 @@ public class SceneManagement : MonoBehaviour
                     SceneManager.LoadScene(levelToLoad);
                 }
             }
+        }
+        else if (nextArea)
+        {
+            thePlayer.transform.position = newStartPoint.position;
         }
     }
 
