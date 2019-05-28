@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
         halfWidth = halfHeight * Screen.width / Screen.height;
     }
 
-    void LateUpdate()
+    void Update()
     {
         transform.position = player.transform.position + cameraOffset;
         targetPosition.y = Mathf.Min(targetPosition.y, m_minY);

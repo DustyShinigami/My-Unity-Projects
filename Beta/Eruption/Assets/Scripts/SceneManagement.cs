@@ -18,12 +18,10 @@ public class SceneManagement : MonoBehaviour
     private bool insideHut;
     private bool backOutsideHut;
     private PlayerController thePlayer;
-    //private CameraController theCamera;
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        //theCamera = FindObjectOfType<CameraController>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;

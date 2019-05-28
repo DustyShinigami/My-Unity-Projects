@@ -808,7 +808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380049559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 2.01, z: -0.98}
+  m_LocalPosition: {x: 6.21, y: 2.01, z: -0.98}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 382427305}
@@ -1928,7 +1928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792563321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.361, y: 1.988, z: 2.37}
+  m_LocalPosition: {x: -4.4, y: 1.988, z: 2.37}
   m_LocalScale: {x: 7.3092465, y: 2.353548, z: 1}
   m_Children: []
   m_Father: {fileID: 1801058349}
@@ -3207,7 +3207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424120531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.61, y: 0.66, z: -1.004}
+  m_LocalPosition: {x: 5.15, y: 0.66, z: -1.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1050606794}
@@ -3225,7 +3225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7279f73c6691a44ba46d25bafe0ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitPoint: Area 2 Transition
+  nextArea: 0
+  newStartPoint: {fileID: 1870882320}
 --- !u!65 &1424120535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4437,7 +4438,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870882320}
-  - component: {fileID: 1870882318}
   m_Layer: 0
   m_Name: Area 2 Start
   m_TagString: Untagged
@@ -4445,19 +4445,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1870882318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870882317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80bd46e7c33bf004b89f709190e686e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointName: Area 2 Transition
 --- !u!4 &1870882320
 Transform:
   m_ObjectHideFlags: 0
@@ -4466,7 +4453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870882317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.263, y: 0.59504, z: -0.99904}
+  m_LocalPosition: {x: 10.98, y: 0.59504, z: -0.99904}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1050606794}

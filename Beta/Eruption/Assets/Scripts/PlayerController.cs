@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public bool notDestroyed;
     public static bool canMove;
-    public string startPoint;
 
     private Vector3 moveDirection;
     private Vector3 extraDirections;
