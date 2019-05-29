@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 1199776158}
   - component: {fileID: 1199776157}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Camera Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
