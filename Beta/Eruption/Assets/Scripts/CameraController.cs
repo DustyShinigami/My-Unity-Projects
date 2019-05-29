@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] GameObject player = null;
 
-    public BoxCollider boundBox;
+    //public BoxCollider boundBox;
 
     private Vector3 minBounds;
     private Vector3 maxBounds;
@@ -24,8 +24,8 @@ public class CameraController : MonoBehaviour
         theCamera = GetComponent<Camera>();
         thePlayer = GetComponent<PlayerController>();
         cameraOffset = transform.position - player.transform.position;
-        minBounds = boundBox.bounds.min;
-        maxBounds = boundBox.bounds.max;
+        //minBounds = boundBox.bounds.min;
+        //maxBounds = boundBox.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
     }
