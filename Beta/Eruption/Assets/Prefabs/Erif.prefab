@@ -1014,8 +1014,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Radius: 1.25
+  m_Center: {x: 0, y: 1.68, z: -0.05}
 --- !u!143 &136459090951579392
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1028,12 +1028,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 0
-  m_Radius: 1.4
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.67, z: -0.06}
+  m_Center: {x: 0, y: 0.7, z: -0.03}
 --- !u!114 &136459090951579398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,6 @@ MonoBehaviour:
   allowCombat: 0
   allowJump: 0
   notDestroyed: 0
-  startPoint: 
 --- !u!1 &9221193725431708034
 GameObject:
   m_ObjectHideFlags: 0

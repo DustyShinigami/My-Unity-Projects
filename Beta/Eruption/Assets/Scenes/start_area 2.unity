@@ -188,7 +188,6 @@ MonoBehaviour:
   exitVicinity: 0
   levelToLoad: level 1
   exitLight: {fileID: 0}
-  backOutsideHut: 0
 --- !u!65 &354473803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -582,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &594785954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 136459090951579398, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: gravityScale
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4944521516980344059, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1998,16 +2002,6 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.68
       objectReference: {fileID: 0}
-    - target: {fileID: 136459090951579398, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: gravityScale
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 136459090951579393, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 136459090951579392, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_Radius
@@ -2022,6 +2016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 136459090951579393, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96eb2c9525d808c40beb8c327cee7f16, type: 3}
