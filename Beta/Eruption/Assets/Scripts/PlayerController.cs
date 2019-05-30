@@ -50,7 +50,12 @@ public class PlayerController : MonoBehaviour
             allowCombat = false;
             allowJump = true;
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
+        {
+            allowCombat = true;
+            allowJump = true;
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
         {
             allowCombat = true;
             allowJump = true;

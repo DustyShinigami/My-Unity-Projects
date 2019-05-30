@@ -6,7 +6,7 @@ Sprite:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Deactive Checkpoint
+  m_Name: Checkpoint
   m_Rect:
     serializedVersion: 2
     x: 496
@@ -22,7 +22,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    dee8d77e5987e9041a1909350a2e7611: -8611469982287121847
+    3c746f36118e992439efa5e39a054134: 21300000
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
