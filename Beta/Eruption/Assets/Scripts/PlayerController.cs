@@ -24,17 +24,21 @@ public class PlayerController : MonoBehaviour
     public bool notDestroyed;
     public static bool canMove;
 
-    private Vector3 moveDirection;
-    private Vector3 extraDirections;
+    private Vector2 moveDirection;
+    private Vector2 moveHorizontal;
+    private Vector2 moveVertical;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
+    private Quaternion targetrot;
+    private bool headingLeft = false;
 
     void Start()
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
         canMove = true;
+        targetrot = transform.rotation;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
@@ -66,23 +70,44 @@ public class PlayerController : MonoBehaviour
     {
         if (knockBackCounter <= 0 && canMove)
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
+            moveHorizontal.x = Input.GetAxis("Horizontal");
+            float moveHorizontalSnap = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            moveDirection = new Vector2(moveHorizontal * moveSpeed, moveDirection.y);
-            extraDirections = new Vector2(moveVertical * moveSpeed, extraDirections.y);
+            //moveVertical.y = Input.GetAxis("Vertical");
+            moveDirection = new Vector2(moveHorizontal.x * moveSpeed, moveDirection.y);
             controller.Move(moveDirection * Time.deltaTime);
 
-            if (moveHorizontal > 0)
+            //Adds character rotation when changing direction horizontally
+            if ((moveHorizontal.x < 0f && !headingLeft) || (moveHorizontal.x > 0f && headingLeft))
             {
-                transform.eulerAngles = new Vector2(0, 90);
+                if (moveHorizontal.x < 0f) targetrot = Quaternion.Euler(0, 270, 0);
+                if (moveHorizontal.x > 0f) targetrot = Quaternion.Euler(0, 90, 0);
+                headingLeft = !headingLeft;
             }
-            else if (moveHorizontal < 0)
+
+            //Adds character rotation when changing direction vertically
+            /*if(moveVertical.y < 0f && lookingUp || (moveVertical.y > 0f && !lookingUp))
             {
-                transform.eulerAngles = new Vector2(0, -90);
-            }
-            //To possibly prevent diagonal movement with some control setups, try adding 'else if'
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
+                if (moveVertical.y > 0f) targetrot = Quaternion.Euler(0, 0, 0);
+                if (moveVertical.y < 0f) targetrot = Quaternion.Euler(0, 180, 0);
+                lookingUp = !lookingUp;
+            }*/
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetrot, Time.deltaTime * 20f);
+
+            if (SceneManagement.insideHut)
             {
+                //Adds character rotation when changing direction horizontally, but snaps instead of fully rotating
+                if (moveHorizontalSnap > 0)
+                {
+                    transform.eulerAngles = new Vector2(0, 90);
+                }
+                else if (moveHorizontalSnap < 0)
+                {
+                    transform.eulerAngles = new Vector2(0, -90);
+                }
+                //To possibly prevent diagonal movement with some control setups, try adding 'else if'
+                //Adds character rotation when changing direction vertically, but snaps instead of fully rotating
                 if (moveVertical > 0)
                 {
                     transform.eulerAngles = new Vector2(0, 0);
@@ -93,6 +118,7 @@ public class PlayerController : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180);
                 }*/
             }
+
             if (controller.isGrounded)
             {
                 if (allowJump)

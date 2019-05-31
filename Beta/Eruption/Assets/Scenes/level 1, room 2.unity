@@ -3336,7 +3336,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1105965210}
   - component: {fileID: 1105965211}
-  - component: {fileID: 1105965212}
   - component: {fileID: 1105965213}
   m_Layer: 0
   m_Name: Camera Trigger
@@ -3372,18 +3371,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9984307, y: 1.951427, z: 0.2422238}
   m_Center: {x: -0.08978963, y: -0.35039663, z: -0.3788882}
---- !u!114 &1105965212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105965209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf0a8224cd904846aa72091250686e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1105965213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7225,7 +7212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136967704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.751487, y: 1.4115298, z: -2.744358}
+  m_LocalPosition: {x: -10.74994, y: 1.4115298, z: -2.744358}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

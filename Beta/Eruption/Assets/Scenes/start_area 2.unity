@@ -180,14 +180,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 354473801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8c13158c32f84469bc1cb51be16f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f7279f73c6691a44ba46d25bafe0ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrompts: []
-  entranceVicinity: 0
-  exitVicinity: 0
-  levelToLoad: level 1
-  exitLight: {fileID: 0}
+  nextArea: 0
 --- !u!65 &354473803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1987,21 +1983,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_Radius
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 1.68
-      objectReference: {fileID: 0}
     - target: {fileID: 136459090951579392, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_Radius
@@ -2021,6 +2002,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 136459090951579399, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96eb2c9525d808c40beb8c327cee7f16, type: 3}

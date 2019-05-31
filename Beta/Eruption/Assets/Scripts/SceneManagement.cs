@@ -13,10 +13,10 @@ public class SceneManagement : MonoBehaviour
     public static int xbox360Controller = 0;
     public static int ps4Controller = 0;
     public GameObject exitLight;
+    public static bool insideHut;
+    public static bool outsideHut;
+    public static bool backOutsideHut;
 
-    private bool outsideHut;
-    private bool insideHut;
-    private bool backOutsideHut;
     private PlayerController thePlayer;
 
     void Start()
@@ -61,13 +61,12 @@ public class SceneManagement : MonoBehaviour
                 }
             }
         }
-        else if (Pickup.objectsDisabled && NPC.leverActivated && insideHut)
+        if (Pickup.objectsDisabled && NPC.leverActivated && insideHut)
         {
             if (other.gameObject.CompareTag("Player"))
             {
                 entranceVicinity = false;
                 exitVicinity = true;
-                exitLight.SetActive(true);
                 ControllerDetection();
                 if (exitVicinity && ps4Controller == 1)
                 {
@@ -147,6 +146,10 @@ public class SceneManagement : MonoBehaviour
                     SceneManager.LoadScene(levelToLoad);
                 }
             }
+        }
+        if (Pickup.objectsDisabled && NPC.leverActivated && insideHut)
+        {
+            exitLight.SetActive(true);
         }
     }
 

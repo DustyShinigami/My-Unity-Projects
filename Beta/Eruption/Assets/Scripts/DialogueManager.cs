@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
     private bool spacePressed;
     private bool endDialogue;
     private bool continueAllowed;
-    private bool characterVicinity;
+    public bool characterVicinity;
     private bool dialogueActive;
     private NPC theNPC;
 

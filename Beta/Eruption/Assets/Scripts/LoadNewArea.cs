@@ -10,7 +10,7 @@ public class LoadNewArea : MonoBehaviour
     private PlayerController thePlayer;
     private ScreenFader theScreenFader;
     private SceneManagement theSceneManager;
-    private bool nextArea;
+    public bool nextArea;
     //private CameraController theCamera;
     //private bool playerMoved;
 
@@ -33,10 +33,20 @@ public class LoadNewArea : MonoBehaviour
 
     IEnumerator NextArea()
     {
-        thePlayer.gameObject.SetActive(false);
-        theScreenFader.StartCoroutine("ScreenFade");
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("level 1, room 2");
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
+        {
+            thePlayer.gameObject.SetActive(false);
+            theScreenFader.StartCoroutine("ScreenFade");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("level 1, room 1");
+        }
+        else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
+        {
+            thePlayer.gameObject.SetActive(false);
+            theScreenFader.StartCoroutine("ScreenFade");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("level 1, room 2");
+        }
         //thePlayer.transform.position = newStartPoint.position;
         //playerMoved = true;
         //thePlayer.gameObject.SetActive(true);
