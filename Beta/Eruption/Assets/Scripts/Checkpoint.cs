@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public Sprite unlitCandle;
-    public Sprite litCandle;
+    public GameObject unlitCandle;
+    public GameObject litCandle;
 
-    private SpriteRenderer theSpriteRenderer;
     private bool checkpointActive;
-
-    void Start()
-    {
-        theSpriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
-            theSpriteRenderer.sprite = litCandle;
+            unlitCandle.gameObject.SetActive(false);
+            litCandle.gameObject.SetActive(true);
             checkpointActive = true;
         }
     }
