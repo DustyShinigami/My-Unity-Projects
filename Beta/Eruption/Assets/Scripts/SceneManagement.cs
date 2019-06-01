@@ -6,21 +6,22 @@ using UnityEngine.UI;
 
 public class SceneManagement : MonoBehaviour
 {
+    public GameObject[] buttonPrompts;
     public bool entranceVicinity;
     public bool exitVicinity;
     public string levelToLoad;
+    public static int xbox360Controller = 0;
+    public static int ps4Controller = 0;
     public GameObject exitLight;
     public static bool insideHut;
     public static bool outsideHut;
     public static bool backOutsideHut;
 
     private PlayerController thePlayer;
-    private ButtonPrompts buttonPrompts;
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        buttonPrompts = FindObjectOfType<ButtonPrompts>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
@@ -45,18 +46,18 @@ public class SceneManagement : MonoBehaviour
             {
                 entranceVicinity = true;
                 exitVicinity = false;
-                buttonPrompts.ControllerDetection();
-                if (entranceVicinity && ButtonPrompts.ps4Controller == 1)
+                ControllerDetection();
+                if (entranceVicinity && ps4Controller == 1)
                 {
-                    buttonPrompts.PS4Prompts();
+                    PS4Prompts();
                 }
-                else if (entranceVicinity && ButtonPrompts.xbox360Controller == 1)
+                else if (entranceVicinity && xbox360Controller == 1)
                 {
-                    buttonPrompts.Xbox360Prompts();
+                    Xbox360Prompts();
                 }
                 else
                 {
-                    buttonPrompts.PCPrompts();
+                    PCPrompts();
                 }
             }
         }
@@ -66,18 +67,18 @@ public class SceneManagement : MonoBehaviour
             {
                 entranceVicinity = false;
                 exitVicinity = true;
-                buttonPrompts.ControllerDetection();
-                if (exitVicinity && ButtonPrompts.ps4Controller == 1)
+                ControllerDetection();
+                if (exitVicinity && ps4Controller == 1)
                 {
-                    buttonPrompts.PS4Prompts();
+                    PS4Prompts();
                 }
-                else if (exitVicinity && ButtonPrompts.xbox360Controller == 1)
+                else if (exitVicinity && xbox360Controller == 1)
                 {
-                    buttonPrompts.Xbox360Prompts();
+                    Xbox360Prompts();
                 }
                 else
                 {
-                    buttonPrompts.PCPrompts();
+                    PCPrompts();
                 }
             }
         }
@@ -100,14 +101,14 @@ public class SceneManagement : MonoBehaviour
     {
         if (entranceVicinity)
         {
-            if (ButtonPrompts.xbox360Controller == 1)
+            if (xbox360Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 2"))
                 {
                     SceneManager.LoadScene(levelToLoad);
                 }
             }
-            else if (ButtonPrompts.ps4Controller == 1)
+            else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
@@ -124,14 +125,14 @@ public class SceneManagement : MonoBehaviour
         }
         else if (exitVicinity)
         {
-            if (ButtonPrompts.xbox360Controller == 1)
+            if (xbox360Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 2"))
                 {
                     SceneManager.LoadScene(levelToLoad);
                 }
             }
-            else if (ButtonPrompts.ps4Controller == 1)
+            else if (ps4Controller == 1)
             {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
@@ -146,9 +147,74 @@ public class SceneManagement : MonoBehaviour
                 }
             }
         }
+
         if (Pickup.objectsDisabled && NPC.leverActivated && insideHut)
         {
             exitLight.SetActive(true);
+        }
+    }
+
+    public void Hide()
+    {
+        buttonPrompts[0].SetActive(false);
+        buttonPrompts[1].SetActive(false);
+        buttonPrompts[2].SetActive(false);
+    }
+
+    public void Xbox360Prompts()
+    {
+        buttonPrompts[1].SetActive(true);
+        Invoke("Hide", 3f);
+    }
+
+    public void PS4Prompts()
+    {
+        buttonPrompts[2].SetActive(true);
+        Invoke("Hide", 3f);
+    }
+
+    public void PCPrompts()
+    {
+        buttonPrompts[0].SetActive(true);
+        Invoke("Hide", 3f);
+    }
+
+    public void ControllerDetection()
+    {
+        string[] names = Input.GetJoystickNames();
+        for (int x = 0; x < names.Length; x++)
+        {
+            //print(names[x].Length);
+            if (names[x].Length == 19)
+            {
+                //print("PS4 CONTROLLER IS CONNECTED");
+                ps4Controller = 1;
+                xbox360Controller = 0;
+                if (ps4Controller == 1)
+                {
+                    //Debug.Log("PS4 controller detected");
+                }
+            }
+            else if (names[x].Length == 33)
+            {
+                //print("XBOX 360 CONTROLLER IS CONNECTED");
+                ps4Controller = 0;
+                xbox360Controller = 1;
+                if (xbox360Controller == 1)
+                {
+                    //Debug.Log("Xbox 360 controller detected");
+                }
+            }
+            else
+            {
+                ps4Controller = 0;
+                xbox360Controller = 0;
+            }
+
+            if(xbox360Controller == 0 && ps4Controller == 0)
+            {
+                //Debug.Log("No controllers detected");
+            }
         }
     }
 }

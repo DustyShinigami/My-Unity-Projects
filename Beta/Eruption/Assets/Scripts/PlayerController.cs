@@ -30,15 +30,15 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private ButtonPrompts buttonPrompts;
     private Quaternion targetrot;
     private bool headingLeft = false;
+    private Pickup pickupWeapon;
 
     void Start()
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
-        buttonPrompts = FindObjectOfType<ButtonPrompts>();
+        pickupWeapon = FindObjectOfType<Pickup>();
         canMove = true;
         targetrot = transform.rotation;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //To possibly prevent diagonal movement with some control setups, try adding 'else if'
                 //Adds character rotation when changing direction vertically, but snaps instead of fully rotating
-                if (moveVertical > 0)
+                else if (moveVertical > 0)
                 {
                     transform.eulerAngles = new Vector2(0, 0);
                 }
@@ -159,23 +159,38 @@ public class PlayerController : MonoBehaviour
 
                 if (allowInteract)
                 {
-                    if (ButtonPrompts.xbox360Controller == 1)
+                    if (SceneManagement.xbox360Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 2"))
                         {
-                            interact = true;
+                            //interact = true;
+                            anim.SetBool("Interact", controller.isGrounded);
+                            pickupWeapon.ObjectActivation();
+                            interact = false;
+                            allowInteract = false;
                         }
                     }
-                    else if (ButtonPrompts.ps4Controller == 1)
+                    else if (SceneManagement.ps4Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 0"))
                         {
-                            interact = true;
+                            //interact = true;
+                            anim.SetBool("Interact", controller.isGrounded);
+                            pickupWeapon.ObjectActivation();
+                            interact = false;
+                            allowInteract = false;
                         }
                     }
                     else
                     {
                         interact = true;
+                        if (Input.GetKeyDown(KeyCode.Return))
+                        {
+                            anim.SetBool("Interact", controller.isGrounded);
+                            pickupWeapon.ObjectActivation();
+                            interact = false;
+                            allowInteract = false;
+                        }
                     }
                 }
             }
@@ -196,7 +211,7 @@ public class PlayerController : MonoBehaviour
 
         //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
-        if (interact)
+        /*if (interact)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -205,7 +220,7 @@ public class PlayerController : MonoBehaviour
                 interact = false;
                 allowInteract = false;
             }
-        }
+        }*/
         if (attack)
         {
             anim.SetTrigger("Attack");

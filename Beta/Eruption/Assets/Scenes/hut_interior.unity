@@ -1655,31 +1655,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071069
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00000018396376
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.00000012214656
-      objectReference: {fileID: 0}
-    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 136459090951579392, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_Center.y
@@ -1708,6 +1683,31 @@ PrefabInstance:
     - target: {fileID: 136459090951579392, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071069
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000018396376
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000012214656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575067453839505776, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1660997755302061399, guid: 96eb2c9525d808c40beb8c327cee7f16,
@@ -4268,7 +4268,6 @@ GameObject:
   - component: {fileID: 1173936013}
   - component: {fileID: 1173936014}
   - component: {fileID: 1173936012}
-  - component: {fileID: 1173936015}
   m_Layer: 0
   m_Name: Pickup_Trigger
   m_TagString: Untagged
@@ -4288,6 +4287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2950ba22285741145a257f738f204f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPrompts:
+  - {fileID: 952798766}
+  - {fileID: 1561716617}
+  - {fileID: 1028373914}
   rayGun: {fileID: 2083205020}
   pickupLight: {fileID: 16112278}
 --- !u!4 &1173936013
@@ -4317,22 +4320,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.518927, z: 0.35}
   m_Center: {x: 0, y: 0.23446351, z: 0}
---- !u!114 &1173936015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173936011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d872550679c7a74c84ac08eb27e8c00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPrompts:
-  - {fileID: 952798766}
-  - {fileID: 1561716617}
-  - {fileID: 1028373914}
 --- !u!1 &1210378143
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,6 +4714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8c13158c32f84469bc1cb51be16f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPrompts: []
   entranceVicinity: 0
   exitVicinity: 0
   levelToLoad: start_area 2

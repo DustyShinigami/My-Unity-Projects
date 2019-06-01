@@ -103,57 +103,70 @@ public class DialogueManager : MonoBehaviour
                     StartCoroutine("Type");
                 }
             }
-            if (nameDisplay.enabled && dialogueBox.activeSelf)
+            else if (SceneManagement.xbox360Controller == 1)
             {
-                dialogueActive = true;
-                //The button prompt must be active in conjunction with the Space bar being pressed before the next line will show.
-                if(buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
+                if (Input.GetKeyUp("joystick button 2") && !dialogueBox.activeSelf)
                 {
-                    currentLine++;
-                }
-                if(currentLine >= sentences.Length)
-                {
-                    nameDisplay.enabled = false;
-                    dialogueBox.SetActive(false);
-                    dialogueActive = false;
-                    endDialogue = true;
-                    characterVicinity = false;
-                    dialogueTrigger.enabled = false;
-                    theNPC.MoveRight();
+                    PlayerController.canMove = false;
+                    returnPressed = true;
+                    if (returnPressed)
+                    {
+                        continueAllowed = false;
+                        nameDisplay.enabled = true;
+                        dialogueBox.SetActive(true);
+                        StartCoroutine("Type");
+                    }
                 }
             }
-            if (textDisplay.text == sentences[index])
+            else if (SceneManagement.ps4Controller == 1)
             {
-                buttonPrompts[3].SetActive(true);
-                continueAllowed = true;
-                //Placing this 'if' statement here within the previous one will stop the button from being spammed.
-                if (Input.GetKeyUp(KeyCode.Space))
+                if (Input.GetKeyUp("joystick button 0") && !dialogueBox.activeSelf)
                 {
-                    spacePressed = true;
-                    continueAllowed = false;
-                    NextSentence();
-                }
-                else
-                {
-                    spacePressed = false;
+                    PlayerController.canMove = false;
+                    returnPressed = true;
+                    if (returnPressed)
+                    {
+                        continueAllowed = false;
+                        nameDisplay.enabled = true;
+                        dialogueBox.SetActive(true);
+                        StartCoroutine("Type");
+                    }
                 }
             }
         }
-
-        if (xbox360Controller == 1)
+        if (nameDisplay.enabled && dialogueBox.activeSelf)
         {
-            if (Input.GetKeyDown("joystick button 2"))
+            dialogueActive = true;
+            //The button prompt must be active in conjunction with the Space bar being pressed before the next line will show.
+            if (buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
             {
-                dialogueActive = true;
-                PlayerController.canMove = false;
+                currentLine++;
+            }
+            if (currentLine >= sentences.Length)
+            {
+                nameDisplay.enabled = false;
+                dialogueBox.SetActive(false);
+                dialogueActive = false;
+                endDialogue = true;
+                characterVicinity = false;
+                dialogueTrigger.enabled = false;
+                theNPC.MoveRight();
             }
         }
-        else if (pS4Controller == 1)
+        if (textDisplay.text == sentences[index])
         {
-            if (Input.GetKeyDown("joystick button 0"))
+            buttonPrompts[3].SetActive(true);
+            continueAllowed = true;
+            //Placing this 'if' statement here within the previous one will stop the button from being spammed.
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                dialogueActive = true;
-                PlayerController.canMove = false;
+                spacePressed = true;
+                continueAllowed = false;
+                NextSentence();
+            }
+            else
+            {
+                spacePressed = false;
             }
         }
     }

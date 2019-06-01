@@ -63,7 +63,7 @@ public class ButtonPrompts : MonoBehaviour
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
-            print(names[x].Length);
+            //print(names[x].Length);
             if (names[x].Length == 19)
             {
                 //print("PS4 CONTROLLER IS CONNECTED");
@@ -71,7 +71,7 @@ public class ButtonPrompts : MonoBehaviour
                 xbox360Controller = 0;
                 if (ps4Controller == 1)
                 {
-                    Debug.Log("PS4 controller detected");
+                    //Debug.Log("PS4 controller detected");
                 }
             }
             else if (names[x].Length == 33)
@@ -81,7 +81,7 @@ public class ButtonPrompts : MonoBehaviour
                 xbox360Controller = 1;
                 if (xbox360Controller == 1)
                 {
-                    Debug.Log("Xbox 360 controller detected");
+                    //Debug.Log("Xbox 360 controller detected");
                 }
             }
             else
@@ -92,7 +92,7 @@ public class ButtonPrompts : MonoBehaviour
 
             if (xbox360Controller == 0 && ps4Controller == 0)
             {
-                Debug.Log("No controllers detected");
+                //Debug.Log("No controllers detected");
             }
         }
     }

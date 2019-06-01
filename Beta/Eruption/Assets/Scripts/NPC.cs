@@ -136,8 +136,6 @@ public class NPC : MonoBehaviour
         anim.SetBool("isWalking", false);
         anim.SetFloat("Speed", 0f);
         anim.SetTrigger("Interact");
-        //leverAnim.SetTrigger("Lever Pushed");
-        //leverAnim.SetBool("Lever Activated", true);
         StartCoroutine("ReturnToStart");
     }
 
