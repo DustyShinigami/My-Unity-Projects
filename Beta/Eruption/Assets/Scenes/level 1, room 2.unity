@@ -6266,7 +6266,6 @@ GameObject:
   - component: {fileID: 1758477498}
   - component: {fileID: 1758477499}
   - component: {fileID: 1758477500}
-  - component: {fileID: 1758477501}
   m_Layer: 0
   m_Name: Unlit Candle
   m_TagString: Untagged
@@ -6349,19 +6348,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.28, z: 1.1127555}
   m_Center: {x: 0, y: 0, z: -0.45637774}
---- !u!114 &1758477501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758477497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37a6b9645c193142ad58f039d7b778f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  litCandle: {fileID: 0}
 --- !u!1 &1808516244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6735,6 +6721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1975613884}
   - component: {fileID: 1975613885}
+  - component: {fileID: 1975613886}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -6805,6 +6792,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1975613886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975613883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37a6b9645c193142ad58f039d7b778f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlitCandle: {fileID: 21300000, guid: f173b3c7d4bbd2d4196a09236703c6f2, type: 2}
+  litCandle: {fileID: 21300000, guid: e6440cef1a6cdb14695b3e9c09a54c5f, type: 2}
 --- !u!1001 &1989797928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7231,7 +7232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2136967709
 MonoBehaviour:
@@ -7277,6 +7278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3683906281133774226, guid: a624d7b7d850c7c4996f4fee3e71c3d6,
+        type: 3}
+      propertyPath: m_BoundingVolume
+      value: 
+      objectReference: {fileID: 1074312935}
     - target: {fileID: 3683906281133774227, guid: a624d7b7d850c7c4996f4fee3e71c3d6,
         type: 3}
       propertyPath: m_Name
@@ -7342,10 +7348,5 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1454530936}
-    - target: {fileID: 3683906281133774226, guid: a624d7b7d850c7c4996f4fee3e71c3d6,
-        type: 3}
-      propertyPath: m_BoundingVolume
-      value: 
-      objectReference: {fileID: 1074312935}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a624d7b7d850c7c4996f4fee3e71c3d6, type: 3}
