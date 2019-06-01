@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
+    private ButtonPrompts buttonPrompts;
     private Quaternion targetrot;
     private bool headingLeft = false;
 
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        buttonPrompts = FindObjectOfType<ButtonPrompts>();
         canMove = true;
         targetrot = transform.rotation;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
@@ -157,14 +159,14 @@ public class PlayerController : MonoBehaviour
 
                 if (allowInteract)
                 {
-                    if (SceneManagement.xbox360Controller == 1)
+                    if (ButtonPrompts.xbox360Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 2"))
                         {
                             interact = true;
                         }
                     }
-                    else if (SceneManagement.ps4Controller == 1)
+                    else if (ButtonPrompts.ps4Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 0"))
                         {
