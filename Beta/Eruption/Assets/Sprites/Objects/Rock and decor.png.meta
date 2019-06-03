@@ -1,0 +1,1565 @@
+fileFormatVersion: 2
+guid: dee8d77e5987e9041a1909350a2e7611
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3541442961635015174
+    second: Rock and decor_0
+  - first:
+      213: 8499033135229176176
+    second: Rock and decor_1
+  - first:
+      213: 8919728724461000448
+    second: Rock and decor_2
+  - first:
+      213: -7147515122580894952
+    second: Rock and decor_3
+  - first:
+      213: 7851860682664737708
+    second: Rock and decor_4
+  - first:
+      213: 3117075672254879340
+    second: Rock and decor_5
+  - first:
+      213: -6527299345397559052
+    second: Rock and decor_6
+  - first:
+      213: -2210037688325969117
+    second: Rock and decor_7
+  - first:
+      213: -8542120417882146513
+    second: Rock and decor_8
+  - first:
+      213: 426323368149148533
+    second: Rock and decor_9
+  - first:
+      213: -395054668225225664
+    second: Rock and decor_10
+  - first:
+      213: -137357465452327133
+    second: Rock and decor_11
+  - first:
+      213: -7869568319336560575
+    second: Rock and decor_12
+  - first:
+      213: -8502129040274619230
+    second: Rock and decor_13
+  - first:
+      213: 7000537996903050427
+    second: Rock and decor_14
+  - first:
+      213: 5554853479003354006
+    second: Rock and decor_15
+  - first:
+      213: -3267140147298657358
+    second: Rock and decor_16
+  - first:
+      213: -5046731464162231341
+    second: Rock and decor_17
+  - first:
+      213: 1257030422222953079
+    second: Rock and decor_18
+  - first:
+      213: 1562947595241797125
+    second: Rock and decor_19
+  - first:
+      213: -2289689535185651249
+    second: Rock and decor_20
+  - first:
+      213: -7598600341489821253
+    second: Rock and decor_21
+  - first:
+      213: 5745750806072520150
+    second: Rock and decor_22
+  - first:
+      213: -4000573711397663163
+    second: Rock and decor_23
+  - first:
+      213: -9148739879379623865
+    second: Rock and decor_24
+  - first:
+      213: 211009018096942020
+    second: Rock and decor_25
+  - first:
+      213: 4867234197651472632
+    second: Rock and decor_26
+  - first:
+      213: -6989800782173624045
+    second: Rock and decor_27
+  - first:
+      213: 6147316806845055998
+    second: Rock and decor_28
+  - first:
+      213: 1762733083338641333
+    second: Rock and decor_29
+  - first:
+      213: 9215904871343222117
+    second: Rock and decor_30
+  - first:
+      213: -6034144491715965646
+    second: Rock and decor_31
+  - first:
+      213: -8431461243495438396
+    second: Rock and decor_32
+  - first:
+      213: 646861991324624983
+    second: Rock and decor_33
+  - first:
+      213: 3391736367959057080
+    second: Rock and decor_34
+  - first:
+      213: -1440889097452653845
+    second: Rock and decor_35
+  - first:
+      213: -2095452031294589587
+    second: Rock and decor_36
+  - first:
+      213: -4720444255558235413
+    second: Rock and decor_37
+  - first:
+      213: 4749682902059098155
+    second: Rock and decor_38
+  - first:
+      213: 5969115486605434860
+    second: Rock and decor_39
+  - first:
+      213: -1558301660478791913
+    second: Rock and decor_40
+  - first:
+      213: -1874476418617371313
+    second: Rock and decor_41
+  - first:
+      213: -7791127916211717601
+    second: Rock and decor_42
+  - first:
+      213: -2780232284347950906
+    second: Rock and decor_43
+  - first:
+      213: -409588243512890889
+    second: Rock and decor_44
+  - first:
+      213: 7497700087677373011
+    second: Rock and decor_45
+  - first:
+      213: -7907624953826533037
+    second: Rock and decor_46
+  - first:
+      213: -1227961279313222137
+    second: Rock and decor_47
+  - first:
+      213: 3808768812671319136
+    second: Rock and decor_48
+  - first:
+      213: -1870528196335107978
+    second: Rock and decor_49
+  - first:
+      213: 5084306055540250519
+    second: Rock and decor_50
+  - first:
+      213: 1307440988351742068
+    second: Rock and decor_51
+  - first:
+      213: -2745739239128076914
+    second: Rock and decor_52
+  - first:
+      213: 8585389397622516850
+    second: Rock and decor_53
+  - first:
+      213: 8627998566525160243
+    second: Rock and decor_54
+  - first:
+      213: -1041438047904130679
+    second: Rock and decor_55
+  - first:
+      213: 8268186116139154453
+    second: Rock and decor_56
+  - first:
+      213: -5684311958752647527
+    second: Rock and decor_57
+  - first:
+      213: -8611469982287121847
+    second: Rock and decor_58
+  - first:
+      213: -8389344904301546508
+    second: Unlit Candle
+  - first:
+      213: -1899791996525691615
+    second: Rock and decor_60
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rock and decor_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 604
+        width: 292
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2343107b3e210eb45a32fc53da12da6f
+      internalID: -3541442961635015174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_1
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405ff58573f8ec14cbc015e83ac43a02
+      internalID: 8499033135229176176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_2
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6817e13da6c2e44e8dfdb8640a124e2
+      internalID: 8919728724461000448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_3
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e6b3234dc05bd4584986e842010531
+      internalID: -7147515122580894952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_4
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8dfcd54ad0c214f9b80866e983ad9c
+      internalID: 7851860682664737708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_5
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b64a20a8563bc240b4a7550f08f66e7
+      internalID: 3117075672254879340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_6
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b833857976f2cc64f8bc56e4fd476eca
+      internalID: -6527299345397559052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_7
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 748
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d048e0d9932459240b76466687fb9a68
+      internalID: -2210037688325969117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_8
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 764
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebadfaf266be1041a24c770194c4173
+      internalID: -8542120417882146513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_9
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 764
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3011a3081df5d004fbf64baf16fb6e97
+      internalID: 426323368149148533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_10
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 764
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b53382c1f26c74c814d34467f9a918
+      internalID: -395054668225225664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_11
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 764
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057367f047a398942835c1bd5f8cc6c2
+      internalID: -137357465452327133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_12
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 704
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6017a8fd6a6e6c4796684b3b9d2e715
+      internalID: -7869568319336560575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_13
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 704
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64a057b3e1c6ff44855c61709990f94
+      internalID: -8502129040274619230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_14
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 704
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe9bbc311a15984c9ecc99648188b2d
+      internalID: 7000537996903050427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_15
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 704
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68799d937ecccf49a35a9d0e0d2981c
+      internalID: 5554853479003354006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_16
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 716
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30a236a3f2a23f49a614949e5d40e54
+      internalID: -3267140147298657358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_17
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 716
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc516fce1102fe848817c587b176bce8
+      internalID: -5046731464162231341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_18
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 724
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2660c678e24d534badcbf483fa7434e
+      internalID: 1257030422222953079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_19
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 740
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc4d0262421ca045afb1eebc4461af7
+      internalID: 1562947595241797125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_20
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 740
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09c08d10cc65cc4d8070643c2586c38
+      internalID: -2289689535185651249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_21
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 740
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e003a88264289b4e90d84e7838d7d03
+      internalID: -7598600341489821253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_22
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 740
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2036a5593fc7227418b2f9b892c383db
+      internalID: 5745750806072520150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_23
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 716
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a79347f99f4f4b45a3897e175418aa1
+      internalID: -4000573711397663163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_24
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 716
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e99080ab255164b8bf2628f334770f
+      internalID: -9148739879379623865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_25
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 716
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef17714f99d9ce48a616138ab765982
+      internalID: 211009018096942020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_26
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 716
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9988380b7d58e504c812490613c1ae56
+      internalID: 4867234197651472632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_27
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 604
+        width: 152
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6077300acdbad49b71f5fe0f56b5d4
+      internalID: -6989800782173624045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_28
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 692
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c858a9c53bb3e142804e676fb994d20
+      internalID: 6147316806845055998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_29
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 692
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed24cb13bf18514c8426c9d2b4ee3ad
+      internalID: 1762733083338641333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_30
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 692
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537e21d4ffedc6b499cba0e4958834fa
+      internalID: 9215904871343222117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_31
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 692
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff9153a0e143f74e9eba23303dabc7f
+      internalID: -6034144491715965646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_32
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 604
+        width: 120
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96baa28b3b3da94380ca18848743460
+      internalID: -8431461243495438396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_33
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 668
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5933ce5478fa22348be2ed30c169d391
+      internalID: 646861991324624983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_34
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 668
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f42761427bbe54db4be8c33fd7f1a2
+      internalID: 3391736367959057080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_35
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 500
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1034ea112e0427e47bc901220a447a5e
+      internalID: -1440889097452653845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 500
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134625971e17b8547859f24648551ad1
+      internalID: -2095452031294589587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_37
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 500
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e6122a38894974980aa91b5ca26dc8
+      internalID: -4720444255558235413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_38
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 500
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b3f7335ce685d4e8046384b9fe93ed
+      internalID: 4749682902059098155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_39
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 500
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be2062cd94e76c479a731ac0309f4a3
+      internalID: 5969115486605434860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_40
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 500
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4aae8edf00ca64faafae39cfa6b27e
+      internalID: -1558301660478791913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_41
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 500
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cf585e602c9b94a9105f450452c1ba
+      internalID: -1874476418617371313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_42
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 500
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd323ac45e2ef54884204b8940a6d95
+      internalID: -7791127916211717601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_43
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 500
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61041232f8f75d64d8808e1bb1b95fd2
+      internalID: -2780232284347950906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 500
+        width: 44
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273a374fbe31145439a28869608e5bdb
+      internalID: -409588243512890889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 500
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a00d9fbe223c8418fbc07640d71c9c
+      internalID: 7497700087677373011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_46
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 500
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb03053a8b5588c4883e37d6d39c7515
+      internalID: -7907624953826533037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_47
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 500
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaec645231ede254b89b0b5f63492906
+      internalID: -1227961279313222137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26290c11be86754cb52b4840f9e4eac
+      internalID: 3808768812671319136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ba29fb041916041944156d3afc22fb
+      internalID: -1870528196335107978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_50
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea83e9ff6e89114c8bbf44d2159cbc4
+      internalID: 5084306055540250519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa833be696455240a94aab6380f17d5
+      internalID: 1307440988351742068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_52
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315e985b7f85dc843871a26ca1b9cef5
+      internalID: -2745739239128076914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_53
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a9012e616374f4f97b11e1620ac508
+      internalID: 8585389397622516850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_54
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8a7b758be3e64438277e8db3f6824f
+      internalID: 8627998566525160243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_55
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 348
+        width: 52
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4fb2b374c4ea242a11478ca6d3edcd
+      internalID: -1041438047904130679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_56
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 8
+        width: 200
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6bbe6a9c490854e98cedcbb7ff30c6
+      internalID: 8268186116139154453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_57
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 344
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e48a15f0d4b5b489cfcf9ec44af9b2
+      internalID: -5684311958752647527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_58
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 8
+        width: 208
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccdaa5aaeabe5a54385002d2c9bb9841
+      internalID: -8611469982287121847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unlit Candle
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 224
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d541704f17bf444fb4e34ed72998ace
+      internalID: -8389344904301546508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock and decor_60
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 8
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf7073ca548af7418a2d78fab202d2a
+      internalID: -1899791996525691615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ac788f9a61bc20e439d11a21e528fbc8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
