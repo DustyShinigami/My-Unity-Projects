@@ -15,8 +15,10 @@ public class ScreenFader : MonoBehaviour
 
     void Start()
     {
-        //DontDestroyOnLoad(this);
-        //DontDestroyOnLoad(blackScreen);
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("main_menu"))
+        {
+            StartCoroutine("ScreenFade");
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             StartCoroutine("ScreenFade");
@@ -37,6 +39,8 @@ public class ScreenFader : MonoBehaviour
         isFadetoBlack = true;
         yield return new WaitForSeconds(waitForFade);
         isFadefromBlack = true;
+        yield return new WaitForSeconds(1f);
+        blackScreen.enabled = false;
     }
 
     void Update()
