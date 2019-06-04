@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 424f9f43f5582894694bc8eed2ed0a74
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bottle
+    100002: Bottle_2
+    100004: Bottle_3
+    100006: //RootNode
+    100008: Rack
+    100010: Test_Tube_1
+    100012: Test_Tube_2
+    100014: Test_Tube_3
+    400000: Bottle
+    400002: Bottle_2
+    400004: Bottle_3
+    400006: //RootNode
+    400008: Rack
+    400010: Test_Tube_1
+    400012: Test_Tube_2
+    400014: Test_Tube_3
+    2100000: Glass
+    2100002: Potion_3
+    2100004: Cork
+    2100006: Test_Tube
+    2100008: Rack
+    2100010: Potion_2
+    2100012: Potion
+    2300000: Bottle
+    2300002: Bottle_2
+    2300004: Bottle_3
+    2300006: Rack
+    2300008: Test_Tube_1
+    2300010: Test_Tube_2
+    2300012: Test_Tube_3
+    3300000: Bottle
+    3300002: Bottle_2
+    3300004: Bottle_3
+    3300006: Rack
+    3300008: Test_Tube_1
+    3300010: Test_Tube_2
+    3300012: Test_Tube_3
+    4300000: Bottle_3
+    4300002: Test_Tube_3
+    4300004: Test_Tube_1
+    4300006: Rack
+    4300008: Test_Tube_2
+    4300010: Bottle_2
+    4300012: Bottle
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cork
+    second: {fileID: 2100000, guid: d5713190d25d78744b7f0cbe758f2780, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 20a1a9c3e4f5521439fe8560c105f661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion
+    second: {fileID: 2100000, guid: be0eea8a4a203ab45b8291db6ecc4b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion_2
+    second: {fileID: 2100000, guid: e66d30449bce9be4dbcf06e3df0e7914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion_3
+    second: {fileID: 2100000, guid: 8b1a51ea423816c48b7fa4716d761fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rack
+    second: {fileID: 2100000, guid: 692e5c5878025624684170ccb455449d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Test_Tube
+    second: {fileID: 2100000, guid: 20a1a9c3e4f5521439fe8560c105f661, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
