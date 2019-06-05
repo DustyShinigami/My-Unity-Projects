@@ -31,15 +31,13 @@ public class LoadNewArea : MonoBehaviour
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
         {
             thePlayer.gameObject.SetActive(false);
-            theScreenFader.StartCoroutine("ScreenFade");
-            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("level 1, room 1");
         }
-        else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
             thePlayer.gameObject.SetActive(false);
-            theScreenFader.StartCoroutine("ScreenFade");
-            yield return new WaitForSeconds(2f);
+            //theScreenFader.StartCoroutine("ScreenFade");
+            yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("level 1, room 2");
         }
     }

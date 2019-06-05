@@ -31,6 +31,10 @@ public class ScreenFader : MonoBehaviour
         {
             StartCoroutine("ScreenFade");
         }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
+        {
+            StartCoroutine("ScreenFade");
+        }
     }
 
     IEnumerator ScreenFade()
@@ -39,7 +43,7 @@ public class ScreenFader : MonoBehaviour
         isFadetoBlack = true;
         yield return new WaitForSeconds(waitForFade);
         isFadefromBlack = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         blackScreen.enabled = false;
     }
 
