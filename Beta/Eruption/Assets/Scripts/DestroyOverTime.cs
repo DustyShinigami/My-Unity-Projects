@@ -8,9 +8,6 @@ public class DestroyOverTime : MonoBehaviour {
 
 	void Update()
     {
-        if(lifeTime <= 0)
-        {
-            Destroy(gameObject, lifeTime);
-        }
-	}
+        Destroy(gameObject, lifeTime);
+    }
 }

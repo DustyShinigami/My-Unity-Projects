@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     public GameObject unlitCandle;
     public GameObject litCandle;
-    public ParticleSystem fireParticles;
+    public GameObject fireParticles;
 
     private bool checkpointActive;
 
@@ -16,7 +16,8 @@ public class Checkpoint : MonoBehaviour
         {
             unlitCandle.gameObject.SetActive(false);
             litCandle.gameObject.SetActive(true);
-            fireParticles.Play();
+            Instantiate(fireParticles, transform.position, transform.rotation);
+            //fireParticles.Play();
             checkpointActive = true;
         }
     }
