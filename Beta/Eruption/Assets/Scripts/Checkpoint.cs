@@ -17,7 +17,6 @@ public class Checkpoint : MonoBehaviour
             unlitCandle.gameObject.SetActive(false);
             litCandle.gameObject.SetActive(true);
             Instantiate(fireParticles, transform.position, transform.rotation);
-            //fireParticles.Play();
             checkpointActive = true;
         }
     }
