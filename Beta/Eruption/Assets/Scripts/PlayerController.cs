@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private Quaternion targetrot;
+    private Quaternion targetRot;
     private bool headingLeft = false;
     private Pickup pickupWeapon;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         pickupWeapon = FindObjectOfType<Pickup>();
         canMove = true;
-        targetrot = transform.rotation;
+        targetRot = transform.rotation;
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             allowCombat = false;
@@ -82,8 +82,8 @@ public class PlayerController : MonoBehaviour
             //Adds character rotation when changing direction horizontally
             if ((moveHorizontal.x < 0f && !headingLeft) || (moveHorizontal.x > 0f && headingLeft))
             {
-                if (moveHorizontal.x < 0f) targetrot = Quaternion.Euler(0, 270, 0);
-                if (moveHorizontal.x > 0f) targetrot = Quaternion.Euler(0, 90, 0);
+                if (moveHorizontal.x < 0f) targetRot = Quaternion.Euler(0, 270, 0);
+                if (moveHorizontal.x > 0f) targetRot = Quaternion.Euler(0, 90, 0);
                 headingLeft = !headingLeft;
             }
 
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 lookingUp = !lookingUp;
             }*/
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetrot, Time.deltaTime * 20f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * 20f);
 
             if (SceneManagement.insideHut)
             {
