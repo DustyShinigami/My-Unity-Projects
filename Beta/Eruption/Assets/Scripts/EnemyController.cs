@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviour
     {
         thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
         canMove = true;
-        moveLeft = true;
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
     }
@@ -30,52 +29,36 @@ public class EnemyController : MonoBehaviour
     {
         if (canMove)
         {
-            if ((moveHorizontal.x < 0f && !moveLeft) || (moveHorizontal.x > 0f && moveLeft))
+            if ((moveHorizontal.x < 0f && moveLeft) || (moveHorizontal.x > 0f && !moveLeft))
             {
-                if (moveHorizontal.x < 0f) targetRot = Quaternion.Euler(0, 90, 0);
-                if (moveHorizontal.x > 0f) targetRot = Quaternion.Euler(0, 270, 0);
+                if (moveHorizontal.x < 0f) targetRot = Quaternion.Euler(0, 270, 0);
+                if (moveHorizontal.x > 0f) targetRot = Quaternion.Euler(0, 90, 0);
                 moveLeft = !moveLeft;
             }
         }
         if (moveLeft)
         {
-            transform.eulerAngles = new Vector2(0, 180);
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0, 270);
+            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, moveSpeed * Time.deltaTime);
         }
         else if (!moveLeft)
         {
-            transform.eulerAngles = new Vector2(0, -90);
-            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, moveSpeed * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0, 90);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
-        else if (transform.position == startPoint.position)
+        if (transform.position == target.position)
         {
-            anim.SetBool("isWalking", false);
-            anim.SetFloat("Speed", 0f);
-            transform.eulerAngles = new Vector2(0, -180);
-            anim.SetTrigger("Idle");
+            transform.eulerAngles = new Vector2(0, 90);
+            anim.SetBool("isFloating", true);
+            anim.SetFloat("Speed", 0.2f);
+            moveLeft = true;
         }
-    }
-
-    IEnumerator ReturnToStart()
-    {
-        yield return new WaitForSeconds(2.5f);
-        PlayerController.canMove = true;
-        moveLeft = true;
-        anim.SetBool("isFloating", true);
-        anim.SetFloat("Speed", 0.2f);
-    }
-
-    public void Idle()
-    {
-        anim.SetBool("isFloating", false);
-        anim.SetFloat("Speed", 0f);
-    }
-
-    public void MoveRight()
-    {
-        moveLeft = false;
-        //anim.ResetTrigger("Idle");
-        anim.SetBool("isFloating", true);
-        anim.SetFloat("Speed", 0.2f);
+        else if(transform.position == startPoint.position)
+        {
+            transform.eulerAngles = new Vector2(0, 270);
+            anim.SetBool("isFloating", true);
+            anim.SetFloat("Speed", 0.2f);
+            moveLeft = false;
+        }
     }
 }

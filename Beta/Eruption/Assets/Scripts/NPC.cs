@@ -16,8 +16,6 @@ public class NPC : MonoBehaviour
     public Transform startPoint;
     //public NPCState currentState;
 
-    private CharacterController controller;
-
     /*public enum NPCState
     {
         MovingLeft,
@@ -29,8 +27,6 @@ public class NPC : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();
-        //currentState = NPCState.Idle;
         Idle();
     }
 
