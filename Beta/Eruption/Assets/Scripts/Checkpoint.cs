@@ -7,8 +7,7 @@ public class Checkpoint : MonoBehaviour
     public GameObject unlitCandle;
     public GameObject litCandle;
     public GameObject fireParticles;
-
-    private bool checkpointActive;
+    public static bool checkpointActive;
 
     public void OnTriggerEnter(Collider other)
     {

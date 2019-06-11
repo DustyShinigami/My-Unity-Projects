@@ -44,7 +44,7 @@ public class ScreenFader : MonoBehaviour
         yield return new WaitForSeconds(waitForFade);
         isFadefromBlack = true;
         yield return new WaitForSeconds(2f);
-        blackScreen.enabled = false;
+        //blackScreen.enabled = false;
     }
 
     void Update()

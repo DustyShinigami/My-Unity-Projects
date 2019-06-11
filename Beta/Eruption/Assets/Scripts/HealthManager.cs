@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -23,13 +24,15 @@ public class HealthManager : MonoBehaviour
     private Vector3 respawnPoint;
     private bool isFadetoBlack;
     private bool isFadefromBlack;
-    public PlayerController thePlayer;
+    private PlayerController thePlayer;
+    private Quaternion startPosition;
 
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
         currentHealth += maxHealth;
         respawnPoint = thePlayer.transform.position;
+        startPosition = thePlayer.transform.rotation;
     }
 
     void Update()
@@ -103,20 +106,42 @@ public class HealthManager : MonoBehaviour
     //IEnumerators or Coroutines will execute the code separately at specified times while the rest of the code in a codeblock will carry on executing as normal
     public IEnumerator RespawnCo()
     {
-        isRespawning = true;
-        thePlayer.gameObject.SetActive(false);
-        Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
-        yield return new WaitForSeconds(respawnLength);
-        isFadetoBlack = true;
-        yield return new WaitForSeconds(waitForFade);
-        isFadefromBlack = true;
-        isRespawning = false;
-        thePlayer.gameObject.SetActive(true);
-        thePlayer.transform.position = respawnPoint;
-        currentHealth = maxHealth;
-        invincibilityCounter = invincibilityLength;
-        playerRenderer.enabled = false;
-        flashCounter = flashLength;
+        if (!Checkpoint.checkpointActive)
+        {
+            isRespawning = true;
+            thePlayer.gameObject.SetActive(false);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+            yield return new WaitForSeconds(respawnLength);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            isFadefromBlack = true;
+            isRespawning = false;
+            thePlayer.gameObject.SetActive(true);
+            currentHealth = maxHealth;
+            invincibilityCounter = invincibilityLength;
+            playerRenderer.enabled = false;
+            flashCounter = flashLength;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.currentEmbers = 0;
+        }
+        else if (Checkpoint.checkpointActive)
+        {
+            isRespawning = true;
+            thePlayer.gameObject.SetActive(false);
+            Instantiate(deathEffect, respawnPoint, startPosition);
+            yield return new WaitForSeconds(respawnLength);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            isFadefromBlack = true;
+            isRespawning = false;
+            thePlayer.gameObject.SetActive(true);
+            thePlayer.transform.position = respawnPoint;
+            thePlayer.transform.rotation = startPosition;
+            currentHealth = maxHealth;
+            invincibilityCounter = invincibilityLength;
+            playerRenderer.enabled = false;
+            flashCounter = flashLength;
+        }
     }
 
     public void HealPlayer(int healAmount)
