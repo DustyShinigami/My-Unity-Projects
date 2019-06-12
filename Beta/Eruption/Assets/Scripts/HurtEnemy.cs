@@ -6,13 +6,14 @@ public class HurtEnemy : MonoBehaviour
 {
     public int damnageToGive = 10;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.CompareTag ("Enemy"))
         {
             Vector3 hitDirection = other.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
             FindObjectOfType<EnemyController>().HurtEnemy(damnageToGive, hitDirection);
+            Debug.Log("Enemy hit");
         }
     }
 }
