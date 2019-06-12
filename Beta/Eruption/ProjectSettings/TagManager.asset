@@ -9,6 +9,7 @@ TagManager:
   - Pickup
   - Entrance Trigger
   - Pickup Light
+  - Enemy
   layers:
   - Default
   - TransparentFX

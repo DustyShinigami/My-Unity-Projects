@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public bool notDestroyed;
     public static bool canMove;
+    public GameObject projectileEffect;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -224,6 +225,7 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("Attack");
+            //Instantiate(projectileEffect, transform.position, transform.rotation);
         }
     }
 
