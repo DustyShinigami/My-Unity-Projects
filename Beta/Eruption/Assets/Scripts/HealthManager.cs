@@ -122,6 +122,7 @@ public class HealthManager : MonoBehaviour
             playerRenderer.enabled = false;
             flashCounter = flashLength;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            blackScreen.enabled = true;
             GameManager.currentEmbers = 0;
         }
         else if (Checkpoint.checkpointActive)

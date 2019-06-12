@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public bool notDestroyed;
     public static bool canMove;
-    public GameObject projectileEffect;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -128,12 +127,12 @@ public class PlayerController : MonoBehaviour
                 {
                     moveDirection.y = -1f;
                     //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
-                    if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 1"))
+                    if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 0"))
                     {
                         moveDirection.y = jumpForce;
                         jumped = true;
                     }
-                    else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 1"))
+                    else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 0"))
                     {
                         jumped = false;
                     }

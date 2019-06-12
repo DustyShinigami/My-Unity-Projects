@@ -63,3 +63,6 @@ TagManager:
   - name: Player Level
     uniqueID: 4226844363
     locked: 0
+  - name: Camera
+    uniqueID: 1507547511
+    locked: 0

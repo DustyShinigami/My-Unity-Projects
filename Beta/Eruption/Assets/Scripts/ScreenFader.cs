@@ -12,13 +12,11 @@ public class ScreenFader : MonoBehaviour
 
     private bool isFadetoBlack;
     private bool isFadefromBlack;
+    private HealthManager theHealthManager;
 
     void Start()
     {
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("main_menu"))
-        {
-            StartCoroutine("ScreenFade");
-        }
+        theHealthManager = FindObjectOfType<HealthManager>();
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             StartCoroutine("ScreenFade");
@@ -35,16 +33,36 @@ public class ScreenFader : MonoBehaviour
         {
             StartCoroutine("ScreenFade");
         }
+        else
+        {
+            StartCoroutine("ScreenFade");
+        }
     }
 
     IEnumerator ScreenFade()
     {
-        yield return new WaitForSeconds(fadeSpeed);
-        isFadetoBlack = true;
-        yield return new WaitForSeconds(waitForFade);
-        isFadefromBlack = true;
-        yield return new WaitForSeconds(2f);
-        //blackScreen.enabled = false;
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("main_menu"))
+        {
+            yield return new WaitForSeconds(fadeSpeed);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            isFadefromBlack = true;
+            yield return new WaitForSeconds(2f);
+            blackScreen.enabled = false;
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
+        {
+            isFadetoBlack = false;
+        }
+        else
+        {
+            blackScreen.enabled = true;
+            yield return new WaitForSeconds(fadeSpeed);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            isFadefromBlack = true;
+            yield return new WaitForSeconds(2f);
+        }
     }
 
     void Update()

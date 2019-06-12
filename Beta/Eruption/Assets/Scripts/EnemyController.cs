@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    //Transform thePlayer;
+    HealthManager playerHealth;
+
+    public Transform thePlayer;
     public Animator anim;
     public float moveSpeed;
     public float rotSpeed;
@@ -18,10 +22,8 @@ public class EnemyController : MonoBehaviour
     public Renderer enemyRenderer;
     public float flashLength;
 
-    private Transform thePlayer;
     private float invincibilityCounter;
     private float flashCounter;
-    //private CharacterController controller;
 
     void Start()
     {
@@ -29,7 +31,6 @@ public class EnemyController : MonoBehaviour
         canMove = true;
         anim = GetComponent<Animator>();
         currentHealth += maxHealth;
-        //controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -89,6 +90,14 @@ public class EnemyController : MonoBehaviour
                 enemyRenderer.enabled = false;
                 flashCounter = flashLength;
             }
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            transform.LookAt(thePlayer.transform.position);
         }
     }
 
