@@ -11,23 +11,14 @@ public class HurtEnemy : MonoBehaviour
     public void Shoot()
     {
         RaycastHit hit;
-        if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit, range))
+        if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
+            EnemyController target = hit.transform.GetComponent<EnemyController>();
+            if(target != null)
+            {
+                target.Damage(damnageToGive);
+            }
         }
     }
-
-    /*private EnemyController theEnemy;
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            Vector3 hitDirection = other.transform.position - transform.position;
-            hitDirection = hitDirection.normalized;
-            //GetComponent will get a component on the current GameObject the script is attached to. To get a component on a different object, a reference will need to be made, such as below.
-            theEnemy.GetComponent<EnemyController>().HurtEnemy(damnageToGive, hitDirection);
-            Debug.Log("Enemy hit");
-        }
-    }*/
 }

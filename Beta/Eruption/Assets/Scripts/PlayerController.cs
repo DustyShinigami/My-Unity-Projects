@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public bool notDestroyed;
     public static bool canMove;
+    public GameObject projectile;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -30,14 +31,20 @@ public class PlayerController : MonoBehaviour
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
+    private HurtEnemy damageEnemy;
     private Quaternion targetRot;
     private bool headingLeft = false;
     private Pickup pickupWeapon;
 
+    public void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+        damageEnemy = projectile.GetComponent<HurtEnemy>();
+    }
+
     void Start()
     {
         Cursor.visible = false;
-        controller = GetComponent<CharacterController>();
         pickupWeapon = FindObjectOfType<Pickup>();
         canMove = true;
         targetRot = transform.rotation;
@@ -224,6 +231,7 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("Attack");
+            damageEnemy.Shoot();
             //Instantiate(projectileEffect, transform.position, transform.rotation);
         }
     }

@@ -2554,7 +2554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952595618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.48764, y: 1.8607368, z: -2.7479134}
+  m_LocalPosition: {x: -11.486704, y: 1.8607368, z: -2.7479134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3202,21 +3202,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f0e556c1f9be47c4bbe46215428eaf1f, type: 2}
-    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8839407246737316346, guid: 9617ec839779e894fb8fae77f8b7e12c,
         type: 3}
@@ -4673,6 +4658,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 175.4511
       objectReference: {fileID: 0}
+    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0e556c1f9be47c4bbe46215428eaf1f, type: 2}
+    - target: {fileID: -25694453627674987, guid: 9617ec839779e894fb8fae77f8b7e12c,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1100513896612926539, guid: 9617ec839779e894fb8fae77f8b7e12c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5963,7 +5963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damnageToGive: 10
-  range: 50
+  range: 3
   rayProjectile: {fileID: 1320423932}
 --- !u!1 &1374610597
 GameObject:
@@ -6653,6 +6653,11 @@ PrefabInstance:
       propertyPath: damaageEnemy
       value: 
       objectReference: {fileID: 1320423938}
+    - target: {fileID: 136459090951579398, guid: 96eb2c9525d808c40beb8c327cee7f16,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1320423932}
     - target: {fileID: 4944521516980344059, guid: 96eb2c9525d808c40beb8c327cee7f16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7537,7 +7542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e516ab26d9b3064daef4274d06c5892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
   anim: {fileID: 1687164119}
   moveSpeed: 1.5
   rotSpeed: 4

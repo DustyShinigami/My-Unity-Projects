@@ -5,10 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    //Transform thePlayer;
-    HealthManager playerHealth;
-
-    public Transform thePlayer;
+    //public Transform thePlayer;
     public Animator anim;
     public float moveSpeed;
     public float rotSpeed;
@@ -17,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     public Transform startPoint;
     public int maxHealth;
-    public int currentHealth;
+    public float currentHealth = 30;
     public float invincibilityLength;
     public Renderer enemyRenderer;
     public float flashLength;
@@ -27,7 +24,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        //thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
         canMove = true;
         anim = GetComponent<Animator>();
         currentHealth += maxHealth;
@@ -75,11 +72,11 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    public void HurtEnemy(int damage, Vector3 direction)
+    public void Damage(float amount)
     {
         if (invincibilityCounter <= 0)
         {
-            currentHealth -= damage;
+            currentHealth -= amount;
             if (currentHealth <= 0)
             {
                 Destroy(gameObject);
@@ -92,13 +89,4 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            transform.LookAt(thePlayer.transform.position);
-        }
-    }
-
 }
