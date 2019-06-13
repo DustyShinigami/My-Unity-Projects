@@ -6,12 +6,12 @@ public class HurtEnemy : MonoBehaviour
 {
     public int damnageToGive = 10;
     public float range = 50;
-    public GameObject rayProjectile;
+    public GameObject rayGun;
 
     public void Shoot()
     {
         RaycastHit hit;
-        if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit))
+        if(Physics.Raycast(rayGun.transform.position, rayGun.transform.forward, out hit, range))
         {
             //Debug.Log(hit.transform.name);
             EnemyController target = hit.transform.GetComponent<EnemyController>();

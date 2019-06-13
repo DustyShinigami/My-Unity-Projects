@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public bool notDestroyed;
     public static bool canMove;
-    public GameObject projectile;
+    public GameObject rayGun;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public void Awake()
     {
         controller = GetComponent<CharacterController>();
-        damageEnemy = projectile.GetComponent<HurtEnemy>();
+        damageEnemy = rayGun.GetComponent<HurtEnemy>();
     }
 
     void Start()
