@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    //public Transform thePlayer;
+    public GameObject thePlayer;
     public Animator anim;
     public float moveSpeed;
     public float rotSpeed;
@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     public float flashLength;
     public ParticleSystem enemyDamage;
     public HealthManager theHealthManager;
+    public float sightRange;
+    public bool playerDetected;
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -37,6 +39,21 @@ public class EnemyController : MonoBehaviour
         canMove = true;
         currentHealth += maxHealth;
     }
+
+    /*void FixedUpdate()
+    {
+        RaycastHit detection;
+        if(Physics.Raycast(transform.position, transform.forward, out detection, sightRange))
+        {
+            if(detection.collider.tag == "Player")
+            {
+                anim.SetTrigger("isAttacking_1");
+            }
+            //Debug.Log(detection.transform.name);
+            //playerDetected = true;
+            //anim.SetTrigger("isAttacking_1");
+        }
+    }*/
 
     void Update()
     {
@@ -78,6 +95,14 @@ public class EnemyController : MonoBehaviour
                 anim.SetFloat("Speed", 0.2f);
                 moveLeft = false;
             }
+            /*if (playerDetected)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position, moveSpeed * Time.deltaTime);
+            }
+            if(transform.position == thePlayer.transform.position)
+            {
+                anim.SetTrigger("isAttacking_1");
+            }*/
         }
     }
     public void Damage(float amount)
