@@ -5,13 +5,16 @@ using UnityEngine;
 public class HurtEnemy : MonoBehaviour
 {
     public int damnageToGive = 10;
-    public float range = 50;
+    public float range;
     public GameObject rayProjectile;
+    public ParticleSystem projectileEffect;
 
-    public void Shoot()
+    //Physics such as Raycasts are better within the FixedUpdate function as it runs in tandem with the physics
+    public void FixedUpdate()
     {
+        projectileEffect.Play();
         RaycastHit hit;
-        if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit))
+        if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit, range))
         {
             //Debug.Log(hit.transform.name);
             EnemyController target = hit.transform.GetComponent<EnemyController>();

@@ -11,22 +11,30 @@ public class EnemyController : MonoBehaviour
     public float rotSpeed;
     public bool moveLeft;
     public bool canMove;
-    public Transform target;
     public Transform startPoint;
+    public Transform target;
     public int maxHealth;
     public float currentHealth = 30;
     public float invincibilityLength;
     public Renderer enemyRenderer;
     public float flashLength;
+    public ParticleSystem enemyDamage;
+    public HealthManager theHealthManager;
 
     private float invincibilityCounter;
     private float flashCounter;
+    private SphereCollider enemyCollider;
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+        enemyCollider = GetComponent<SphereCollider>();
+    }
 
     void Start()
     {
         //thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
         canMove = true;
-        anim = GetComponent<Animator>();
         currentHealth += maxHealth;
     }
 
@@ -77,9 +85,11 @@ public class EnemyController : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHealth -= amount;
+            enemyDamage.Play();
             if (currentHealth <= 0)
             {
-                Destroy(gameObject);
+                enemyDamage.Play();
+                StartCoroutine("EnemyDeath");
             }
             else
             {
@@ -88,5 +98,13 @@ public class EnemyController : MonoBehaviour
                 flashCounter = flashLength;
             }
         }
+    }
+    public IEnumerator EnemyDeath()
+    {
+        transform.localScale += new Vector3(1.5f, 1.5f, 1.5f) * Time.deltaTime;
+        enemyCollider.enabled = false;
+        Instantiate(theHealthManager.deathEffect, transform.position, transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

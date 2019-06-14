@@ -25,13 +25,14 @@ public class PlayerController : MonoBehaviour
     public static bool canMove;
     public GameObject projectile;
 
+    [SerializeField]
+    private HurtEnemy damageEnemy;
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
     private Vector2 moveVertical;
     private float knockBackCounter;
     private float invincibilityCounter;
     private CharacterController controller;
-    private HurtEnemy damageEnemy;
     private Quaternion targetRot;
     private bool headingLeft = false;
     private Pickup pickupWeapon;
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public void Awake()
     {
         controller = GetComponent<CharacterController>();
-        damageEnemy = projectile.GetComponent<HurtEnemy>();
+        //damageEnemy = projectile.GetComponent<HurtEnemy>();
     }
 
     void Start()
@@ -147,12 +148,12 @@ public class PlayerController : MonoBehaviour
 
                 if (allowCombat)
                 {
-                    if (Input.GetKey(KeyCode.Space) || Input.GetKey("joystick button 7"))
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 7"))
                     {
                         attack = true;
                         playerRenderer.material = textureChange;
                     }
-                    else if (!Input.GetKey(KeyCode.Space) || !Input.GetKey("joystick button 7"))
+                    else if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKey("joystick button 7"))
                     {
                         attack = false;
                         playerRenderer.material = textureDefault;
@@ -231,8 +232,6 @@ public class PlayerController : MonoBehaviour
         if (attack)
         {
             anim.SetTrigger("Attack");
-            damageEnemy.Shoot();
-            //Instantiate(projectileEffect, transform.position, transform.rotation);
         }
     }
 
