@@ -48,7 +48,7 @@ public class ScreenFader : MonoBehaviour
             yield return new WaitForSeconds(waitForFade);
             isFadefromBlack = true;
             yield return new WaitForSeconds(2f);
-            blackScreen.enabled = false;
+            //blackScreen.enabled = false;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
@@ -56,7 +56,7 @@ public class ScreenFader : MonoBehaviour
         }
         else
         {
-            blackScreen.enabled = true;
+            //blackScreen.enabled = true;
             yield return new WaitForSeconds(fadeSpeed);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);

@@ -30,7 +30,7 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
-        currentHealth += maxHealth;
+        currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
         startPosition = thePlayer.transform.rotation;
     }
@@ -125,6 +125,7 @@ public class HealthManager : MonoBehaviour
             blackScreen.enabled = true;
             GameManager.currentEmbers = 0;
         }
+
         else if (Checkpoint.checkpointActive)
         {
             isRespawning = true;
@@ -142,6 +143,19 @@ public class HealthManager : MonoBehaviour
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
+        }
+        else if (DeathTrigger.instaKill && Checkpoint.checkpointActive)
+        {
+            isRespawning = true;
+            thePlayer.gameObject.SetActive(false);
+            yield return new WaitForSeconds(respawnLength);
+            isFadetoBlack = true;
+            yield return new WaitForSeconds(waitForFade);
+            isFadefromBlack = true;
+            isRespawning = false;
+            thePlayer.gameObject.SetActive(true);
+            currentHealth = maxHealth;
+            playerRenderer.enabled = false;
         }
     }
 
