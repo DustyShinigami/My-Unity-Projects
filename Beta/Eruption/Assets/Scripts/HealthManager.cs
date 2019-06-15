@@ -68,7 +68,7 @@ public class HealthManager : MonoBehaviour
             blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
             if (blackScreen.color.a == 0f)
             {
-                isFadefromBlack = true;
+                isFadefromBlack = false;
             }
         }
     }
@@ -122,7 +122,6 @@ public class HealthManager : MonoBehaviour
             playerRenderer.enabled = false;
             flashCounter = flashLength;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            blackScreen.enabled = true;
             GameManager.currentEmbers = 0;
         }
 
@@ -130,7 +129,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, respawnPoint, startPosition);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -144,7 +143,7 @@ public class HealthManager : MonoBehaviour
             playerRenderer.enabled = false;
             flashCounter = flashLength;
         }
-        else if (DeathTrigger.instaKill && Checkpoint.checkpointActive)
+        /*if (DeathTrigger.instaKill && Checkpoint.checkpointActive)
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
@@ -154,9 +153,13 @@ public class HealthManager : MonoBehaviour
             isFadefromBlack = true;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
+            thePlayer.transform.position = respawnPoint;
+            thePlayer.transform.rotation = startPosition;
             currentHealth = maxHealth;
+            invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
-        }
+            flashCounter = flashLength;
+        }*/
     }
 
     public void HealPlayer(int healAmount)

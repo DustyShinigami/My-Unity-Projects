@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static int currentEmbers;
     public static int currentSecrets;
     public TextMeshProUGUI emberText;
     public TextMeshProUGUI secretsText;
-    public bool secretCollected = false;
+
+    private bool secretCollected = false;
+
     public float timer = 2f;
 
     void Start()
@@ -26,7 +29,9 @@ public class GameManager : MonoBehaviour {
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
+                Time.timeScale = 0;
                 secretsText.enabled = false;
+                secretCollected = false;
             }
         }
     }
@@ -35,6 +40,12 @@ public class GameManager : MonoBehaviour {
     {
         currentEmbers += embertoAdd;
         emberText.text = "Embers: " + currentEmbers;
+        SetCountText();
+    }
+
+    public void SetCountText()
+    {
+        emberText.text = "Embers: " + currentEmbers.ToString();
     }
 
     public void AddSecret(int secrettoAdd)

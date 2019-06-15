@@ -860,7 +860,6 @@ GameObject:
   - component: {fileID: 1300247021538920723}
   - component: {fileID: 6384657510719224862}
   - component: {fileID: 7522706696764206380}
-  - component: {fileID: 9099150109999593184}
   - component: {fileID: 3774269337181879657}
   m_Layer: 0
   m_Name: Player
@@ -915,26 +914,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
-  m_Radius: 0.5
+  m_Height: 3.01
+  m_Radius: 0.85
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.8, z: -0.03}
---- !u!135 &9099150109999593184
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7315807368347333830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.17
-  m_Center: {x: 0, y: 1.65, z: -0.16}
+  m_Center: {x: 0, y: 1.82, z: -0.11}
 --- !u!114 &3774269337181879657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,11 +1187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3296638063166681259}
     m_Modifications:
-    - target: {fileID: 360610686116983040, guid: dd1cc693a567b3041ab021c7845db452,
-        type: 3}
-      propertyPath: m_Name
-      value: Projectile Effect
-      objectReference: {fileID: 0}
     - target: {fileID: 360610686116983045, guid: dd1cc693a567b3041ab021c7845db452,
         type: 3}
       propertyPath: playOnAwake
@@ -1215,6 +1196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 360610686116983040, guid: dd1cc693a567b3041ab021c7845db452,
+        type: 3}
+      propertyPath: m_Name
+      value: Projectile Effect
       objectReference: {fileID: 0}
     - target: {fileID: 360610686116983047, guid: dd1cc693a567b3041ab021c7845db452,
         type: 3}
@@ -1295,11 +1281,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300247019747548813}
     m_Modifications:
-    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5744796382144689880, guid: eca15963e281b8a49823e9f77fd48121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1369,6 +1350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.666671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca15963e281b8a49823e9f77fd48121, type: 3}

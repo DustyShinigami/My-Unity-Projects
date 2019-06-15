@@ -6257,7 +6257,6 @@ GameObject:
   - component: {fileID: 7987027285344473675}
   - component: {fileID: 26350062789197617}
   - component: {fileID: 3147218104575049293}
-  - component: {fileID: 3147218104575049291}
   - component: {fileID: 3147218104575049292}
   - component: {fileID: 3147218104575049290}
   m_Layer: 0
@@ -6311,25 +6310,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6380693743835127896}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.65
+  m_Radius: 1.5
   m_Height: 6
   m_Direction: 1
   m_Center: {x: 0.12, y: 2.99, z: -0.5}
---- !u!135 &3147218104575049291
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6380693743835127896}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.45
-  m_Center: {x: 0, y: 2.88, z: -0.49}
 --- !u!114 &3147218104575049292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6345,17 +6331,15 @@ MonoBehaviour:
   anim: {fileID: 26350062789197617}
   moveSpeed: 1.5
   rotSpeed: 4
-  moveLeft: 0
-  canMove: 0
-  target: {fileID: 0}
   startPoint: {fileID: 0}
+  target: {fileID: 0}
   maxHealth: 30
   currentHealth: 0
   invincibilityLength: 2
   enemyRenderer: {fileID: 6055544033139615684}
   flashLength: 0.1
-  gameManager: {fileID: 0}
   enemyDamage: {fileID: 3147218104947053593}
+  theHealthManager: {fileID: 0}
 --- !u!114 &3147218104575049290
 MonoBehaviour:
   m_ObjectHideFlags: 0

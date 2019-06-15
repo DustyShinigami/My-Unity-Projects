@@ -17,7 +17,8 @@ public class ScreenFader : MonoBehaviour
     void Start()
     {
         theHealthManager = FindObjectOfType<HealthManager>();
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
+        StartCoroutine("ScreenFade");
+        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             StartCoroutine("ScreenFade");
         }
@@ -29,14 +30,10 @@ public class ScreenFader : MonoBehaviour
         {
             StartCoroutine("ScreenFade");
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
+        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
         {
             StartCoroutine("ScreenFade");
-        }
-        else
-        {
-            StartCoroutine("ScreenFade");
-        }
+        }*/
     }
 
     IEnumerator ScreenFade()
@@ -48,7 +45,8 @@ public class ScreenFader : MonoBehaviour
             yield return new WaitForSeconds(waitForFade);
             isFadefromBlack = true;
             yield return new WaitForSeconds(2f);
-            //blackScreen.enabled = false;
+            //If the black screen isn't disabled, it prevents the buttons from being pressed
+            blackScreen.enabled = false;
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
@@ -56,7 +54,6 @@ public class ScreenFader : MonoBehaviour
         }
         else
         {
-            //blackScreen.enabled = true;
             yield return new WaitForSeconds(fadeSpeed);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);

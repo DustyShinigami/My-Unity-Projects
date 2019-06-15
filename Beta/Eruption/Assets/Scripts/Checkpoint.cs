@@ -8,17 +8,29 @@ public class Checkpoint : MonoBehaviour
     public GameObject litCandle;
     public GameObject fireParticles;
     public static bool checkpointActive;
-    //public HealthManager theHealthManager;
+    public HealthManager theHealthManager;
+    public Transform checkpointZone;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
             unlitCandle.gameObject.SetActive(false);
             litCandle.gameObject.SetActive(true);
-            Instantiate(fireParticles, transform.position, transform.rotation);
+            Instantiate(fireParticles, litCandle.transform.position, litCandle.transform.rotation);
             checkpointActive = true;
-            //theHealthManager.SetSpawnPoint(transform.position);
+        }
+        else
+        {
+            checkpointActive = false;
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(checkpointActive)
+        {
+            theHealthManager.SetSpawnPoint(checkpointZone.transform.position);
         }
     }
 }

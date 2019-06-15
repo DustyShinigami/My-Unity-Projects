@@ -9,7 +9,7 @@ public class EmberPickup : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.gameObject.CompareTag ("Player"))
         {
             FindObjectOfType<GameManager>().AddEmber(value);
             Instantiate(pickupEffect, transform.position, transform.rotation);

@@ -10,7 +10,7 @@ public class DeathTrigger : MonoBehaviour
     public static bool instaKill;
     public GameObject thePlayer;
 
-    private int damnageToGive;
+    private int damnageToGive = 30;
 
     void Start()
     {
@@ -20,36 +20,23 @@ public class DeathTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             instaKill = true;
-            thePlayer.SetActive(false);
             if (!Checkpoint.checkpointActive)
             {
-                StartCoroutine("Timer");
+                damnageToGive -= theHealthManager.currentHealth;
+                Vector3 hitDirection = other.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
             }
             else if (Checkpoint.checkpointActive)
             {
-                theHealthManager.StartCoroutine("RespawnCo");
+                Vector3 hitDirection = other.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
+                //checkpoint.OnTriggerStay(other);
             }
-            //theHealthManager.StartCoroutine("RespawnCo");
-            /*damnageToGive -= theHealthManager.currentHealth;
-            Vector3 hitDirection = other.transform.position - transform.position;
-            hitDirection = hitDirection.normalized;
-            FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);*/
-        /*else if (Checkpoint.checkpointActive)
-        {
-            Debug.Log("Checkpoint is active")
-            Vector3 hitDirection = other.transform.position - transform.position;
-            hitDirection = hitDirection.normalized;
-            FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
-            //checkpoint.OnTriggerStay(other);
-        }*/
-    }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

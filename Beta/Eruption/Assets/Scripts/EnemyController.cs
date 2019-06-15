@@ -9,8 +9,6 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public float moveSpeed;
     public float rotSpeed;
-    public bool moveLeft;
-    public bool canMove;
     public Transform startPoint;
     public Transform target;
     public int maxHealth;
@@ -23,19 +21,21 @@ public class EnemyController : MonoBehaviour
 
     private float invincibilityCounter;
     private float flashCounter;
-    private SphereCollider enemyCollider;
+    private CapsuleCollider enemyCollider;
+    private bool moveLeft;
+    private bool canMove;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-        enemyCollider = GetComponent<SphereCollider>();
+        enemyCollider = GetComponent<CapsuleCollider>();
     }
 
     void Start()
     {
         //thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
         canMove = true;
-        currentHealth += maxHealth;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
     }
     public IEnumerator EnemyDeath()
     {
-        transform.localScale += new Vector3(1.5f, 1.5f, 1.5f) * Time.deltaTime;
+        transform.localScale += new Vector3(5f, 5f, 5f) * Time.deltaTime;
         enemyCollider.enabled = false;
         Instantiate(theHealthManager.deathEffect, transform.position, transform.rotation);
         yield return new WaitForSeconds(0.5f);
