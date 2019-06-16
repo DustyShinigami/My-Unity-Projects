@@ -1976,6 +1976,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 11.22, y: 0, z: 0}
+--- !u!1 &506987187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315807368347333830, guid: a6b6b61679bd5314f8931a50702be38a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1825541329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &506987190 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6384657510719224862, guid: a6b6b61679bd5314f8931a50702be38a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1825541329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &574454610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,6 +4184,7 @@ MonoBehaviour:
   - {fileID: 1028373914}
   rayGun: {fileID: 2083205020}
   pickupLight: {fileID: 16112278}
+  thePlayer: {fileID: 506987187}
 --- !u!4 &1173936013
 Transform:
   m_ObjectHideFlags: 0
@@ -5712,6 +5725,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 506987190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b6b61679bd5314f8931a50702be38a, type: 3}
 --- !u!1 &1892950159

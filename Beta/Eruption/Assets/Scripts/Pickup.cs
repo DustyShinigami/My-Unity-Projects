@@ -8,13 +8,20 @@ public class Pickup : MonoBehaviour
     public GameObject rayGun;
     public GameObject pickupLight;
     public static bool objectsDisabled = false;
+    public GameObject thePlayer;
+
+    private PlayerController thePlayerController;
+
+    void Awake()
+    {
+        thePlayerController = thePlayer.GetComponent<PlayerController>();
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController.allowInteract = true;
-            PlayerController.interact = true;
+            thePlayerController.allowInteract = true;
             ControllerDetection();
             if (SceneManagement.ps4Controller == 1)
             {
@@ -41,8 +48,7 @@ public class Pickup : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        PlayerController.allowInteract = false;
-        PlayerController.interact = false;
+        thePlayerController.allowInteract = false;
     }
 
     public void ObjectActivation()

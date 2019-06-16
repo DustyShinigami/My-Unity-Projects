@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool jumped;
-    public static bool interact = false;
-    public static bool allowInteract = false;
+    public bool allowInteract = false;
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
@@ -21,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
+    public GameObject chest;
 
     [SerializeField]
     private HurtEnemy damageEnemy;
@@ -33,10 +33,12 @@ public class PlayerController : MonoBehaviour
     private Quaternion targetRot;
     private bool headingLeft = false;
     private Pickup pickupWeapon;
+    private OpenChest openChest;
 
-    public void Awake()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
+        openChest = chest.GetComponent<OpenChest>();
         //damageEnemy = projectile.GetComponent<HurtEnemy>();
     }
 
@@ -166,10 +168,8 @@ public class PlayerController : MonoBehaviour
                     {
                         if (Input.GetKeyDown("joystick button 2"))
                         {
-                            //interact = true;
                             anim.SetBool("Interact", controller.isGrounded);
                             pickupWeapon.ObjectActivation();
-                            interact = false;
                             allowInteract = false;
                         }
                     }
@@ -177,22 +177,50 @@ public class PlayerController : MonoBehaviour
                     {
                         if (Input.GetKeyDown("joystick button 0"))
                         {
-                            //interact = true;
                             anim.SetBool("Interact", controller.isGrounded);
                             pickupWeapon.ObjectActivation();
-                            interact = false;
                             allowInteract = false;
                         }
                     }
                     else
                     {
-                        interact = true;
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
                             pickupWeapon.ObjectActivation();
-                            interact = false;
                             allowInteract = false;
+                        }
+                    }
+                }
+                if(openChest.openChest)
+                {
+                    anim.SetBool("chestClosed", true);
+                    if (SceneManagement.xbox360Controller == 1)
+                    {
+                        if (Input.GetKeyDown("joystick button 2"))
+                        {
+                            anim.SetBool("Interact", controller.isGrounded);
+                            allowInteract = false;
+                            anim.SetTrigger("Open");
+                        }
+                    }
+                    else if (SceneManagement.ps4Controller == 1)
+                    {
+                        if (Input.GetKeyDown("joystick button 0"))
+                        {
+                            anim.SetBool("Interact", controller.isGrounded);
+                            allowInteract = false;
+                            anim.SetTrigger("Open");
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.Return))
+                        {
+                            anim.SetBool("Interact", controller.isGrounded);
+                            allowInteract = false;
+                            anim.SetTrigger("Open");
+                            anim.SetBool("chestOpened", true);
                         }
                     }
                 }
