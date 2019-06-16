@@ -12,11 +12,9 @@ public class ScreenFader : MonoBehaviour
 
     private bool isFadetoBlack;
     private bool isFadefromBlack;
-    private HealthManager theHealthManager;
 
     void Start()
     {
-        theHealthManager = FindObjectOfType<HealthManager>();
         StartCoroutine("ScreenFade");
         /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
@@ -58,7 +56,7 @@ public class ScreenFader : MonoBehaviour
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadefromBlack = true;
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(2f);
         }
     }
 

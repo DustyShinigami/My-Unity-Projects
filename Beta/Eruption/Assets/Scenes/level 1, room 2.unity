@@ -222,7 +222,6 @@ MonoBehaviour:
   fireParticles: {fileID: 8464393175082704813, guid: 20072c09339125347be565b3e1aa739b,
     type: 3}
   theHealthManager: {fileID: 1466717341}
-  checkpointZone: {fileID: 43092707}
 --- !u!65 &11808827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -234,8 +233,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.28, z: 0.88879716}
-  m_Center: {x: -0.24, y: 1.24, z: -0.34439856}
+  m_Size: {x: 2.0815918, y: 2.4829226, z: 0.88879716}
+  m_Center: {x: -0.013983607, y: 0.13853884, z: -0.34439856}
 --- !u!1 &22922463
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,92 +380,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &43092706
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 43092707}
-  - component: {fileID: 43092708}
-  - component: {fileID: 43092709}
-  m_Layer: 0
-  m_Name: Checkpoint Zone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &43092707
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43092706}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009, y: -0.57, z: -0.304}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1866967521}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &43092708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43092706}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.19869334, z: 0.74462795}
-  m_Center: {x: 0, y: -0.40065333, z: -0.12768602}
---- !u!114 &43092709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43092706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46ac8d61dc065848bd5a1aa7cd8c006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_WithTag: 
-  m_WithoutTag: 
-  m_SkipFirst: 0
-  m_Repeating: 1
-  m_OnObjectEnter:
-    m_Action: 2
-    m_Target: {fileID: 246308639}
-    m_BoostAmount: 0
-    m_StartTime: 0
-    m_Mode: 0
-    m_Event:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: Cinemachine.CinemachineTriggerAction+ActionSettings+TriggerEvent,
-        Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_OnObjectExit:
-    m_Action: 0
-    m_Target: {fileID: 0}
-    m_BoostAmount: 0
-    m_StartTime: 0
-    m_Mode: 0
-    m_Event:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: Cinemachine.CinemachineTriggerAction+ActionSettings+TriggerEvent,
-        Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1001 &46752946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4538,7 +4451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061620103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.89, y: -2.61, z: -0.83}
+  m_LocalPosition: {x: 22.89, y: -2.07, z: -0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 428515890}
@@ -4569,9 +4482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098b5dfde517975429773f86f08b3037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 11808826}
-  theHealthManager: {fileID: 1466717341}
-  thePlayer: {fileID: 963179846}
 --- !u!114 &1061620107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6664,9 +6574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098b5dfde517975429773f86f08b3037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 11808826}
-  theHealthManager: {fileID: 1466717341}
-  thePlayer: {fileID: 963179846}
 --- !u!114 &1501693831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9014,7 +8921,7 @@ PrefabInstance:
     - target: {fileID: 4001966913062535777, guid: e001e8a6f3594234ba68fe6f80262d24,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 4001966913062535777, guid: e001e8a6f3594234ba68fe6f80262d24,
         type: 3}

@@ -9,7 +9,6 @@ public class Checkpoint : MonoBehaviour
     public GameObject fireParticles;
     public static bool checkpointActive;
     public HealthManager theHealthManager;
-    public Transform checkpointZone;
 
     void OnTriggerEnter(Collider other)
     {
@@ -30,7 +29,7 @@ public class Checkpoint : MonoBehaviour
     {
         if(checkpointActive)
         {
-            theHealthManager.SetSpawnPoint(checkpointZone.transform.position);
+            theHealthManager.SetSpawnPoint(transform.position);
         }
     }
 }

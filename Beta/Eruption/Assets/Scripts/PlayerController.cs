@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool jumped;
-    public bool attack;
     public static bool interact = false;
     public static bool allowInteract = false;
     public float gravityScale;
@@ -21,9 +20,7 @@ public class PlayerController : MonoBehaviour
     public Material textureDefault;
     public bool allowCombat;
     public bool allowJump;
-    public bool notDestroyed;
     public static bool canMove;
-    public GameObject projectile;
 
     [SerializeField]
     private HurtEnemy damageEnemy;
@@ -148,20 +145,18 @@ public class PlayerController : MonoBehaviour
 
                 if (allowCombat)
                 {
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 7"))
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("joystick button 1"))
                     {
-                        attack = true;
                         playerRenderer.material = textureChange;
+                        anim.SetTrigger("Attack");
                     }
-                    else if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKey("joystick button 7"))
+                    else if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 7") || !Input.GetKeyDown("joystick button 1"))
                     {
-                        attack = false;
                         playerRenderer.material = textureDefault;
                     }
                 }
                 else if (!allowCombat)
                 {
-                    attack = false;
                     playerRenderer.material = textureDefault;
                 }
 
@@ -229,10 +224,6 @@ public class PlayerController : MonoBehaviour
                 allowInteract = false;
             }
         }*/
-        if (attack)
-        {
-            anim.SetTrigger("Attack");
-        }
     }
 
     public void Knockback(Vector3 direction)

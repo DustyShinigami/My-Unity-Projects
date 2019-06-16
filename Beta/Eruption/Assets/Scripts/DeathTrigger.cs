@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour
 {
-    public Checkpoint checkpoint;
-    public HealthManager theHealthManager;
     public static bool instaKill;
-    public GameObject thePlayer;
 
     private int damnageToGive = 30;
 
@@ -25,7 +22,6 @@ public class DeathTrigger : MonoBehaviour
             instaKill = true;
             if (!Checkpoint.checkpointActive)
             {
-                damnageToGive -= theHealthManager.currentHealth;
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
@@ -35,7 +31,6 @@ public class DeathTrigger : MonoBehaviour
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
-                //checkpoint.OnTriggerStay(other);
             }
         }
     }

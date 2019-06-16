@@ -110,7 +110,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+            Instantiate(deathEffect, respawnPoint, startPosition);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -129,7 +129,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+            Instantiate(deathEffect, respawnPoint, startPosition);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -145,8 +145,10 @@ public class HealthManager : MonoBehaviour
         }
         /*if (DeathTrigger.instaKill && Checkpoint.checkpointActive)
         {
+            Debug.Log("it's doing no. 3");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
+            Instantiate(deathEffect, respawnPoint, startPosition);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
