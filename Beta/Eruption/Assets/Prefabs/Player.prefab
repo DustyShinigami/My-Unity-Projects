@@ -937,7 +937,7 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 12
   jumped: 0
-  attack: 0
+  allowInteract: 0
   gravityScale: 4
   knockBackForce: 5
   knockBackTime: 0.5
@@ -947,8 +947,6 @@ MonoBehaviour:
   textureDefault: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
   allowCombat: 0
   allowJump: 0
-  notDestroyed: 0
-  projectile: {fileID: 1300247020553260282}
   damageEnemy: {fileID: 1300247020866657052}
 --- !u!1 &7422674488719066359
 GameObject:
@@ -1187,6 +1185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3296638063166681259}
     m_Modifications:
+    - target: {fileID: 360610686116983040, guid: dd1cc693a567b3041ab021c7845db452,
+        type: 3}
+      propertyPath: m_Name
+      value: Projectile Effect
+      objectReference: {fileID: 0}
     - target: {fileID: 360610686116983045, guid: dd1cc693a567b3041ab021c7845db452,
         type: 3}
       propertyPath: playOnAwake
@@ -1196,11 +1199,6 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 360610686116983040, guid: dd1cc693a567b3041ab021c7845db452,
-        type: 3}
-      propertyPath: m_Name
-      value: Projectile Effect
       objectReference: {fileID: 0}
     - target: {fileID: 360610686116983047, guid: dd1cc693a567b3041ab021c7845db452,
         type: 3}
@@ -1281,6 +1279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300247019747548813}
     m_Modifications:
+    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 5744796382144689880, guid: eca15963e281b8a49823e9f77fd48121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1350,11 +1353,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.666671
-      objectReference: {fileID: 0}
-    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca15963e281b8a49823e9f77fd48121, type: 3}

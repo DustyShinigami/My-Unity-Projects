@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
-    public GameObject chest;
+    public OpenChest chest;
 
     [SerializeField]
     private HurtEnemy damageEnemy;
@@ -33,14 +33,11 @@ public class PlayerController : MonoBehaviour
     private Quaternion targetRot;
     private bool headingLeft = false;
     private Pickup pickupWeapon;
-    private OpenChest openChest;
 
     void Awake()
     {
         controller = GetComponent<CharacterController>();
-        openChest = chest.GetComponent<OpenChest>();
         anim = GetComponent<Animator>();
-        //damageEnemy = projectile.GetComponent<HurtEnemy>();
     }
 
     void Start()
@@ -193,14 +190,14 @@ public class PlayerController : MonoBehaviour
                         }
                     }
                 }
-                if(openChest.allowOpen)
+                if(OpenChest.allowOpen)
                 {
                     if (SceneManagement.xbox360Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 2"))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
-                            anim.SetTrigger("open");
+                            chest.ChestOpen();
                             allowInteract = false;
                         }
                     }
@@ -209,7 +206,7 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKeyDown("joystick button 0"))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
-                            anim.SetTrigger("open");
+                            chest.ChestOpen();
                             allowInteract = false;
                         }
                     }
@@ -218,7 +215,7 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
-                            anim.SetTrigger("open");
+                            chest.ChestOpen();
                             allowInteract = false;
                         }
                     }
