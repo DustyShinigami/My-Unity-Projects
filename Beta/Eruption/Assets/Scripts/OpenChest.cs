@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class OpenChest : MonoBehaviour
 {
-    public bool openChest;
+    public bool allowOpen;
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            openChest = true;
+            allowOpen = true;
         }
     }
 }

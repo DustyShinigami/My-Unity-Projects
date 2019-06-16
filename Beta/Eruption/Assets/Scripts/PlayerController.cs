@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         openChest = chest.GetComponent<OpenChest>();
+        anim = GetComponent<Animator>();
         //damageEnemy = projectile.GetComponent<HurtEnemy>();
     }
 
@@ -192,16 +193,15 @@ public class PlayerController : MonoBehaviour
                         }
                     }
                 }
-                if(openChest.openChest)
+                if(openChest.allowOpen)
                 {
-                    anim.SetBool("chestClosed", true);
                     if (SceneManagement.xbox360Controller == 1)
                     {
                         if (Input.GetKeyDown("joystick button 2"))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
+                            anim.SetTrigger("open");
                             allowInteract = false;
-                            anim.SetTrigger("Open");
                         }
                     }
                     else if (SceneManagement.ps4Controller == 1)
@@ -209,8 +209,8 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKeyDown("joystick button 0"))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
+                            anim.SetTrigger("open");
                             allowInteract = false;
-                            anim.SetTrigger("Open");
                         }
                     }
                     else
@@ -218,9 +218,8 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Return))
                         {
                             anim.SetBool("Interact", controller.isGrounded);
+                            anim.SetTrigger("open");
                             allowInteract = false;
-                            anim.SetTrigger("Open");
-                            anim.SetBool("chestOpened", true);
                         }
                     }
                 }
