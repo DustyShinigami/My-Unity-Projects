@@ -12,22 +12,13 @@ public class Chest : MonoBehaviour
     public float hoverSpeed;
 
     private Animator chestAnim;
-    private Vector3 direction;
-    //private SecretsPickup pickupSecret;
+    private SecretsPickup pickupSecret;
 
     void Awake()
     {
         chestAnim = chest.GetComponent<Animator>();
         blueSecret.SetActive(false);
-        //pickupSecret = blueSecret.GetComponent<SecretsPickup>();
-    }
-
-    void Update()
-    {
-        if (secretRevealed)
-        {
-            direction = Vector3.up * hoverSpeed;
-        }
+        pickupSecret = blueSecret.GetComponent<SecretsPickup>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -44,14 +35,8 @@ public class Chest : MonoBehaviour
         {
             chestAnim.SetBool("canOpen", true);
             chestAnim.SetTrigger("open");
-            secretRevealed = true;
-            StartCoroutine("RevealSecret");
+            blueSecret.SetActive(true);
+            pickupSecret.StartCoroutine("SecretReveal");
         }
-    }
-
-    IEnumerator RevealSecret()
-    {
-        blueSecret.SetActive(true);
-        yield return new WaitForSeconds(hoverSpeed);
     }
 }

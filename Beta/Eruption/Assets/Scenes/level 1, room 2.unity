@@ -2377,6 +2377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  secretAnim: {fileID: 0}
 --- !u!1 &557426863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4788,6 +4789,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: platforms_Ethan
       objectReference: {fileID: 0}
+    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c6a69787c50d1d248850b78b9375116f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4842,21 +4858,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 35658504099206654, guid: c6a69787c50d1d248850b78b9375116f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 507637936729413656, guid: c6a69787c50d1d248850b78b9375116f,
         type: 3}
@@ -7513,9 +7514,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475767284}
+  - component: {fileID: 1475767285}
   - component: {fileID: 1475767287}
   - component: {fileID: 1475767286}
-  - component: {fileID: 1475767285}
   m_Layer: 0
   m_Name: Secret_Blue
   m_TagString: Untagged
@@ -7537,19 +7538,25 @@ Transform:
   m_Father: {fileID: 1473637733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475767285
-MonoBehaviour:
+--- !u!95 &1475767285
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475767283}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1748f5d7d84344048aab6528887d7068, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11313d5c48f1e8e47af58f5f68d71ea3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1475767286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8665,6 +8672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  secretAnim: {fileID: 0}
 --- !u!65 &1808516248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10657,7 +10665,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pickupSecret
       value: 
-      objectReference: {fileID: 1475767285}
+      objectReference: {fileID: 0}
     - target: {fileID: 4696935516176676119, guid: efd6abf0772886248b385baf57c817d7,
         type: 3}
       propertyPath: gameManager
@@ -10671,7 +10679,7 @@ PrefabInstance:
     - target: {fileID: 4696935516176676119, guid: efd6abf0772886248b385baf57c817d7,
         type: 3}
       propertyPath: hoverSpeed
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 311989970349700353, guid: efd6abf0772886248b385baf57c817d7,
         type: 3}
