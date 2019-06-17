@@ -12,7 +12,6 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = true;
         theScreenFader = FindObjectOfType<ScreenFader>();
         ControllerDetection();
     }
@@ -49,6 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        Cursor.visible = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;

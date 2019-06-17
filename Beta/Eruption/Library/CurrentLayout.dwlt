@@ -387,7 +387,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d6e8ffff0ce9ffff6aeaffff96edffff3cf1ffff3cf2ffff88f3ffff2cf5ffff30f5ffffd0f5ffffb4faffff6efbffff
+      m_ExpandedIDs: 32e0ffff64e0ffffc2e1ffffeee4ffff94e8ffff94e9ffffd4eaffff78ecffff7cecffffbeedffffeeedffff4cefffff78f2ffff1ef6ffff1ef7ffff6cf8ffff10faffff14faffff6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 373.5, y: 210, z: 0}
     speed: 2
-    m_Value: {x: 373.5001, y: 210, z: -0.000028893994}
+    m_Value: {x: 373.5, y: 210, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 1414.0116
     speed: 2
-    m_Value: 1414.0121
+    m_Value: 1414.0116
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -739,19 +739,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\GitHub Repositories\My-Unity-Projects\Beta\Eruption
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 322e0000
-    m_LastClickedID: 11826
+    m_SelectedIDs: 2c2d0000
+    m_LastClickedID: 11564
     m_ExpandedIDs: 00000000fa2b00008a2c00007a2d0000822d00006a2e0000742f00001c3100004a310000583100000c320000dc320000143300006033000080340000da340000003700000237000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
