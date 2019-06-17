@@ -7,9 +7,7 @@ public class Chest : MonoBehaviour
 {
     public GameObject chest;
     public static bool allowOpen;
-    public static bool secretRevealed;
     public GameObject blueSecret;
-    public float hoverSpeed;
 
     private Animator chestAnim;
     private SecretsPickup pickupSecret;
@@ -17,8 +15,8 @@ public class Chest : MonoBehaviour
     void Awake()
     {
         chestAnim = chest.GetComponent<Animator>();
-        blueSecret.SetActive(false);
         pickupSecret = blueSecret.GetComponent<SecretsPickup>();
+        blueSecret.SetActive(false);
     }
 
     public void OnTriggerEnter(Collider other)
