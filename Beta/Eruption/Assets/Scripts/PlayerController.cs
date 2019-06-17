@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
-    public OpenChest chest;
+    public Chest chest;
 
     [SerializeField]
     private HurtEnemy damageEnemy;
@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
                         }
                     }
                 }
-                if(OpenChest.allowOpen)
+                if(Chest.allowOpen)
                 {
                     if (SceneManagement.xbox360Controller == 1)
                     {

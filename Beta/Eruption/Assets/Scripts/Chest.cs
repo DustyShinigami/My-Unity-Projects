@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OpenChest : MonoBehaviour
+public class Chest : MonoBehaviour
 {
     public GameObject chest;
     public static bool allowOpen;
-    public bool secretRevealed;
-    public GameObject secret;
-    //public float secretSpeed;
+    public static bool secretRevealed;
+    public GameObject blueSecret;
+    public float hoverSpeed;
 
     private Animator chestAnim;
-    private Vector2 direction;
+    private Vector3 direction;
+    //private SecretsPickup pickupSecret;
 
     void Awake()
     {
         chestAnim = chest.GetComponent<Animator>();
-        secret.SetActive(false);
+        blueSecret.SetActive(false);
+        //pickupSecret = blueSecret.GetComponent<SecretsPickup>();
     }
 
     void Update()
     {
         if (secretRevealed)
         {
-
+            direction = Vector3.up * hoverSpeed;
         }
     }
 
@@ -43,7 +45,13 @@ public class OpenChest : MonoBehaviour
             chestAnim.SetBool("canOpen", true);
             chestAnim.SetTrigger("open");
             secretRevealed = true;
-            secret.SetActive(true);
+            StartCoroutine("RevealSecret");
         }
+    }
+
+    IEnumerator RevealSecret()
+    {
+        blueSecret.SetActive(true);
+        yield return new WaitForSeconds(hoverSpeed);
     }
 }
