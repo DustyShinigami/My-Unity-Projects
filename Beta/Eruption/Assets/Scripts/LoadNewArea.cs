@@ -36,7 +36,7 @@ public class LoadNewArea : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
             thePlayer.gameObject.SetActive(false);
-            //theScreenFader.StartCoroutine("ScreenFade");
+            theScreenFader.StartCoroutine("ScreenFade");
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("level 1, room 2");
         }

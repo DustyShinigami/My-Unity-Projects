@@ -34,7 +34,7 @@ public class Chest : MonoBehaviour
             chestAnim.SetBool("canOpen", true);
             chestAnim.SetTrigger("open");
             blueSecret.SetActive(true);
-            pickupSecret.StartCoroutine("SecretReveal");
+            pickupSecret.Secret();
         }
     }
 }

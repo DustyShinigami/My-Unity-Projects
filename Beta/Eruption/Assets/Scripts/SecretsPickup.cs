@@ -5,7 +5,8 @@ using UnityEngine;
 public class SecretsPickup : MonoBehaviour
 {
     public int value;
-    public Animator secretAnim;
+
+    private Animator secretAnim;
 
     void Awake()
     {
@@ -21,11 +22,14 @@ public class SecretsPickup : MonoBehaviour
         }
     }
 
-    IEnumerator SecretRevealed()
+    public void Secret()
     {
+        StartCoroutine("SecretRevealed");
+    }
+
+    public IEnumerator SecretRevealed()
+    {
+        yield return new WaitForSeconds(.5f);
         secretAnim.SetTrigger("secretMove");
-        yield return new WaitForSeconds(2f);
-        FindObjectOfType<GameManager>().AddSecret(value);
-        Destroy(gameObject);
     }
 }

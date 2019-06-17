@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 secretsText.enabled = false;
                 secretCollected = false;
             }
@@ -48,10 +48,16 @@ public class GameManager : MonoBehaviour
         emberText.text = "Embers: " + currentEmbers.ToString();
     }
 
+    public void SetSecondCountText()
+    {
+        secretsText.text = "Secrets Found: " + currentSecrets.ToString();
+    }
+
     public void AddSecret(int secrettoAdd)
     {
         secretCollected = true;
         currentSecrets += secrettoAdd;
         secretsText.text = "Secrets Found: " + currentSecrets;
+        SetSecondCountText();
     }
 }

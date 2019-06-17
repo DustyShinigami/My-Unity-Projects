@@ -8,6 +8,12 @@ public class DeathTrigger : MonoBehaviour
     public static bool instaKill;
 
     private int damnageToGive = 30;
+    private ScreenFader theScreenFader;
+
+    void Awake()
+    {
+        theScreenFader = FindObjectOfType<ScreenFader>();
+    }
 
     void Start()
     {
@@ -22,15 +28,19 @@ public class DeathTrigger : MonoBehaviour
             instaKill = true;
             if (!Checkpoint.checkpointActive)
             {
+                Debug.Log("this");
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
+                theScreenFader.StartCoroutine("ScreenFade");
             }
-            else if (Checkpoint.checkpointActive)
+            else
             {
+                Debug.Log("that");
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
+                //theScreenFader.StartCoroutine("ScreenFade");
             }
         }
     }

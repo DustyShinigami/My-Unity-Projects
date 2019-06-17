@@ -108,6 +108,7 @@ public class HealthManager : MonoBehaviour
     {
         if (!Checkpoint.checkpointActive)
         {
+            //Debug.Log("this");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
@@ -127,6 +128,7 @@ public class HealthManager : MonoBehaviour
 
         else if (Checkpoint.checkpointActive)
         {
+            //Debug.Log("that");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
