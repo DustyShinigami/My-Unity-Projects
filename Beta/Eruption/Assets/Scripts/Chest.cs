@@ -7,6 +7,7 @@ public class Chest : MonoBehaviour
 {
     public GameObject chest;
     public static bool allowOpen;
+    public static bool opened;
     public GameObject blueSecret;
 
     private Animator chestAnim;
@@ -35,6 +36,7 @@ public class Chest : MonoBehaviour
             chestAnim.SetTrigger("open");
             blueSecret.SetActive(true);
             pickupSecret.Secret();
+            opened = true;
         }
     }
 }

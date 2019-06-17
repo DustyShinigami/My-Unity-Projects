@@ -7,6 +7,20 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour {
 
     public string levelToLoad;
+    public GameObject buttons;
+    public GameObject title;
+
+    void Start()
+    {
+        StartCoroutine("MainMenuManager");
+    }
+
+    IEnumerator MainMenuManager()
+    {
+        yield return new WaitForSeconds(2f);
+        title.SetActive(true);
+        buttons.SetActive(true);
+    }
 
     public void PlayGame()
     {

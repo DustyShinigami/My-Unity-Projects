@@ -132,12 +132,31 @@ public class PlayerController : MonoBehaviour
                 {
                     moveDirection.y = -1f;
                     //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
-                    if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown("joystick button 0"))
+                    if (SceneManagement.xbox360Controller == 1)
                     {
-                        moveDirection.y = jumpForce;
-                        jumped = true;
+                        if (Input.GetKeyDown("joystick button 0"))
+                        {
+                            moveDirection.y = jumpForce;
+                            jumped = true;
+                        }
                     }
-                    else if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 0"))
+                    else if (SceneManagement.ps4Controller == 1)
+                    {
+                        if (Input.GetKeyDown("joystick button 1"))
+                        {
+                            moveDirection.y = jumpForce;
+                            jumped = true;
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.Space))
+                        {
+                            moveDirection.y = jumpForce;
+                            jumped = true;
+                        }
+                    }
+                    if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 1"))
                     {
                         jumped = false;
                     }
@@ -145,12 +164,31 @@ public class PlayerController : MonoBehaviour
 
                 if (allowCombat)
                 {
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("joystick button 1"))
+                    if (SceneManagement.xbox360Controller == 1)
                     {
-                        playerRenderer.material = textureChange;
-                        anim.SetTrigger("Attack");
+                        if (Input.GetKey("joystick button 1"))
+                        {
+                            anim.SetTrigger("Attack");
+                            playerRenderer.material = textureChange;
+                        }
                     }
-                    else if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 7") || !Input.GetKeyDown("joystick button 1"))
+                    else if (SceneManagement.ps4Controller == 1)
+                    {
+                        if (Input.GetKey("joystick button 2"))
+                        {
+                            anim.SetTrigger("Attack");
+                            playerRenderer.material = textureChange;
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.Space))
+                        {
+                            anim.SetTrigger("Attack");
+                            playerRenderer.material = textureChange;
+                        }
+                    }
+                    if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 1") || !Input.GetKeyDown("joystick button 2"))
                     {
                         playerRenderer.material = textureDefault;
                     }
@@ -198,7 +236,10 @@ public class PlayerController : MonoBehaviour
                         {
                             anim.SetBool("Interact", controller.isGrounded);
                             chest.ChestOpen();
-                            allowInteract = false;
+                        }
+                        else if (Input.GetKeyDown("joystick button 2") && Chest.opened)
+                        {
+                            anim.SetBool("Interact", false);
                         }
                     }
                     else if (SceneManagement.ps4Controller == 1)
@@ -207,7 +248,10 @@ public class PlayerController : MonoBehaviour
                         {
                             anim.SetBool("Interact", controller.isGrounded);
                             chest.ChestOpen();
-                            allowInteract = false;
+                        }
+                        else if (Input.GetKeyDown("joystick button 0") && Chest.opened)
+                        {
+                            anim.SetBool("Interact", false);
                         }
                     }
                     else
@@ -216,7 +260,10 @@ public class PlayerController : MonoBehaviour
                         {
                             anim.SetBool("Interact", controller.isGrounded);
                             chest.ChestOpen();
-                            allowInteract = false;
+                        }
+                        else if (Input.GetKeyDown(KeyCode.Return) && Chest.opened)
+                        {
+                            anim.SetBool("Interact", false);
                         }
                     }
                 }

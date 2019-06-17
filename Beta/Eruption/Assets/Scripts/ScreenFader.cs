@@ -16,47 +16,15 @@ public class ScreenFader : MonoBehaviour
     void Start()
     {
         StartCoroutine("ScreenFade");
-        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
-        {
-            StartCoroutine("ScreenFade");
-        }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
-        {
-            StartCoroutine("ScreenFade");
-        }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
-        {
-            StartCoroutine("ScreenFade");
-        }*/
-        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
-        {
-            StartCoroutine("ScreenFade");
-        }*/
     }
 
     IEnumerator ScreenFade()
     {
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("main_menu"))
-        {
-            yield return new WaitForSeconds(fadeSpeed);
-            isFadetoBlack = true;
-            yield return new WaitForSeconds(waitForFade);
-            isFadefromBlack = true;
-            yield return new WaitForSeconds(2f);
-            //If the black screen isn't disabled, it prevents the buttons from being pressed
-            blackScreen.enabled = false;
-        }
-        /*else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
-        {
-            isFadetoBlack = false;
-        }*/
-        else
-        {
-            yield return new WaitForSeconds(fadeSpeed);
-            isFadetoBlack = true;
-            yield return new WaitForSeconds(waitForFade);
-            isFadefromBlack = true;
-        }
+        yield return new WaitForSeconds(fadeSpeed);
+        isFadetoBlack = true;
+        yield return new WaitForSeconds(waitForFade);
+        isFadefromBlack = true;
+        yield return new WaitForSeconds(2f);
     }
 
     void Update()

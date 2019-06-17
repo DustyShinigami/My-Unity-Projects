@@ -16,11 +16,6 @@ public class GameManager : MonoBehaviour
 
     public float timer = 2f;
 
-    void Start()
-    {
-        secretsText.enabled = false;
-    }
-
     void Update()
     {
         if (secretCollected)
@@ -31,7 +26,7 @@ public class GameManager : MonoBehaviour
             {
                 //Time.timeScale = 0;
                 secretsText.enabled = false;
-                secretCollected = false;
+                //secretCollected = false;
             }
         }
     }
