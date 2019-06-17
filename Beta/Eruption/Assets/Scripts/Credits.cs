@@ -16,6 +16,7 @@ public class Credits : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = true;
         StartCoroutine("CreditsManager");
     }
 

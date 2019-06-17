@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = true;
         theScreenFader = FindObjectOfType<ScreenFader>();
         ControllerDetection();
     }
