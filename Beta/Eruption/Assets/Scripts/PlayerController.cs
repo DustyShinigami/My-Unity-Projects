@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        if (Input.GetKeyDown(KeyCode.Space))
+                        if (Input.GetKeyDown(KeyCode.KeypadPlus))
                         {
                             moveDirection.y = jumpForce;
                             jumped = true;

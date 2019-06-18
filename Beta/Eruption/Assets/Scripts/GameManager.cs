@@ -24,10 +24,13 @@ public class GameManager : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
-                //Time.timeScale = 0;
                 secretsText.enabled = false;
-                //secretCollected = false;
+                secretCollected = false;
             }
+        }
+        else if (!secretCollected)
+        {
+            timer = 2f;
         }
     }
 
