@@ -13,6 +13,7 @@ public class Checkpoint : MonoBehaviour
     void Start()
     {
         unlitCandle.gameObject.SetActive(true);
+        checkpointActive = false;
     }
 
     public void OnTriggerEnter (Collider other)

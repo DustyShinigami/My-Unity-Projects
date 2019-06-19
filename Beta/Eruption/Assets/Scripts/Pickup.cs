@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
     public GameObject[] buttonPrompts;
     public GameObject rayGun;
     public GameObject pickupLight;
-    public static bool objectsDisabled = false;
+    public static bool objectsDisabled;
     public GameObject thePlayer;
 
     private PlayerController thePlayerController;
@@ -15,6 +15,7 @@ public class Pickup : MonoBehaviour
     void Awake()
     {
         thePlayerController = thePlayer.GetComponent<PlayerController>();
+        objectsDisabled = false;
     }
 
     public void OnTriggerEnter(Collider other)

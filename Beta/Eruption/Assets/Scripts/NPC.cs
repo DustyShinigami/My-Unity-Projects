@@ -28,6 +28,7 @@ public class NPC : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         Idle();
+        leverActivated = false;
     }
 
     /*public void MoveRight()

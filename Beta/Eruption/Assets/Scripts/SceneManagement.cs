@@ -25,16 +25,21 @@ public class SceneManagement : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area"))
         {
             outsideHut = true;
+            insideHut = false;
+            backOutsideHut = false;
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("hut_interior"))
         {
             insideHut = true;
             outsideHut = false;
+            backOutsideHut = false;
             exitLight.SetActive(false);
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("start_area 2"))
         {
             backOutsideHut = true;
+            outsideHut = false;
+            insideHut = false;
         }
     }
 

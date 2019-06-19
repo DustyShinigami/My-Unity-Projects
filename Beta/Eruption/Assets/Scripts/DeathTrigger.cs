@@ -13,6 +13,7 @@ public class DeathTrigger : MonoBehaviour
     void Awake()
     {
         theScreenFader = FindObjectOfType<ScreenFader>();
+        instaKill = false;
     }
 
     void Start()

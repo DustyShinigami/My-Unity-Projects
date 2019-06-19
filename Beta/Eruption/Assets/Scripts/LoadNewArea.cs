@@ -8,7 +8,7 @@ public class LoadNewArea : MonoBehaviour
     private PlayerController thePlayer;
     private ScreenFader theScreenFader;
     private SceneManagement theSceneManager;
-    public bool nextArea;
+    private bool nextArea;
 
     void Start()
     {

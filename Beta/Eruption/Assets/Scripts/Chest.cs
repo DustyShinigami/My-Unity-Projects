@@ -18,6 +18,8 @@ public class Chest : MonoBehaviour
         chestAnim = chest.GetComponent<Animator>();
         pickupSecret = blueSecret.GetComponent<SecretsPickup>();
         blueSecret.SetActive(false);
+        allowOpen = false;
+        opened = false;
     }
 
     public void OnTriggerEnter(Collider other)

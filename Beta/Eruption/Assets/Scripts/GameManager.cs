@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI secretsText;
 
     private bool secretCollected = false;
+    private float timer = 2f;
 
-    public float timer = 2f;
+    void Awake()
+    {
+        currentEmbers = 0;
+        currentSecrets = 0;
+    }
 
     void Update()
     {

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GamePaused = false;
+    public static bool GamePaused;
     public GameObject pauseMenuUI;
 
     private ScreenFader theScreenFader;
@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     {
         theScreenFader = FindObjectOfType<ScreenFader>();
         ControllerDetection();
+        GamePaused = false;
     }
 
     void Update()
