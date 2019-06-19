@@ -14052,6 +14052,16 @@ PrefabInstance:
       propertyPath: chest
       value: 
       objectReference: {fileID: 1415710222}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: textureDefault
+      value: 
+      objectReference: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: textureChange
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e23520481cb9554da63a43634d19d5f, type: 2}
     - target: {fileID: 6864510610562718442, guid: a6b6b61679bd5314f8931a50702be38a,
         type: 3}
       propertyPath: m_LocalRotation.x
