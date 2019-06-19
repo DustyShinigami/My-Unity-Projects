@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     public float knockBackTime;
     public float invincibilityLength;
     public Renderer playerRenderer;
-    public Material textureChange;
-    public Material textureDefault;
+    //public Material textureChange;
+    //public Material textureDefault;
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
@@ -139,6 +139,10 @@ public class PlayerController : MonoBehaviour
                             moveDirection.y = jumpForce;
                             jumped = true;
                         }
+                        else if (!Input.GetKeyDown("joystick button 0"))
+                        {
+                            jumped = false;
+                        }
                     }
                     else if (SceneManagement.ps4Controller == 1)
                     {
@@ -146,6 +150,10 @@ public class PlayerController : MonoBehaviour
                         {
                             moveDirection.y = jumpForce;
                             jumped = true;
+                        }
+                        else if (!Input.GetKeyDown("joystick button 1"))
+                        {
+                            jumped = false;
                         }
                     }
                     else
@@ -155,10 +163,10 @@ public class PlayerController : MonoBehaviour
                             moveDirection.y = jumpForce;
                             jumped = true;
                         }
-                    }
-                    if (!Input.GetKeyDown(KeyCode.KeypadPlus) || !Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("joystick button 1"))
-                    {
-                        jumped = false;
+                        else if(!Input.GetKeyDown(KeyCode.KeypadPlus))
+                        {
+                            jumped = false;
+                        }
                     }
                 }
 
@@ -169,7 +177,11 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKey("joystick button 1"))
                         {
                             anim.SetTrigger("Attack");
-                            playerRenderer.material = textureChange;
+                            //playerRenderer.material = textureChange;
+                        }
+                        else if(!Input.GetKeyDown("joystick button 2"))
+                        {
+                            //playerRenderer.material = textureChange;
                         }
                     }
                     else if (SceneManagement.ps4Controller == 1)
@@ -177,7 +189,11 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKey("joystick button 2"))
                         {
                             anim.SetTrigger("Attack");
-                            playerRenderer.material = textureChange;
+                            //playerRenderer.material = textureChange;
+                        }
+                        else if(!Input.GetKeyDown("joystick button 2"))
+                        {
+                            //playerRenderer.material = textureChange;
                         }
                     }
                     else
@@ -185,18 +201,15 @@ public class PlayerController : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
                             anim.SetTrigger("Attack");
-                            playerRenderer.material = textureChange;
+                            //playerRenderer.material = textureChange;
+                            //playerRenderer.material = textureDefault;
                         }
                     }
-                    if (!Input.GetKeyDown(KeyCode.Space) || !Input.GetKeyDown("joystick button 1") || !Input.GetKeyDown("joystick button 2"))
-                    {
-                        playerRenderer.material = textureDefault;
-                    }
                 }
-                else if (!allowCombat)
+                /*else if (!allowCombat)
                 {
                     playerRenderer.material = textureDefault;
-                }
+                }*/
 
                 if (allowInteract)
                 {
