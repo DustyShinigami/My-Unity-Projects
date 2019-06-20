@@ -19,8 +19,8 @@ public class DialogueManager : MonoBehaviour
     private int index;
     private BoxCollider dialogueTrigger;
     private int currentLine;
-    private bool returnPressed;
-    private bool spacePressed;
+    private bool interactPressed;
+    private bool continuePressed;
     private bool endDialogue;
     private bool continueAllowed;
     public bool characterVicinity;
@@ -45,6 +45,8 @@ public class DialogueManager : MonoBehaviour
     public void NextSentence()
     {
         buttonPrompts[3].SetActive(false);
+        buttonPrompts[4].SetActive(false);
+        buttonPrompts[5].SetActive(false);
         //If Index has less than the number of elements in the 'sentences' array by -1
         if (index < sentences.Length - 1)
         {
@@ -94,8 +96,8 @@ public class DialogueManager : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Return) && !dialogueBox.activeSelf)
             {
                 PlayerController.canMove = false;
-                returnPressed = true;
-                if (returnPressed)
+                interactPressed = true;
+                if (interactPressed)
                 {
                     continueAllowed = false;
                     nameDisplay.enabled = true;
@@ -108,8 +110,8 @@ public class DialogueManager : MonoBehaviour
                 if (Input.GetKeyUp("joystick button 2") && !dialogueBox.activeSelf)
                 {
                     PlayerController.canMove = false;
-                    returnPressed = true;
-                    if (returnPressed)
+                    interactPressed = true;
+                    if (interactPressed)
                     {
                         continueAllowed = false;
                         nameDisplay.enabled = true;
@@ -123,8 +125,8 @@ public class DialogueManager : MonoBehaviour
                 if (Input.GetKeyUp("joystick button 0") && !dialogueBox.activeSelf)
                 {
                     PlayerController.canMove = false;
-                    returnPressed = true;
-                    if (returnPressed)
+                    interactPressed = true;
+                    if (interactPressed)
                     {
                         continueAllowed = false;
                         nameDisplay.enabled = true;
@@ -137,43 +139,105 @@ public class DialogueManager : MonoBehaviour
         if (nameDisplay.enabled && dialogueBox.activeSelf)
         {
             dialogueActive = true;
-            //The button prompt must be active in conjunction with the Space bar being pressed before the next line will show.
-            if (buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
+            if (SceneManagement.xbox360Controller == 1)
             {
-                currentLine++;
+                if (buttonPrompts[4].activeSelf && Input.GetKeyUp("joystick button 2"))
+                {
+                    currentLine++;
+                    if (currentLine >= sentences.Length)
+                    {
+                        nameDisplay.enabled = false;
+                        dialogueBox.SetActive(false);
+                        dialogueActive = false;
+                        endDialogue = true;
+                        characterVicinity = false;
+                        dialogueTrigger.enabled = false;
+                        theNPC.MoveRight();
+                    }
+                }
             }
-            if (currentLine >= sentences.Length)
+            else if (SceneManagement.ps4Controller == 1)
             {
-                nameDisplay.enabled = false;
-                dialogueBox.SetActive(false);
-                dialogueActive = false;
-                endDialogue = true;
-                characterVicinity = false;
-                dialogueTrigger.enabled = false;
-                theNPC.MoveRight();
+                if (buttonPrompts[5].activeSelf && Input.GetKeyUp("joystick button 0"))
+                {
+                    currentLine++;
+                    if (currentLine >= sentences.Length)
+                    {
+                        nameDisplay.enabled = false;
+                        dialogueBox.SetActive(false);
+                        dialogueActive = false;
+                        endDialogue = true;
+                        characterVicinity = false;
+                        dialogueTrigger.enabled = false;
+                        theNPC.MoveRight();
+                    }
+                }
+            }
+            else
+            {
+                //The button prompt must be active in conjunction with the Space bar being pressed before the next line will show.
+                if (buttonPrompts[3].activeSelf && Input.GetKeyUp(KeyCode.Space))
+                {
+                    currentLine++;
+                    if (currentLine >= sentences.Length)
+                    {
+                        nameDisplay.enabled = false;
+                        dialogueBox.SetActive(false);
+                        dialogueActive = false;
+                        endDialogue = true;
+                        characterVicinity = false;
+                        dialogueTrigger.enabled = false;
+                        theNPC.MoveRight();
+                    }
+                }
             }
         }
-        if (textDisplay.text == sentences[index])
+        if (textDisplay.text == sentences[index] && SceneManagement.xbox360Controller == 1)
+        {
+            buttonPrompts[4].SetActive(true);
+            continueAllowed = true;
+            if (Input.GetKeyUp("joystick button 2"))
+            {
+                continuePressed = true;
+                continueAllowed = false;
+                NextSentence();
+            }
+            else
+            {
+                continuePressed = false;
+            }
+        }
+        else if (textDisplay.text == sentences[index] && SceneManagement.ps4Controller == 1)
+        {
+            buttonPrompts[5].SetActive(true);
+            continueAllowed = true;
+            if (Input.GetKeyUp("joystick button 0"))
+            {
+                continuePressed = true;
+                continueAllowed = false;
+                NextSentence();
+            }
+            else
+            {
+                continuePressed = false;
+            }
+        }
+        else if(textDisplay.text == sentences[index])
         {
             buttonPrompts[3].SetActive(true);
             continueAllowed = true;
             //Placing this 'if' statement here within the previous one will stop the button from being spammed.
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                spacePressed = true;
+                continuePressed = true;
                 continueAllowed = false;
                 NextSentence();
             }
             else
             {
-                spacePressed = false;
+                continuePressed = false;
             }
         }
-    }
-
-    public void Timer()
-    {
-        buttonPrompts[3].SetActive(true);
     }
 
     public void Hide()
