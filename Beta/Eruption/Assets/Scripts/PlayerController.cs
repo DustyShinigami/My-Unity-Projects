@@ -218,10 +218,10 @@ public class PlayerController : MonoBehaviour
                 {
                     anim.SetBool("Interact", controller.isGrounded);
                     chest.ChestOpen();
-                }
-                else if (Input.GetKeyDown(KeyCode.Return) && Chest.opened)
-                {
-                    anim.SetBool("Interact", false);
+                    if (Input.GetKeyDown(KeyCode.Return) && !Chest.allowOpen)
+                    {
+                        anim.SetBool("Interact", false);
+                    }
                 }
                 else if (SceneManagement.xbox360Controller == 1)
                 {
@@ -229,10 +229,10 @@ public class PlayerController : MonoBehaviour
                     {
                         anim.SetBool("Interact", controller.isGrounded);
                         chest.ChestOpen();
-                    }
-                    else if (Input.GetKeyDown("joystick button 2") && Chest.opened)
-                    {
-                        anim.SetBool("Interact", false);
+                        if (Input.GetKeyDown("joystick button 2") && !Chest.allowOpen)
+                        {
+                            anim.SetBool("Interact", false);
+                        }
                     }
                 }
                 else if (SceneManagement.ps4Controller == 1)
@@ -241,10 +241,10 @@ public class PlayerController : MonoBehaviour
                     {
                         anim.SetBool("Interact", controller.isGrounded);
                         chest.ChestOpen();
-                    }
-                    else if (Input.GetKeyDown("joystick button 0") && Chest.opened)
-                    {
-                        anim.SetBool("Interact", false);
+                        if (Input.GetKeyDown("joystick button 0") && !Chest.allowOpen)
+                        {
+                            anim.SetBool("Interact", false);
+                        }
                     }
                 }
             }

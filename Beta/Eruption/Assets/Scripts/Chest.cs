@@ -8,7 +8,6 @@ public class Chest : MonoBehaviour
     public GameObject controllerManager;
     public GameObject chest;
     public static bool allowOpen;
-    public static bool opened;
     public GameObject blueSecret;
 
     private Animator chestAnim;
@@ -22,14 +21,13 @@ public class Chest : MonoBehaviour
         theControllerManager = controllerManager.GetComponent<ControllerManager>();
         blueSecret.SetActive(false);
         allowOpen = false;
-        opened = false;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //allowOpen = true;
+            allowOpen = true;
             theControllerManager.ControllerDetection();
             if(allowOpen && ControllerManager.xbox360Controller == 1)
             {
@@ -59,7 +57,11 @@ public class Chest : MonoBehaviour
             chestAnim.SetTrigger("open");
             blueSecret.SetActive(true);
             pickupSecret.Secret();
-            opened = true;
+            if (blueSecret.activeSelf)
+            {
+                allowOpen = false;
+                GetComponent<Collider>().enabled = false;
+            }
         }
     }
 }
