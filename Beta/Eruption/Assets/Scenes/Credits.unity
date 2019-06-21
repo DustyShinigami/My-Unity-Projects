@@ -349,7 +349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 409}
+  m_AnchoredPosition: {x: 0, y: 453}
   m_SizeDelta: {x: 614.7, y: 63.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628320404
@@ -506,7 +506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 876, y: 15}
+  m_AnchoredPosition: {x: 866, y: 41}
   m_SizeDelta: {x: 50, y: 575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734165708
@@ -535,7 +535,10 @@ MonoBehaviour:
     Tim Smith and Molly Mills
 
 
-    Tim Smith and Ethan Alesbrook
+    Tim Smith
+
+
+    Ethan Alesbrook
 
 
     Tim Smith and Molly Mills
@@ -545,6 +548,9 @@ MonoBehaviour:
 
 
     Jack Brassington
+
+
+    Tim Smith
 
 
     James Perry
@@ -619,15 +625,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -751.24744, y: 0, z: 48.195137, w: -175.22058}
+  m_margin: {x: -751.24744, y: -47.36706, z: 48.195137, w: -259.8376}
   m_textInfo:
     textComponent: {fileID: 734165708}
-    characterCount: 180
+    characterCount: 188
     spriteCount: 0
-    spaceCount: 37
-    wordCount: 30
+    spaceCount: 40
+    wordCount: 31
     linkCount: 0
-    lineCount: 17
+    lineCount: 21
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1621,7 +1627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.000002, y: 15}
+  m_AnchoredPosition: {x: -57, y: 45}
   m_SizeDelta: {x: 50, y: 575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010750629
@@ -1650,7 +1656,10 @@ MonoBehaviour:
     Game and level design created by
 
 
-    3D Modelling by
+    3D Modelling and Animations by
+
+
+    Additional 3D Modelling by
 
 
     Pixel Art by
@@ -1660,6 +1669,9 @@ MonoBehaviour:
 
 
     Enemy Design by
+
+
+    Engine Work by
 
 
     Marketing by
@@ -1734,15 +1746,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -751.24744, y: 0, z: 48.195137, w: -175.22058}
+  m_margin: {x: -751.24744, y: -51.003517, z: 48.195137, w: -261.90433}
   m_textInfo:
     textComponent: {fileID: 2010750629}
-    characterCount: 172
+    characterCount: 231
     spriteCount: 0
-    spaceCount: 35
-    wordCount: 28
+    spaceCount: 46
+    wordCount: 37
     linkCount: 0
-    lineCount: 17
+    lineCount: 21
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

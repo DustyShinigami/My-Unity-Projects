@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 lookingUp = !lookingUp;
             }*/
         }
-        if (SceneManagement.insideHut)
+        if (SceneManagement.insideHut && canMove)
         {
             float moveHorizontalSnap = Input.GetAxis("Horizontal");
             float moveVerticalSnap = Input.GetAxis("Vertical");
