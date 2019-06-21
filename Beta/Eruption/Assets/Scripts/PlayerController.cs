@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
-    public Chest chest;
+    public ChestTrigger chest;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -212,14 +212,14 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            if (Chest.allowOpen)
+            if (ChestTrigger.allowOpen)
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     anim.SetBool("Interact", controller.isGrounded);
                     chest.ChestOpen();
                 }
-                else if (Input.GetKeyDown(KeyCode.Return) && !Chest.allowOpen)
+                else if (Input.GetKeyDown(KeyCode.Return) && !ChestTrigger.allowOpen)
                 {
                     anim.SetBool("Interact", false);
                 }
@@ -230,7 +230,7 @@ public class PlayerController : MonoBehaviour
                         anim.SetBool("Interact", controller.isGrounded);
                         chest.ChestOpen();
                     }
-                    else if (Input.GetKeyDown("joystick button 2") && !Chest.allowOpen)
+                    else if (Input.GetKeyDown("joystick button 2") && !ChestTrigger.allowOpen)
                     {
                         anim.SetBool("Interact", false);
                     }
@@ -242,7 +242,7 @@ public class PlayerController : MonoBehaviour
                         anim.SetBool("Interact", controller.isGrounded);
                         chest.ChestOpen();
                     }
-                    else if (Input.GetKeyDown("joystick button 0") && !Chest.allowOpen)
+                    else if (Input.GetKeyDown("joystick button 0") && !ChestTrigger.allowOpen)
                     {
                         anim.SetBool("Interact", false);
                     }

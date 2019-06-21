@@ -1,67 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
-    public GameObject controllerManager;
-    public GameObject chest;
-    public static bool allowOpen;
-    public GameObject blueSecret;
+    BoxCollider m_Collider;
+    float m_ScaleX, m_ScaleY, m_ScaleZ;
 
-    private Animator chestAnim;
-    private SecretsPickup pickupSecret;
-    private ControllerManager theControllerManager;
-
-    void Awake()
+    void Start()
     {
-        chestAnim = chest.GetComponent<Animator>();
-        pickupSecret = blueSecret.GetComponent<SecretsPickup>();
-        theControllerManager = controllerManager.GetComponent<ControllerManager>();
-        blueSecret.SetActive(false);
-        allowOpen = false;
+        m_Collider = GetComponent<BoxCollider>();
+        m_ScaleX = 2.424546f;
+        m_ScaleY = 1.28647f;
+        m_ScaleZ = 3.120195f;
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void ChestCollider()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            allowOpen = true;
-            theControllerManager.ControllerDetection();
-            if(allowOpen && ControllerManager.xbox360Controller == 1)
-            {
-                theControllerManager.Xbox360Prompts();
-            }
-            else if(allowOpen && ControllerManager.ps4Controller == 1)
-            {
-                theControllerManager.PS4Prompts();
-            }
-            else
-            {
-                theControllerManager.PCPrompts();
-            }
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        allowOpen = false;
-    }
-
-    public void ChestOpen()
-    {
-        if (allowOpen)
-        {
-            chestAnim.SetBool("canOpen", true);
-            chestAnim.SetTrigger("open");
-            blueSecret.SetActive(true);
-            pickupSecret.Secret();
-            if (blueSecret.activeSelf)
-            {
-                allowOpen = false;
-                GetComponent<Collider>().enabled = false;
-            }
-        }
+        m_Collider.size = new Vector3(m_ScaleX, 0.25f, m_ScaleZ);
     }
 }

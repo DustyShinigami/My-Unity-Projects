@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\ButtonPrompts.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
+    <Compile Include="Assets\Scripts\ChestTrigger.cs" />
     <Compile Include="Assets\Scripts\ControllerManager.cs" />
     <Compile Include="Assets\Scripts\Credits.cs" />
     <Compile Include="Assets\Scripts\DeathTrigger.cs" />
