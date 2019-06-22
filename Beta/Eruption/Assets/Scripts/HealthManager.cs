@@ -108,7 +108,6 @@ public class HealthManager : MonoBehaviour
     {
         if (!Checkpoint.checkpointActive)
         {
-            //Debug.Log("this");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
@@ -128,7 +127,6 @@ public class HealthManager : MonoBehaviour
 
         else if (Checkpoint.checkpointActive)
         {
-            //Debug.Log("that");
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
             Instantiate(deathEffect, respawnPoint, startPosition);
@@ -145,25 +143,6 @@ public class HealthManager : MonoBehaviour
             playerRenderer.enabled = false;
             flashCounter = flashLength;
         }
-        /*if (DeathTrigger.instaKill && Checkpoint.checkpointActive)
-        {
-            Debug.Log("it's doing no. 3");
-            isRespawning = true;
-            thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, respawnPoint, startPosition);
-            yield return new WaitForSeconds(respawnLength);
-            isFadetoBlack = true;
-            yield return new WaitForSeconds(waitForFade);
-            isFadefromBlack = true;
-            isRespawning = false;
-            thePlayer.gameObject.SetActive(true);
-            thePlayer.transform.position = respawnPoint;
-            thePlayer.transform.rotation = startPosition;
-            currentHealth = maxHealth;
-            invincibilityCounter = invincibilityLength;
-            playerRenderer.enabled = false;
-            flashCounter = flashLength;
-        }*/
     }
 
     public void HealPlayer(int healAmount)
