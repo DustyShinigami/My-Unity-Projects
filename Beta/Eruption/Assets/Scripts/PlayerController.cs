@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //To avoid any control or animation issues, each code block must be within this code block
         if (knockBackCounter <= 0 && canMove)
         {
             moveHorizontal.x = Input.GetAxis("Horizontal");
