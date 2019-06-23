@@ -110,7 +110,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, respawnPoint, startPosition);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -129,7 +129,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, respawnPoint, startPosition);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);

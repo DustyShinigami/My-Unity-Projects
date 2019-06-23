@@ -16,8 +16,8 @@ public class EnemyController : MonoBehaviour
     public float invincibilityLength;
     public Renderer enemyRenderer;
     public float flashLength;
-    public ParticleSystem enemyDamage;
     public HealthManager theHealthManager;
+    public GameObject deathEffect;
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -85,10 +85,8 @@ public class EnemyController : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHealth -= amount;
-            enemyDamage.Play();
             if (currentHealth <= 0)
             {
-                enemyDamage.Play();
                 StartCoroutine("EnemyDeath");
             }
             else
@@ -103,7 +101,7 @@ public class EnemyController : MonoBehaviour
     {
         transform.localScale += new Vector3(5f, 5f, 5f) * Time.deltaTime;
         enemyCollider.enabled = false;
-        Instantiate(theHealthManager.deathEffect, transform.position, transform.rotation);
+        Instantiate(deathEffect, transform.position, transform.rotation);
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

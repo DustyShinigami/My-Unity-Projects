@@ -8,7 +8,6 @@ public class Checkpoint : MonoBehaviour
     public GameObject litCandle;
     public GameObject fireParticles;
     public static bool checkpointActive;
-    //public HealthManager theHealthManager;
 
     void Start()
     {
@@ -23,28 +22,4 @@ public class Checkpoint : MonoBehaviour
         Instantiate(fireParticles, litCandle.transform.position, litCandle.transform.rotation);
         checkpointActive = true;
     }
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name == "Player")
-        {
-            unlitCandle.gameObject.SetActive(false);
-            litCandle.gameObject.SetActive(true);
-            Instantiate(fireParticles, litCandle.transform.position, litCandle.transform.rotation);
-            checkpointActive = true;
-        }
-        else
-        {
-            checkpointActive = false;
-        }
-    }*/
-
-    /*public void OnTriggerStay(Collider other)
-    {
-        if(other.tag.Equals("Player"))
-        {
-            theHealthManager.SetSpawnPoint(transform.position);
-            CheckpointOn();
-        }
-    }*/
 }

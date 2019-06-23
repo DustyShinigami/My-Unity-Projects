@@ -39,7 +39,6 @@ public class DeathTrigger : MonoBehaviour
                 Vector3 hitDirection = other.transform.position - transform.position;
                 hitDirection = hitDirection.normalized;
                 FindObjectOfType<HealthManager>().HurtPlayer(damnageToGive, hitDirection);
-                //theScreenFader.StartCoroutine("ScreenFade");
             }
         }
     }
