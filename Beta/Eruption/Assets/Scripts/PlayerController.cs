@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
                 headingLeft = !headingLeft;
             }
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * 20f);
+
             //Adds character rotation when changing direction vertically
             /*if(moveVertical.y < 0f && lookingUp || (moveVertical.y > 0f && !lookingUp))
             {
@@ -94,75 +95,76 @@ public class PlayerController : MonoBehaviour
                 if (moveVertical.y < 0f) targetrot = Quaternion.Euler(0, 180, 0);
                 lookingUp = !lookingUp;
             }*/
-        }
-        else if (SceneManagement.insideHut && canMove)
-        {
-            float moveHorizontalSnap = Input.GetAxis("Horizontal");
-            float moveVerticalSnap = Input.GetAxis("Vertical");
-            //Adds character rotation when changing direction horizontally, but snaps instead of fully rotating
 
-            if (moveHorizontalSnap > 0)
+            if (SceneManagement.insideHut && canMove)
             {
-                transform.eulerAngles = new Vector2(0, 90);
-            }
-            else if (moveHorizontalSnap < 0)
-            {
-                transform.eulerAngles = new Vector2(0, -90);
-            }
-            //To possibly prevent diagonal movement with some control setups, try adding 'else if'
-            //Adds character rotation when changing direction vertically, but snaps instead of fully rotating
+                float moveHorizontalSnap = Input.GetAxis("Horizontal");
+                float moveVerticalSnap = Input.GetAxis("Vertical");
 
-            else if (moveVerticalSnap > 0)
-            {
-                transform.eulerAngles = new Vector2(0, 0);
+                //Adds character rotation when changing direction horizontally, but snaps instead of fully rotating
+                if (moveHorizontalSnap > 0)
+                {
+                    transform.eulerAngles = new Vector2(0, 90);
+                }
+                else if (moveHorizontalSnap < 0)
+                {
+                    transform.eulerAngles = new Vector2(0, -90);
+                }
+
+                //To possibly prevent diagonal movement with some control setups, try adding 'else if'
+                //Adds character rotation when changing direction vertically, but snaps instead of fully rotating
+                else if (moveVerticalSnap > 0)
+                {
+                    transform.eulerAngles = new Vector2(0, 0);
+                }
+
+                //Use this to make the character face towards the camera.
+                /*else if (moveVertical < 0)
+                {
+                    transform.eulerAngles = new Vector3(0, 180);
+                }*/
             }
-            //Use this to make the character face towards the camera.
-            /*else if (moveVertical < 0)
+            if (controller.isGrounded)
             {
-                transform.eulerAngles = new Vector3(0, 180);
-            }*/
-        }
-        if (controller.isGrounded)
-        {
-            if (allowJump)
-            {
-                moveDirection.y = -1f;
-                //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
-                if (Input.GetKeyDown(KeyCode.KeypadPlus))
+                if (allowJump)
                 {
-                    moveDirection.y = jumpForce;
-                    jumped = true;
-                }
-                else if (!Input.GetKeyDown(KeyCode.KeypadPlus))
-                {
-                    jumped = false;
-                }
-                if (SceneManagement.xbox360Controller == 1)
-                {
-                    if (Input.GetKeyDown("joystick button 0"))
+                    moveDirection.y = -1f;
+                    //GetKeyDown will require the player to press the button each time they want to jump. GetKey will allow the player to spam the jump button if they keep pressing it down.
+                    if (Input.GetKeyDown(KeyCode.KeypadPlus))
                     {
                         moveDirection.y = jumpForce;
                         jumped = true;
                     }
-                    else if (!Input.GetKeyDown("joystick button 0"))
+                    else if (!Input.GetKeyDown(KeyCode.KeypadPlus))
                     {
                         jumped = false;
                     }
-                }
-                else if (SceneManagement.ps4Controller == 1)
-                {
-                    if (Input.GetKeyDown("joystick button 1"))
+                    if (SceneManagement.xbox360Controller == 1)
                     {
-                        moveDirection.y = jumpForce;
-                        jumped = true;
+                        if (Input.GetKeyDown("joystick button 0"))
+                        {
+                            moveDirection.y = jumpForce;
+                            jumped = true;
+                        }
+                        else if (!Input.GetKeyDown("joystick button 0"))
+                        {
+                            jumped = false;
+                        }
                     }
-                    else if (!Input.GetKeyDown("joystick button 1"))
+                    else if (SceneManagement.ps4Controller == 1)
                     {
-                        jumped = false;
+                        if (Input.GetKeyDown("joystick button 1"))
+                        {
+                            moveDirection.y = jumpForce;
+                            jumped = true;
+                        }
+                        else if (!Input.GetKeyDown("joystick button 1"))
+                        {
+                            jumped = false;
+                        }
                     }
                 }
             }
-
             if (allowCombat)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -184,16 +186,9 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-
             if (allowInteract)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    anim.SetBool("Interact", controller.isGrounded);
-                    pickupWeapon.ObjectActivation();
-                    allowInteract = false;
-                }
-                else if (SceneManagement.xbox360Controller == 1)
+                if (SceneManagement.xbox360Controller == 1)
                 {
                     if (Input.GetKeyDown("joystick button 2"))
                     {
@@ -205,6 +200,15 @@ public class PlayerController : MonoBehaviour
                 else if (SceneManagement.ps4Controller == 1)
                 {
                     if (Input.GetKeyDown("joystick button 0"))
+                    {
+                        anim.SetBool("Interact", controller.isGrounded);
+                        pickupWeapon.ObjectActivation();
+                        allowInteract = false;
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
                     {
                         anim.SetBool("Interact", controller.isGrounded);
                         pickupWeapon.ObjectActivation();
@@ -263,17 +267,6 @@ public class PlayerController : MonoBehaviour
             : Mathf.Abs(Input.GetAxis("Horizontal")));
 
         //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
-
-        /*if (interact)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                anim.SetBool("Interact", controller.isGrounded);
-                FindObjectOfType<Pickup>().ObjectActivation();
-                interact = false;
-                allowInteract = false;
-            }
-        }*/
     }
 
     public void Knockback(Vector3 direction)
