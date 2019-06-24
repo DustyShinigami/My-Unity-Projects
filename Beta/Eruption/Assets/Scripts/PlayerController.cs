@@ -174,14 +174,14 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (SceneManagement.xbox360Controller == 1)
                 {
-                    if (Input.GetKey("joystick button 1"))
+                    if (Input.GetKeyDown("joystick button 1"))
                     {
                         anim.SetTrigger("Attack");
                     }
                 }
                 else if (SceneManagement.ps4Controller == 1)
                 {
-                    if (Input.GetKey("joystick button 2"))
+                    if (Input.GetKeyDown("joystick button 2"))
                     {
                         anim.SetTrigger("Attack");
                     }

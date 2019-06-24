@@ -3226,7 +3226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952595618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.484423, y: 1.8607368, z: -2.7479134}
+  m_LocalPosition: {x: -11.489262, y: 1.8607368, z: -2.7479134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4384,6 +4384,12 @@ PrefabInstance:
       propertyPath: startPoint
       value: 
       objectReference: {fileID: 5377603155469210716}
+    - target: {fileID: 3147218104575049292, guid: 96af34636b5ee2143ac2103e38ac3561,
+        type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 6379052989264372001, guid: ee1f76637371c1c4e8a95b8f889e8491,
+        type: 3}
     - target: {fileID: 3147218104575049293, guid: 96af34636b5ee2143ac2103e38ac3561,
         type: 3}
       propertyPath: m_IsTrigger
