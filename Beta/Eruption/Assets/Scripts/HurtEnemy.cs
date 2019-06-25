@@ -13,10 +13,11 @@ public class HurtEnemy : MonoBehaviour
     public void FixedUpdate()
     {
         projectileEffect.Play();
+        Instantiate(rayProjectile, transform.position, transform.rotation);
         RaycastHit hit;
         if(Physics.Raycast(rayProjectile.transform.position, rayProjectile.transform.forward, out hit, range))
         {
-            //Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.name);
             EnemyController target = hit.transform.GetComponent<EnemyController>();
             if(target != null)
             {
