@@ -8,14 +8,8 @@ public class HurtEnemy : MonoBehaviour
     public float range;
     public ParticleSystem projectileEffect;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        print("hit " + other.name + "!");
-        Destroy(gameObject);
-    }
-
     //Physics such as Raycasts are better within the FixedUpdate function as it runs in tandem with the physics
-    /*public void FixedUpdate()
+    public void FixedUpdate()
     {
         projectileEffect.Play();
         RaycastHit hit;
@@ -28,5 +22,5 @@ public class HurtEnemy : MonoBehaviour
                 target.Damage(damnageToGive);
             }
         }
-    }*/
+    }
 }

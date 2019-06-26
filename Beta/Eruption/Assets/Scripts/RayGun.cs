@@ -5,6 +5,19 @@ using UnityEngine;
 public class RayGun : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public Transform spawnPoint;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject projectileObject = Instantiate(projectilePrefab);
+            projectileObject.transform.position = spawnPoint.transform.position + spawnPoint.transform.forward;
+            projectileObject.transform.forward = spawnPoint.transform.forward;
+        }
+    }
+
+    /*public GameObject projectilePrefab;
     public Transform projectileSpawn;
     public float projectileSpeed = 30f;
     public float lifeTime = 3f;
@@ -18,24 +31,27 @@ public class RayGun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Fire();
+            Instantiate(projectilePrefab, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+            projectilePrefab.GetComponent<Rigidbody>().AddForce(projectileSpawn.forward * projectileSpeed, ForceMode.Impulse);
+            //Fire();
         }
     }
 
     private void Fire()
     {
-        GameObject projectile = Instantiate(projectilePrefab);
-        Physics.IgnoreCollision(projectile.GetComponent<Collider>(), projectileSpawn.parent.GetComponent<Collider>());
-        projectile.transform.position = projectileSpawn.position;
-        Vector3 rotation = projectile.transform.rotation.eulerAngles;
-        projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-        projectile.GetComponent<Rigidbody>().AddForce(projectileSpawn.forward * projectileSpeed, ForceMode.Impulse);
-        StartCoroutine("DestroyProjectile");
+
+        //Instantiate(projectilePrefab, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+        //Physics.IgnoreCollision(projectilePrefab.GetComponent<Collider>(), projectileSpawn.parent.GetComponent<Collider>());
+        //projectilePrefab.transform.position = projectileSpawn.position;
+        //Vector3 rotation = projectilePrefab.transform.rotation.eulerAngles;
+        //projectilePrefab.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        //projectilePrefab.GetComponent<Rigidbody>().AddForce(projectileSpawn.forward * projectileSpeed, ForceMode.Impulse);
+        //StartCoroutine("DestroyProjectile");
     }
 
     private IEnumerator DestroyProjectile (GameObject projectile, float delay)
     {
         yield return new WaitForSeconds(delay);
         Destroy(projectile);
-    }
+    }*/
 }

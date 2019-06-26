@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Transform startPoint;
+    public float speed;
+   
+    void Update()
+    {
+        transform.position += transform.right * speed * Time.deltaTime;
+    }
+
+    /*public Transform startPoint;
     //public Rigidbody rb;
     public Rigidbody projectile;
     public GameObject projectileObject;
@@ -27,13 +34,13 @@ public class Projectile : MonoBehaviour
         Instantiate(projectile, transform.position, transform.rotation);
     }
 
-    /*public void Fire()
+    public void Fire()
     {
         rb.transform.position = points[0].transform.position;
         rb.velocity = transform.forward * projectileSpeed;
         transform.Translate(transform.right * projectileSpeed * Time.smoothDeltaTime);
         if (rb.transform.position == points[1].transform.position)
-    }*/
+    }
 
     void Update()
     {
@@ -46,6 +53,6 @@ public class Projectile : MonoBehaviour
             //Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
             //instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, projectileSpeed));
         }
-    }
+    }*/
 }
 
