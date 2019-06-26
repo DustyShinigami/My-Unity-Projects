@@ -7,7 +7,7 @@ AvatarMask:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Legs
-  m_Mask: 01000000000000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
+  m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
@@ -60,12 +60,12 @@ AvatarMask:
   - m_Path: Erif_Rig/C_Root/Torso/Shoulder_R/Arm_R/Forearm_R
     m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Torso/Shoulder_R/Arm_R/Forearm_R/Hand_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Eyebrow_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Eyebrow_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Eyelid_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Eyelid_R
-    m_Weight: 1
+    m_Weight: 0
