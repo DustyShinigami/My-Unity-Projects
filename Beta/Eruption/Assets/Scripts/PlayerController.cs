@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public static bool canMove;
     public ChestTrigger chest;
+    //public GameObject projectilePrefab;
+    //public GameObject spawnPoint;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -171,6 +173,8 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     anim.SetTrigger("Attack");
+                    //GameObject projectileObject = Instantiate(projectilePrefab);
+                    //projectilePrefab.transform.position = spawnPoint.transform.position + spawnPoint.transform.forward;
                 }
                 else if (SceneManagement.xbox360Controller == 1)
                 {
