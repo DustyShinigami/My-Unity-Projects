@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed;
+    /*public float speed;
    
     void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
     }
 
-    /*public Transform startPoint;
+    public Transform startPoint;
     //public Rigidbody rb;
     public Rigidbody projectile;
     public GameObject projectileObject;

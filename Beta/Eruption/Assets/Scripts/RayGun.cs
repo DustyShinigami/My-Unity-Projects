@@ -4,20 +4,41 @@ using UnityEngine;
 
 public class RayGun : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    /*public GameObject projectilePrefab;
     public Transform spawnPoint;
+    public float projectileSpeed;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject projectileObject = Instantiate(projectilePrefab);
-            projectileObject.transform.position = spawnPoint.transform.position + spawnPoint.transform.forward;
-            projectileObject.transform.forward = spawnPoint.transform.forward;
+            //Physics.IgnoreCollision(projectilePrefab.GetComponent<Collider>(), spawnPoint.parent.GetComponent<Collider>());
+            Fire();
         }
     }
 
-    /*public GameObject projectilePrefab;
+    void Fire()
+    {
+        Instantiate(projectilePrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        //Physics.IgnoreCollision(projectilePrefab.GetComponent<Collider>(), spawnPoint.parent.GetComponent<Collider>());
+        projectilePrefab.transform.position = spawnPoint.position;
+        Vector3 rotation = projectilePrefab.transform.rotation.eulerAngles;
+        projectilePrefab.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        projectilePrefab.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * projectileSpeed, ForceMode.Impulse);
+        StartCoroutine("DestroyProjectile");
+    }
+
+    public IEnumerator DestroyProjectile()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(projectilePrefab);
+    }
+        //GameObject projectileObject = Instantiate(projectilePrefab);
+        //projectileObject.transform.position = spawnPoint.transform.position + spawnPoint.transform.forward;
+        //projectileObject.transform.forward = spawnPoint.transform.forward;
+        //projectilePrefab.transform.position += transform.right * speed * Time.deltaTime;
+
+    public GameObject projectilePrefab;
     public Transform projectileSpawn;
     public float projectileSpeed = 30f;
     public float lifeTime = 3f;
