@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3666663884432985326}
   - component: {fileID: 7052093905141641239}
   - component: {fileID: 2392429683023698850}
+  - component: {fileID: 2199225526945278382}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -101,3 +102,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2199225526945278382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8782797760877823179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aec19a6f8b9da348aa253c58ba8ea68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damnageToGive: 10
+  range: 5
+  projectileEffect: {fileID: 360610686116983045, guid: dd1cc693a567b3041ab021c7845db452,
+    type: 3}
+  muzzle: {fileID: 2897636833224293278, guid: d5157f758f2fab54d92dd2a65eab5cfd, type: 3}
+  rayGun: {fileID: 8782797760877823179}
+  player: {fileID: 7315807368347333830, guid: a6b6b61679bd5314f8931a50702be38a, type: 3}
