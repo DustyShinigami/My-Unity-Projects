@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
+    public int damageToGive;
 
     private LevelManager theLevelManager;
 
@@ -14,6 +15,7 @@ public class HurtPlayer : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        theLevelManager.Respawn();
+        theLevelManager.HurtPlayer(damageToGive);
+        //theLevelManager.Respawn();
     }
 }

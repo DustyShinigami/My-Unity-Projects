@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -973,9 +981,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -1844,6 +1853,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1099456198957160529, guid: bf9fb1b7d0597b444978f714f7d487d6,
+        type: 3}
+      propertyPath: damageToGive
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9fb1b7d0597b444978f714f7d487d6, type: 3}
 --- !u!1001 &2870250560538196449
@@ -1982,6 +1996,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3854868731367493201, guid: 622c76c760b58f342a7d98494bd8fcae,
+        type: 3}
+      propertyPath: damageToGive
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622c76c760b58f342a7d98494bd8fcae, type: 3}
 --- !u!1001 &5556940986813775672
@@ -2012,6 +2031,44 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8568607404179763068, guid: 5e01ebea65a3b0041bcd9730071ef685,
         type: 3}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heart1
+      value: 
+      objectReference: {fileID: 1173827108}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heart2
+      value: 
+      objectReference: {fileID: 342829055}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heart3
+      value: 
+      objectReference: {fileID: 1289142461}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heartFull
+      value: 
+      objectReference: {fileID: 21300714, guid: 9f1a9a3316cfb8e409d32037558e92a7,
+        type: 3}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heartHalf
+      value: 
+      objectReference: {fileID: 21300716, guid: 9f1a9a3316cfb8e409d32037558e92a7,
+        type: 3}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: heartEmpty
+      value: 
+      objectReference: {fileID: 21300718, guid: 9f1a9a3316cfb8e409d32037558e92a7,
+        type: 3}
+    - target: {fileID: 5556940987620019425, guid: cace91220aac57f459c3c0df6c1674ae,
+        type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5556940987620019426, guid: cace91220aac57f459c3c0df6c1674ae,
         type: 3}
       propertyPath: m_LocalPosition.x
