@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(waitToSpawn);
         healthCount = maxHealth;
         respawning = false;
+        UpdateHeartMetre();
         thePlayer.transform.position = thePlayer.respawnPosition;
         thePlayer.gameObject.SetActive(true);
     }
@@ -63,5 +64,54 @@ public class LevelManager : MonoBehaviour {
     public void HurtPlayer(int damageToTake)
     {
         healthCount -= damageToTake;
+        UpdateHeartMetre();
+    }
+
+    public void UpdateHeartMetre()
+    {
+        switch (healthCount)
+        {
+            case 6:
+                heart1.sprite = heartFull;
+                heart2.sprite = heartFull;
+                heart3.sprite = heartFull;
+                return;
+
+            case 5:
+                heart1.sprite = heartFull;
+                heart2.sprite = heartFull;
+                heart3.sprite = heartHalf;
+                return;
+            case 4:
+                heart1.sprite = heartFull;
+                heart2.sprite = heartFull;
+                heart3.sprite = heartEmpty;
+                return;
+            case 3:
+                heart1.sprite = heartFull;
+                heart2.sprite = heartHalf;
+                heart3.sprite = heartEmpty;
+                return;
+            case 2:
+                heart1.sprite = heartFull;
+                heart2.sprite = heartEmpty;
+                heart3.sprite = heartEmpty;
+                return;
+            case 1:
+                heart1.sprite = heartHalf;
+                heart2.sprite = heartEmpty;
+                heart3.sprite = heartEmpty;
+                return;
+            case 0:
+                heart1.sprite = heartEmpty;
+                heart2.sprite = heartEmpty;
+                heart3.sprite = heartEmpty;
+                return;
+            default:
+                heart1.sprite = heartEmpty;
+                heart2.sprite = heartEmpty;
+                heart3.sprite = heartEmpty;
+                return;
+        }
     }
 }

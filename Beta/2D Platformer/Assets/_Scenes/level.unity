@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 1099456198957160529, guid: bf9fb1b7d0597b444978f714f7d487d6,
         type: 3}
       propertyPath: damageToGive
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9fb1b7d0597b444978f714f7d487d6, type: 3}
@@ -1999,7 +1999,7 @@ PrefabInstance:
     - target: {fileID: 3854868731367493201, guid: 622c76c760b58f342a7d98494bd8fcae,
         type: 3}
       propertyPath: damageToGive
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622c76c760b58f342a7d98494bd8fcae, type: 3}
