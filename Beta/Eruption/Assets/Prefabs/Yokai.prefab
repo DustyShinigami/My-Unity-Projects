@@ -1527,9 +1527,9 @@ MonoBehaviour:
   invincibilityLength: 2
   enemyRenderer: {fileID: 6055544033139615684}
   flashLength: 0.1
-  enemyDamage: {fileID: 0}
   theHealthManager: {fileID: 0}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6379052989264372001, guid: ee1f76637371c1c4e8a95b8f889e8491,
+    type: 3}
 --- !u!114 &3147218104575049290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24fdab5001d80546be2357218f77aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damnageToGive: 10
+  damnageToGive: 5
 --- !u!1 &6499032964577357937
 GameObject:
   m_ObjectHideFlags: 0

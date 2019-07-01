@@ -17,6 +17,14 @@ public class HealthManager : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
+    public Image flame1;
+    public Image flame2;
+    public Image flame3;
+    public Sprite fullFlame;
+    //public Sprite threeQuarterFlame;
+    public Sprite halfFlame;
+    //public Sprite quarterFlame;
+    public Sprite EmptyFlame;
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -29,6 +37,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this);
         thePlayer = FindObjectOfType<PlayerController>();
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
@@ -79,6 +88,7 @@ public class HealthManager : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHealth -= damage;
+            FlameMetre();
             if (currentHealth <= 0)
             {
                 Respawn();
@@ -118,6 +128,7 @@ public class HealthManager : MonoBehaviour
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             currentHealth = maxHealth;
+            FlameMetre();
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
@@ -139,20 +150,69 @@ public class HealthManager : MonoBehaviour
             thePlayer.transform.position = respawnPoint;
             thePlayer.transform.rotation = startPosition;
             currentHealth = maxHealth;
+            FlameMetre();
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
         }
     }
 
-    public void HealPlayer(int healAmount)
+    public void FlameMetre()
+    {
+        switch (currentHealth)
+        {
+            case 30:
+                flame1.sprite = fullFlame;
+                flame2.sprite = fullFlame;
+                flame3.sprite = fullFlame;
+                return;
+            case 25:
+                flame1.sprite = fullFlame;
+                flame2.sprite = fullFlame;
+                flame3.sprite = halfFlame;
+                return;
+            case 20:
+                flame1.sprite = fullFlame;
+                flame2.sprite = fullFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+            case 15:
+                flame1.sprite = fullFlame;
+                flame2.sprite = halfFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+            case 10:
+                flame1.sprite = fullFlame;
+                flame2.sprite = EmptyFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+            case 5:
+                flame1.sprite = halfFlame;
+                flame2.sprite = EmptyFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+            case 0:
+                flame1.sprite = EmptyFlame;
+                flame2.sprite = EmptyFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+
+            default:
+                flame1.sprite = EmptyFlame;
+                flame2.sprite = EmptyFlame;
+                flame3.sprite = EmptyFlame;
+                return;
+        }
+    }
+
+    /*public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;
         if(currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
-    }
+    }*/
 
     public void SetSpawnPoint(Vector3 newPosition)
     {

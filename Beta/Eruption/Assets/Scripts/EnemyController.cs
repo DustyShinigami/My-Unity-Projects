@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
     public float invincibilityLength;
     public Renderer enemyRenderer;
     public float flashLength;
-    public HealthManager theHealthManager;
     public GameObject deathEffect;
 
     private float invincibilityCounter;

@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     public float gravityScale;
     public float knockBackForce;
     public float knockBackTime;
-    public float invincibilityLength;
-    public Renderer playerRenderer;
     //public Material textureChange;
     //public Material textureDefault;
     public bool allowCombat;
@@ -27,7 +25,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
     private float knockBackCounter;
-    private float invincibilityCounter;
     private CharacterController controller;
     private Quaternion targetRot;
     private bool headingLeft = false;
