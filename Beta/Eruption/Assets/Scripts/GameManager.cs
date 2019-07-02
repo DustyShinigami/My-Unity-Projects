@@ -6,7 +6,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
     public static int currentEmbers;
     public static int currentSecrets;
     public TextMeshProUGUI emberText;

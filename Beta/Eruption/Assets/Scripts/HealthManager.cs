@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 {
     //The counters will count down and will keep counting down based on the length variables
     public int maxHealth;
-    public int currentHealth;
+    public static int currentHealth;
     public float invincibilityLength;
     public Renderer playerRenderer;
     public float flashLength;

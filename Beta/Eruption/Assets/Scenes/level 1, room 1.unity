@@ -2299,7 +2299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  currentHealth: 0
   invincibilityLength: 2
   playerRenderer: {fileID: 1300247019837737251}
   flashLength: 0.1

@@ -12,21 +12,21 @@ AvatarMask:
   - m_Path: 
     m_Weight: 1
   - m_Path: Body
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Arm_Pole_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/Arm_Pole_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root/C_Hand_L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root/C_Hand_R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Hips
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Hips/Thigh_L
     m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Hips/Thigh_L/Knee_L
@@ -44,7 +44,7 @@ AvatarMask:
   - m_Path: Erif_Rig/C_Root/Hips/Thigh_R/Knee_R/Foot_R/Toe_R
     m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Torso
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Erif_Rig/C_Root/Torso/Shoulder_L
     m_Weight: 1
   - m_Path: Erif_Rig/C_Root/Torso/Shoulder_L/Arm_L
