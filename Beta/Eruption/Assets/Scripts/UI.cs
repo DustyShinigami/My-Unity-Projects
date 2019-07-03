@@ -24,6 +24,6 @@ public class UI : MonoBehaviour
     public static void Init()
     {
         Debug.Log("UI script called");
-        if (_instance = null) SceneManager.LoadScene("UI", LoadSceneMode.Additive);
+        if (_instance = null)SceneManager.LoadScene("UI", LoadSceneMode.Additive);
     }
 }

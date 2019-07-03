@@ -25,6 +25,7 @@ public class HealthManager : MonoBehaviour
     public Sprite halfFlame;
     //public Sprite quarterFlame;
     public Sprite EmptyFlame;
+    public GameObject playerPrefab;
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -37,7 +38,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        thePlayer = FindObjectOfType<PlayerController>();
+        thePlayer = playerPrefab.GetComponent<PlayerController>();
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
         startPosition = thePlayer.transform.rotation;

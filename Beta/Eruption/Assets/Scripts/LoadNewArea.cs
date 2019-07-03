@@ -35,7 +35,6 @@ public class LoadNewArea : MonoBehaviour
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
-            //UI.MakeSingleton();
             thePlayer.gameObject.SetActive(false);
             theScreenFader.StartCoroutine("ScreenFade");
             yield return new WaitForSeconds(1f);
@@ -43,7 +42,6 @@ public class LoadNewArea : MonoBehaviour
         }
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
         {
-            //UI.MakeSingleton();
             thePlayer.gameObject.SetActive(false);
             theScreenFader.StartCoroutine("ScreenFade");
             yield return new WaitForSeconds(1f);
