@@ -13,16 +13,17 @@ public class UI : MonoBehaviour
         }
     }
 
-    private static UI _instance;
-
-    public static void Init()
-    {
-        if (_instance = null) SceneManager.LoadScene("level 1, room 1", LoadSceneMode.Additive);
-    }
+    public static UI _instance;
 
     void Awake()
     {
         _instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public static void Init()
+    {
+        Debug.Log("UI script called");
+        if (_instance = null) SceneManager.LoadScene("UI", LoadSceneMode.Additive);
     }
 }

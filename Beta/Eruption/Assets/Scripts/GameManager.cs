@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         currentEmbers = 0;
         currentSecrets = 0;
+        //UI.MakeSingleton();
     }
 
     void Update()

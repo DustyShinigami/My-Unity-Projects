@@ -37,7 +37,6 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this);
         thePlayer = FindObjectOfType<PlayerController>();
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
