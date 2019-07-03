@@ -13,9 +13,11 @@ public class HurtPlayer : MonoBehaviour
         theLevelManager = FindObjectOfType<LevelManager>();
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        theLevelManager.HurtPlayer(damageToGive);
-        //theLevelManager.Respawn();
+        if(other.tag == "Player")
+        {
+            theLevelManager.HurtPlayer(damageToGive);
+        }
     }
 }
