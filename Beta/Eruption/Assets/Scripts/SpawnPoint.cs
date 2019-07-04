@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    public HealthManager theHealthManager;
+    private HealthManager theHealthManager;
+
+    void Start()
+    {
+        theHealthManager = FindObjectOfType<HealthManager>();
+    }
 
     public void OnTriggerStay(Collider other)
     {
