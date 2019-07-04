@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   invincibilityLength: 2
-  playerRenderer: {fileID: 1946027483}
+  playerRenderer: {fileID: 0}
   flashLength: 0.1
   respawnLength: 1
   deathEffect: {fileID: 6379052989264372001, guid: 9101f17b5a28f3e45b185343ac37381e,
@@ -4858,7 +4858,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505131154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -23.7}
   m_LocalScale: {x: 0.35573, y: 0.35573, z: 0.35573}
   m_Children:
   - {fileID: 519518157}
@@ -6173,12 +6173,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e777342bc3952644865beb7eac20030, type: 3}
---- !u!137 &1946027483 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1300247020593784510, guid: a6b6b61679bd5314f8931a50702be38a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1300247019837737246}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1967805851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2897636833224293278, guid: d5157f758f2fab54d92dd2a65eab5cfd,
@@ -6391,6 +6385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7315807368347333830, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1300247021538920723, guid: a6b6b61679bd5314f8931a50702be38a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6445,6 +6444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300247020593784510, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
         type: 3}

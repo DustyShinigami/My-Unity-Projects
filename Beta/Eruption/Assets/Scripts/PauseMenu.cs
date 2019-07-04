@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GamePaused = false;
         theScreenFader.blackScreen.enabled = true;
+        PlayerController.canMove = true;
     }
 
     public void Restart()
@@ -53,6 +54,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        PlayerController.canMove = false;
         GamePaused = true;
         theScreenFader.blackScreen.enabled = false;
     }
