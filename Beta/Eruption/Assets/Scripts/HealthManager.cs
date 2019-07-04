@@ -40,8 +40,8 @@ public class HealthManager : MonoBehaviour
     {
         thePlayer = playerPrefab.GetComponent<PlayerController>();
         currentHealth = maxHealth;
-        respawnPoint = thePlayer.transform.position;
-        startPosition = thePlayer.transform.rotation;
+        respawnPoint = playerPrefab.transform.position;
+        startPosition = playerPrefab.transform.rotation;
     }
 
     void Update()
