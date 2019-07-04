@@ -10,8 +10,8 @@ public class ScreenFader : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
 
-    private bool isFadetoBlack;
-    private bool isFadefromBlack;
+    private bool isFadeToBlack;
+    private bool isFadeFromBlack;
 
     void Start()
     {
@@ -22,34 +22,34 @@ public class ScreenFader : MonoBehaviour
     {
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 1"))
         {
-            isFadetoBlack = false;
+            isFadeToBlack = false;
         }
         else
         {
             yield return new WaitForSeconds(fadeSpeed);
-            isFadetoBlack = true;
+            isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
-            isFadefromBlack = true;
+            isFadeFromBlack = true;
             yield return new WaitForSeconds(2f);
         }
     }
 
     void Update()
     {
-        if (isFadetoBlack)
+        if (isFadeToBlack)
         {
             blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
             if (blackScreen.color.a == 1f)
             {
-                isFadetoBlack = false;
+                isFadeToBlack = false;
             }
         }
-        if (isFadefromBlack)
+        if (isFadeFromBlack)
         {
             blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
             if (blackScreen.color.a == 0f)
             {
-                isFadefromBlack = false;
+                isFadeFromBlack = false;
             }
         }
     }
