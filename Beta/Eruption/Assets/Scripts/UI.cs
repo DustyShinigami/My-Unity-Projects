@@ -27,10 +27,4 @@ public class UI : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
-    /*public static void Init()
-    {
-        Debug.Log("UI script called");
-        if (_instance = null)SceneManager.LoadScene("UI", LoadSceneMode.Additive);
-    }*/
 }

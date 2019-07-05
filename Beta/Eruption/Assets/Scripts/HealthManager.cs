@@ -26,6 +26,7 @@ public class HealthManager : MonoBehaviour
     //public Sprite quarterFlame;
     public Sprite EmptyFlame;
     public GameObject playerPrefab;
+    //public GameObject rendererReference;
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -38,13 +39,13 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
-        GameObject renderObject = GameObject.FindWithTag("Player");
+        /*GameObject renderObject = GameObject.FindWithTag("Player");
         if(renderObject != null)
         {
             playerRenderer = renderObject.GetComponent<Renderer>();
-        }
+        }*/
         thePlayer = playerPrefab.GetComponent<PlayerController>();
-        //DontDestroyOnLoad(playerPrefab.gameObject);
+        //playerRenderer = rendererReference.GetComponent<Renderer>();
         currentHealth = maxHealth;
         respawnPoint = playerPrefab.transform.position;
         startPosition = playerPrefab.transform.rotation;
@@ -60,14 +61,14 @@ public class HealthManager : MonoBehaviour
             if(flashCounter <= 0)
             //The Flash Counter is currently set at 0.1 and will be within the 0 region as it counts down. During this period, the playerRenderer will alternate between on and off
             {
-                thePlayer.enabled = !thePlayer.enabled;
+                playerRenderer.enabled = !playerRenderer.enabled;
                 //The Flash Counter will keep counting down and reloop depending on the Flash Length time
                 flashCounter = flashLength;
             }
             //This makes sure after the flashing and invincibility has worn off that the player renderer is always turned back on so you can see the player
             if(invincibilityCounter <= 0)
             {
-                thePlayer.enabled = true;
+                playerRenderer.enabled = true;
             }
         }
         if (isFadetoBlack)
@@ -103,7 +104,7 @@ public class HealthManager : MonoBehaviour
             {
                 thePlayer.Knockback(direction);
                 invincibilityCounter = invincibilityLength;
-                thePlayer.enabled = false;
+                playerRenderer.enabled = false;
                 flashCounter = flashLength;
             }
         }
@@ -136,7 +137,7 @@ public class HealthManager : MonoBehaviour
             currentHealth = maxHealth;
             FlameMetre();
             invincibilityCounter = invincibilityLength;
-            thePlayer.enabled = false;
+            playerRenderer.enabled = false;
             flashCounter = flashLength;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             GameManager.currentEmbers = 0;
@@ -158,7 +159,7 @@ public class HealthManager : MonoBehaviour
             currentHealth = maxHealth;
             FlameMetre();
             invincibilityCounter = invincibilityLength;
-            thePlayer.enabled = false;
+            playerRenderer.enabled = false;
             flashCounter = flashLength;
         }
     }
