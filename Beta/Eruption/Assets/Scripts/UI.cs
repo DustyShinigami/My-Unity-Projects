@@ -17,13 +17,20 @@ public class UI : MonoBehaviour
 
     void Awake()
     {
-        _instance = this;
-        DontDestroyOnLoad(gameObject);
+        if(_instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    public static void Init()
+    /*public static void Init()
     {
         Debug.Log("UI script called");
         if (_instance = null)SceneManager.LoadScene("UI", LoadSceneMode.Additive);
-    }
+    }*/
 }

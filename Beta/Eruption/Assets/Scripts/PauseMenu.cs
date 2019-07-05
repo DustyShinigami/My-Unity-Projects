@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
-        theScreenFader.blackScreen.enabled = true;
+        //theScreenFader.blackScreen.enabled = true;
         PlayerController.canMove = true;
     }
 
@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("start_area");
         pauseMenuUI.SetActive(false);
+        ScreenFader.black = true;
         theScreenFader.StartCoroutine("ScreenFade");
         Time.timeScale = 1f;
     }
@@ -56,7 +57,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         PlayerController.canMove = false;
         GamePaused = true;
-        theScreenFader.blackScreen.enabled = false;
+        //theScreenFader.blackScreen.enabled = false;
     }
 
     public void QuitGame()

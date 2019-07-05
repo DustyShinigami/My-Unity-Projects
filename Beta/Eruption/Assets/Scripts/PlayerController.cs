@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public static bool canMove;
     public ChestTrigger chest;
-    //public GameObject projectilePrefab;
-    //public GameObject spawnPoint;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
