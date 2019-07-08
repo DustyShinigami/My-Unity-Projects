@@ -9,14 +9,14 @@ public class ScreenFader : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
-    public static ScreenFader instance;
+    //public static ScreenFader instance;
     public static bool black;
 
     private bool isFadeToBlack;
     private bool isFadeFromBlack;
     //private bool isBlack;
 
-    void Awake()
+    /*void Awake()
     {
         if (instance != null)
         {
@@ -27,7 +27,7 @@ public class ScreenFader : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
+    }*/
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class ScreenFader : MonoBehaviour
         {
             isFadeToBlack = false;
         }
-        if (black)
+        else if (black)
         {
             Debug.Log("black");
             yield return new WaitForSeconds(fadeSpeed);
