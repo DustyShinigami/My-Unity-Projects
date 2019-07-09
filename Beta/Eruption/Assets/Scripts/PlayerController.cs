@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public static bool canMove;
     public ChestTrigger chest;
-    public static PlayerController instance;
+    //public static PlayerController instance;
 
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        if(instance != null)
+        /*if(instance != null)
         {
             Destroy(gameObject);
         }
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
-        }
+        }*/
     }
 
     void Start()

@@ -1085,11 +1085,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300247019747548813}
     m_Modifications:
-    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
-        type: 3}
-      propertyPath: m_Name
-      value: Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5744796382144689880, guid: eca15963e281b8a49823e9f77fd48121,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1159,6 +1154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.666671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8782797760877823179, guid: eca15963e281b8a49823e9f77fd48121,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca15963e281b8a49823e9f77fd48121, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelStart : MonoBehaviour
 {
-    public Transform startPosition;
+    /*public Transform startPosition;
     //public GameObject playerPrefab;
 
     void Start()
@@ -18,7 +18,7 @@ public class LevelStart : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
         {
             thePlayer.transform.position = startPosition[1].position;
-        }*/
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -27,5 +27,5 @@ public class LevelStart : MonoBehaviour
         {
             PlayerController.instance.transform.position = startPosition.position;
         }
-    }
+    }*/
 }

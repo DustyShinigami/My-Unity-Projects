@@ -87,6 +87,11 @@ public class HealthManager : MonoBehaviour
                 isFadefromBlack = false;
             }
         }
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
+        {
+            playerRenderer = GameObject.FindWithTag("Player").GetComponent<Renderer>();
+        }
     }
 
     public void HurtPlayer(int damage, Vector3 direction)
