@@ -37,6 +37,18 @@ public class HealthManager : MonoBehaviour
     private PlayerController thePlayer;
     private Quaternion startPosition;
 
+    void Awake()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
+        {
+            if (thePlayer != null)
+            {
+                Debug.Log("found the player");
+                playerRenderer = GameObject.FindWithTag("Player").GetComponent<Renderer>();
+            }
+        }
+    }
+
     void Start()
     {
         /*GameObject renderObject = GameObject.FindWithTag("Player");
@@ -54,11 +66,11 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         //These functions are checked every frame until the player takes damage
-        if(invincibilityCounter > 0)
+        if (invincibilityCounter > 0)
         {
             invincibilityCounter -= Time.deltaTime;
             flashCounter -= Time.deltaTime;
-            if(flashCounter <= 0)
+            if (flashCounter <= 0)
             //The Flash Counter is currently set at 0.1 and will be within the 0 region as it counts down. During this period, the playerRenderer will alternate between on and off
             {
                 playerRenderer.enabled = !playerRenderer.enabled;
@@ -66,7 +78,7 @@ public class HealthManager : MonoBehaviour
                 flashCounter = flashLength;
             }
             //This makes sure after the flashing and invincibility has worn off that the player renderer is always turned back on so you can see the player
-            if(invincibilityCounter <= 0)
+            if (invincibilityCounter <= 0)
             {
                 playerRenderer.enabled = true;
             }
@@ -86,11 +98,6 @@ public class HealthManager : MonoBehaviour
             {
                 isFadefromBlack = false;
             }
-        }
-
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
-        {
-            playerRenderer = GameObject.FindWithTag("Player").GetComponent<Renderer>();
         }
     }
 
