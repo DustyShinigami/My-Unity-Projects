@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelStart : MonoBehaviour
 {
-    public GameObject healthManagerRef;
+    /*public GameObject healthManagerRef;
 
     private HealthManager theHealthManager;
 
@@ -20,6 +20,6 @@ public class LevelStart : MonoBehaviour
         {
             theHealthManager.GetPlayerRenderer();
         }
-    }
+    }*/
 
 }

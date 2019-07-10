@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public bool allowJump;
     public static bool canMove;
     public ChestTrigger chest;
+    //public SkinnedMeshRenderer playerRenderer;
+    //public GameObject playerRendererRef;
     //public static PlayerController instance;
 
     private Vector2 moveDirection;
@@ -29,10 +31,11 @@ public class PlayerController : MonoBehaviour
     private bool headingLeft = false;
     private Pickup pickupWeapon;
 
-    void Awake()
+    /*void Awake()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        playerRenderer = playerRendererRef.GetComponent<SkinnedMeshRenderer>();
         /*if(instance != null)
         {
             Destroy(gameObject);
@@ -41,8 +44,8 @@ public class PlayerController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
-        }*/
-    }
+        }
+    }*/
 
     void Start()
     {

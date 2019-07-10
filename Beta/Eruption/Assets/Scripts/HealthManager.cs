@@ -35,7 +35,18 @@ public class HealthManager : MonoBehaviour
     private bool isFadefromBlack;
     private PlayerController thePlayer;
     private Quaternion startPosition;
-    private Renderer playerRenderer;
+    private SkinnedMeshRenderer _playerRenderer = null;
+    public SkinnedMeshRenderer playerRenderer
+    {
+        get
+        {
+            if (_playerRenderer != null)
+                return _playerRenderer;
+
+            _playerRenderer = GameObject.FindWithTag("Player")?.GetComponent<SkinnedMeshRenderer>();
+            return _playerRenderer;
+        }
+    }
 
     /*void Awake()
     {
@@ -95,19 +106,19 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    public Renderer GetPlayerRenderer()
+    /*public Renderer GetPlayerRenderer()
     {
         if (playerRenderer != null)
             return playerRenderer;
 
-        var player = GameObject.FindWithTag("Player");
-        Debug.Assert(player != null);
+        var thePlayer = GameObject.FindWithTag("Player");
+        Debug.Assert(thePlayer != null);
 
-        playerRenderer = player.GetComponent<Renderer>();
+        playerRenderer = thePlayer.GetComponent<Renderer>();
         Debug.Assert(playerRenderer != null);
 
         return playerRenderer;
-    }
+    }*/
 
     public void HurtPlayer(int damage, Vector3 direction)
     {
