@@ -9,7 +9,7 @@ public class LoadNewArea : MonoBehaviour
     private ScreenFader theScreenFader;
     private SceneManagement theSceneManager;
     private bool nextArea;
-    private Vector3 destination = new Vector3(-14.78f, -0.184f, -1.115f);
+    //private Vector3 destination = new Vector3(-14.78f, -0.184f, -1.115f);
 
     void Start()
     {
@@ -39,8 +39,8 @@ public class LoadNewArea : MonoBehaviour
             thePlayer.gameObject.SetActive(false);
             theScreenFader.StartCoroutine("ScreenFade");
             yield return new WaitForSeconds(2f);
-            thePlayer.transform.position = destination;
-            thePlayer.gameObject.SetActive(true);
+            //thePlayer.transform.position = destination;
+            //thePlayer.gameObject.SetActive(true);
             SceneManager.LoadScene("level 1, room 2");
         }
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))

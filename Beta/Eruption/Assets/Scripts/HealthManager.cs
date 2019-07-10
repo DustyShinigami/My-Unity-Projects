@@ -10,7 +10,6 @@ public class HealthManager : MonoBehaviour
     public int maxHealth;
     public static int currentHealth;
     public float invincibilityLength;
-    public Renderer playerRenderer;
     public float flashLength;
     public float respawnLength;
     public GameObject deathEffect;
@@ -36,8 +35,9 @@ public class HealthManager : MonoBehaviour
     private bool isFadefromBlack;
     private PlayerController thePlayer;
     private Quaternion startPosition;
+    private Renderer playerRenderer;
 
-    void Awake()
+    /*void Awake()
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
         {
@@ -47,17 +47,11 @@ public class HealthManager : MonoBehaviour
                 playerRenderer = GameObject.FindWithTag("Player").GetComponent<Renderer>();
             }
         }
-    }
+    }*/
 
     void Start()
     {
-        /*GameObject renderObject = GameObject.FindWithTag("Player");
-        if(renderObject != null)
-        {
-            playerRenderer = renderObject.GetComponent<Renderer>();
-        }*/
         thePlayer = playerPrefab.GetComponent<PlayerController>();
-        //playerRenderer = rendererReference.GetComponent<Renderer>();
         currentHealth = maxHealth;
         respawnPoint = playerPrefab.transform.position;
         startPosition = playerPrefab.transform.rotation;
@@ -99,6 +93,20 @@ public class HealthManager : MonoBehaviour
                 isFadefromBlack = false;
             }
         }
+    }
+
+    public Renderer GetPlayerRenderer()
+    {
+        if (playerRenderer != null)
+            return playerRenderer;
+
+        var player = GameObject.FindWithTag("Player");
+        Debug.Assert(player != null);
+
+        playerRenderer = player.GetComponent<Renderer>();
+        Debug.Assert(playerRenderer != null);
+
+        return playerRenderer;
     }
 
     public void HurtPlayer(int damage, Vector3 direction)
