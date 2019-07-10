@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 {
     //The counters will count down and will keep counting down based on the length variables
     public int maxHealth;
-    public static int currentHealth;
+    public int currentHealth;
     public float invincibilityLength;
     public float flashLength;
     public float respawnLength;
@@ -24,7 +24,8 @@ public class HealthManager : MonoBehaviour
     public Sprite halfFlame;
     //public Sprite quarterFlame;
     public Sprite EmptyFlame;
-    public GameObject playerPrefab;
+    public PlayerController thePlayer;
+    public GameManager theGameManager;
 
     //This checks to see if there's a renderer on the player and if not, it finds and gets it
     public SkinnedMeshRenderer playerRenderer
@@ -46,16 +47,15 @@ public class HealthManager : MonoBehaviour
     private Vector3 respawnPoint;
     private bool isFadetoBlack;
     private bool isFadefromBlack;
-    private PlayerController thePlayer;
     private Quaternion startPosition;
     private SkinnedMeshRenderer _playerRenderer = null;
 
     void Start()
     {
-        thePlayer = playerPrefab.GetComponent<PlayerController>();
         currentHealth = maxHealth;
-        respawnPoint = playerPrefab.transform.position;
-        startPosition = playerPrefab.transform.rotation;
+        respawnPoint = thePlayer.transform.position;
+        startPosition = thePlayer.transform.rotation;
+        deathEffect.transform.position = thePlayer.transform.position;
     }
 
     void Update()
@@ -134,29 +134,28 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+            Instantiate(deathEffect, transform.position, transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadefromBlack = true;
-            Debug.Log("faded from black");
-            yield return new WaitForSeconds(3f);
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             currentHealth = maxHealth;
-            FlameMetre();
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            FlameMetre();
             GameManager.currentEmbers = 0;
+            theGameManager.SetCountText();
         }
 
         else if (Checkpoint.checkpointActive)
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+            Instantiate(deathEffect, transform.position, transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);

@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        //thePlayer = GameObject.FindGameObjectWithTag("Player").transform;
         canMove = true;
         currentHealth = maxHealth;
     }

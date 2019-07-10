@@ -6,20 +6,13 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static int currentEmbers;
-    public static int currentSecrets;
+    public static int currentEmbers = 0;
+    public static int currentSecrets = 0;
     public TextMeshProUGUI emberText;
     public TextMeshProUGUI secretsText;
 
     private bool secretCollected = false;
     private float timer = 2f;
-
-    void Awake()
-    {
-        currentEmbers = 0;
-        currentSecrets = 0;
-        //UI.MakeSingleton();
-    }
 
     void Update()
     {
