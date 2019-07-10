@@ -25,7 +25,20 @@ public class HealthManager : MonoBehaviour
     //public Sprite quarterFlame;
     public Sprite EmptyFlame;
     public GameObject playerPrefab;
-    //public GameObject rendererReference;
+
+    //This checks to see if there's a renderer on the player and if not, it finds and gets it
+    public SkinnedMeshRenderer playerRenderer
+    {
+        get
+        {
+            if (_playerRenderer != null)
+                return _playerRenderer;
+
+            _playerRenderer = GameObject.FindWithTag("Player")?.GetComponentInChildren<SkinnedMeshRenderer>();
+            Debug.Assert(playerRenderer != null);
+            return _playerRenderer;
+        }
+    }
 
     private float invincibilityCounter;
     private float flashCounter;
@@ -36,29 +49,6 @@ public class HealthManager : MonoBehaviour
     private PlayerController thePlayer;
     private Quaternion startPosition;
     private SkinnedMeshRenderer _playerRenderer = null;
-    public SkinnedMeshRenderer playerRenderer
-    {
-        get
-        {
-            if (_playerRenderer != null)
-                return _playerRenderer;
-
-            _playerRenderer = GameObject.FindWithTag("Player")?.GetComponent<SkinnedMeshRenderer>();
-            return _playerRenderer;
-        }
-    }
-
-    /*void Awake()
-    {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("level 1, room 2"))
-        {
-            if (thePlayer != null)
-            {
-                Debug.Log("found the player");
-                playerRenderer = GameObject.FindWithTag("Player").GetComponent<Renderer>();
-            }
-        }
-    }*/
 
     void Start()
     {
@@ -106,20 +96,6 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    /*public Renderer GetPlayerRenderer()
-    {
-        if (playerRenderer != null)
-            return playerRenderer;
-
-        var thePlayer = GameObject.FindWithTag("Player");
-        Debug.Assert(thePlayer != null);
-
-        playerRenderer = thePlayer.GetComponent<Renderer>();
-        Debug.Assert(playerRenderer != null);
-
-        return playerRenderer;
-    }*/
-
     public void HurtPlayer(int damage, Vector3 direction)
     {
         //If the invincibility countdown reaches zero it stops, making you no longer invincible and prone to taking damage again
@@ -163,6 +139,8 @@ public class HealthManager : MonoBehaviour
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadefromBlack = true;
+            Debug.Log("faded from black");
+            yield return new WaitForSeconds(3f);
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
             currentHealth = maxHealth;
@@ -170,7 +148,7 @@ public class HealthManager : MonoBehaviour
             invincibilityCounter = invincibilityLength;
             playerRenderer.enabled = false;
             flashCounter = flashLength;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             GameManager.currentEmbers = 0;
         }
 

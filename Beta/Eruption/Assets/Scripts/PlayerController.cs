@@ -31,11 +31,11 @@ public class PlayerController : MonoBehaviour
     private bool headingLeft = false;
     private Pickup pickupWeapon;
 
-    /*void Awake()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        playerRenderer = playerRendererRef.GetComponent<SkinnedMeshRenderer>();
+        //playerRenderer = playerRendererRef.GetComponent<SkinnedMeshRenderer>();
         /*if(instance != null)
         {
             Destroy(gameObject);
@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
-        }
-    }*/
+        }*/
+    }
 
     void Start()
     {
