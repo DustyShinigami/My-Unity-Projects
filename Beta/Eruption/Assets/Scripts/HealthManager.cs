@@ -24,7 +24,17 @@ public class HealthManager : MonoBehaviour
     public Sprite halfFlame;
     //public Sprite quarterFlame;
     public Sprite EmptyFlame;
-    public PlayerController thePlayer;
+    public PlayerController thePlayer
+    {
+        get
+        {
+            if (_thePlayer != null)
+                return _thePlayer;
+
+            _thePlayer = GameObject.FindWithTag("Player")?.GetComponentInChildren<PlayerController>();
+            return _thePlayer;
+        }
+    }
     public GameManager theGameManager;
 
     //This checks to see if there's a renderer on the player and if not, it finds and gets it
@@ -49,13 +59,13 @@ public class HealthManager : MonoBehaviour
     private bool isFadefromBlack;
     private Quaternion startPosition;
     private SkinnedMeshRenderer _playerRenderer = null;
+    private PlayerController _thePlayer = null;
 
     void Start()
     {
         currentHealth = maxHealth;
         respawnPoint = thePlayer.transform.position;
         startPosition = thePlayer.transform.rotation;
-        deathEffect.transform.position = thePlayer.transform.position;
     }
 
     void Update()
@@ -134,7 +144,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, transform.position, transform.rotation);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -155,7 +165,7 @@ public class HealthManager : MonoBehaviour
         {
             isRespawning = true;
             thePlayer.gameObject.SetActive(false);
-            Instantiate(deathEffect, transform.position, transform.rotation);
+            Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
             yield return new WaitForSeconds(respawnLength);
             isFadetoBlack = true;
             yield return new WaitForSeconds(waitForFade);
@@ -220,14 +230,14 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    /*public void HealPlayer(int healAmount)
+    public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;
         if(currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
-    }*/
+    }
 
     public void SetSpawnPoint(Vector3 newPosition)
     {

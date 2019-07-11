@@ -466,6 +466,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1300247019837737246}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &176236342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1300247019837737246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176236341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdee4387237467c40b4bb9171daf48cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &181014934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7402066811164433399, guid: 2e777342bc3952644865beb7eac20030,
@@ -4339,6 +4351,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1300247019837737247}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: textureChange
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e23520481cb9554da63a43634d19d5f, type: 2}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: textureDefault
+      value: 
+      objectReference: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2461459547127052584, guid: 0e679aacf2790914cad05e4ba2df84a1,
+        type: 3}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1967805851}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: playerRenderer
+      value: 
+      objectReference: {fileID: 487794646}
+    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
+        type: 3}
+      propertyPath: playerRendererRef
+      value: 
+      objectReference: {fileID: 2130278667}
     - target: {fileID: 7315807368347333830, guid: a6b6b61679bd5314f8931a50702be38a,
         type: 3}
       propertyPath: m_Name
@@ -4404,42 +4452,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1300247019837737247}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: textureChange
-      value: 
-      objectReference: {fileID: 2100000, guid: 0e23520481cb9554da63a43634d19d5f, type: 2}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: textureDefault
-      value: 
-      objectReference: {fileID: 2100000, guid: ba516f6ad6085664a8800272cc7b8ba3, type: 2}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 2461459547127052584, guid: 0e679aacf2790914cad05e4ba2df84a1,
-        type: 3}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 1967805851}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: playerRenderer
-      value: 
-      objectReference: {fileID: 487794646}
-    - target: {fileID: 3774269337181879657, guid: a6b6b61679bd5314f8931a50702be38a,
-        type: 3}
-      propertyPath: playerRendererRef
-      value: 
-      objectReference: {fileID: 2130278667}
     - target: {fileID: 7294094121329424564, guid: a6b6b61679bd5314f8931a50702be38a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4996,6 +5008,11 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3147218104575049290, guid: 96af34636b5ee2143ac2103e38ac3561,
+        type: 3}
+      propertyPath: damnageToGive
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96af34636b5ee2143ac2103e38ac3561, type: 3}
 --- !u!1001 &5003365700148195294
@@ -5255,6 +5272,16 @@ PrefabInstance:
       propertyPath: theGameManager
       value: 
       objectReference: {fileID: 2069581583}
+    - target: {fileID: 1182163590091753005, guid: 2457529fe0c84154dbec1fb36f1df2d8,
+        type: 3}
+      propertyPath: _playerRenderer
+      value: 
+      objectReference: {fileID: 487794646}
+    - target: {fileID: 1182163590091753005, guid: 2457529fe0c84154dbec1fb36f1df2d8,
+        type: 3}
+      propertyPath: thePlayer
+      value: 
+      objectReference: {fileID: 176236342}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2457529fe0c84154dbec1fb36f1df2d8, type: 3}
 --- !u!4 &5006512736047400260 stripped

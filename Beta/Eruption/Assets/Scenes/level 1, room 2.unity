@@ -6979,7 +6979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1016015512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14090,6 +14090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1182163590091753005, guid: 2457529fe0c84154dbec1fb36f1df2d8,
+        type: 3}
+      propertyPath: theGameManager
+      value: 
+      objectReference: {fileID: 5003365699834211051}
     - target: {fileID: 1182163591308069679, guid: 2457529fe0c84154dbec1fb36f1df2d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14195,11 +14200,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1182163590091753005, guid: 2457529fe0c84154dbec1fb36f1df2d8,
-        type: 3}
-      propertyPath: theGameManager
-      value: 
-      objectReference: {fileID: 5003365699834211051}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2457529fe0c84154dbec1fb36f1df2d8, type: 3}
 --- !u!1 &8296172668570907659 stripped
