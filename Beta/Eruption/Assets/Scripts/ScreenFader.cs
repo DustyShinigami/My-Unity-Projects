@@ -42,7 +42,6 @@ public class ScreenFader : MonoBehaviour
         }
         else if (black)
         {
-            Debug.Log("black");
             yield return new WaitForSeconds(fadeSpeed);
             isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
