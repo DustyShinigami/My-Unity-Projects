@@ -5,21 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class LevelStart : MonoBehaviour
 {
-    /*public GameObject healthManagerRef;
-
-    private HealthManager theHealthManager;
-
-    public void Awake()
+    public static Vector3 respawnPoint;
+    public static Quaternion startPosition;
+    public PlayerController thePlayer
     {
-        theHealthManager = healthManagerRef.GetComponent<HealthManager>();
+        get
+        {
+            if (_thePlayer != null)
+                return _thePlayer;
+
+            _thePlayer = GameObject.FindWithTag("Player")?.GetComponentInChildren<PlayerController>();
+            return _thePlayer;
+        }
     }
 
-    public void OnTriggerEnter(Collider other)
+    private PlayerController _thePlayer = null;
+
+    public void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
+        respawnPoint = thePlayer.transform.position;
+        startPosition = thePlayer.transform.rotation;
+    }
+
+    /*public void ChangedActiveScene(Scene current, Scene next)
+    {
+        string currentName = current.name;
+        if (currentName == null)
         {
-            theHealthManager.GetPlayerRenderer();
+            currentName = "Replaced";
         }
     }*/
-
 }

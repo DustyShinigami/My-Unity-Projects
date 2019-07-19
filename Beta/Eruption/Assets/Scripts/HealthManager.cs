@@ -54,18 +54,18 @@ public class HealthManager : MonoBehaviour
     private float invincibilityCounter;
     private float flashCounter;
     private bool isRespawning;
-    private Vector3 respawnPoint;
+    //private Vector3 respawnPoint;
     private bool isFadetoBlack;
     private bool isFadefromBlack;
-    private Quaternion startPosition;
+    //private Quaternion startPosition;
     private SkinnedMeshRenderer _playerRenderer = null;
     private PlayerController _thePlayer = null;
 
     void Start()
     {
         currentHealth = maxHealth;
-        respawnPoint = thePlayer.transform.position;
-        startPosition = thePlayer.transform.rotation;
+        //respawnPoint = thePlayer.transform.position;
+        //startPosition = thePlayer.transform.rotation;
     }
 
     void Update()
@@ -172,8 +172,10 @@ public class HealthManager : MonoBehaviour
             isFadefromBlack = true;
             isRespawning = false;
             thePlayer.gameObject.SetActive(true);
-            thePlayer.transform.position = respawnPoint;
-            thePlayer.transform.rotation = startPosition;
+            //thePlayer.transform.position = respawnPoint;
+            //thePlayer.transform.rotation = startPosition;
+            thePlayer.transform.position = LevelStart.respawnPoint;
+            thePlayer.transform.rotation = LevelStart.startPosition;
             currentHealth = maxHealth;
             FlameMetre();
             invincibilityCounter = invincibilityLength;
@@ -241,6 +243,7 @@ public class HealthManager : MonoBehaviour
 
     public void SetSpawnPoint(Vector3 newPosition)
     {
-        respawnPoint = newPosition;
+        //respawnPoint = newPosition;
+        LevelStart.respawnPoint = newPosition;
     }
 }
