@@ -48,7 +48,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Debug.Log("pause menu disabled");
         ScreenFader.black = true;
-        Debug.Log("screen is black");
         theScreenFader.StartCoroutine("ScreenFade");
         Time.timeScale = 1f;
     }
