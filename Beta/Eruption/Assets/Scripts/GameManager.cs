@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     private bool secretCollected = false;
     private float timer = 2f;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         if (secretCollected)
