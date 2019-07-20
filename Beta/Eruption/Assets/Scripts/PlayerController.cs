@@ -18,11 +18,22 @@ public class PlayerController : MonoBehaviour
     public bool allowCombat;
     public bool allowJump;
     public static bool canMove;
-    public ChestTrigger chest;
+    public ChestTrigger chest
+    {
+        get
+        {
+            if (_chest != null)
+                return _chest;
+
+            _chest = GameObject.FindWithTag("Chest Trigger")?.GetComponent<ChestTrigger>();
+            return _chest;
+        }
+    }
     //public SkinnedMeshRenderer playerRenderer;
     //public GameObject playerRendererRef;
     //public static PlayerController instance;
 
+    private ChestTrigger _chest = null;
     private Vector2 moveDirection;
     private Vector2 moveHorizontal;
     private float knockBackCounter;

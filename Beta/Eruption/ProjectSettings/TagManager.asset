@@ -11,6 +11,7 @@ TagManager:
   - Pickup Light
   - Enemy
   - Projectile
+  - Chest Trigger
   layers:
   - Default
   - TransparentFX
