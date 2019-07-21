@@ -11,6 +11,7 @@ public class ScreenFader : MonoBehaviour
     public float waitForFade;
     //public static ScreenFader instance;
     public static bool black;
+    public GameObject thePlayer;
 
     private bool isFadeToBlack;
     private bool isFadeFromBlack;
@@ -31,6 +32,7 @@ public class ScreenFader : MonoBehaviour
 
     void Start()
     {
+        thePlayer.SetActive(false);
         StartCoroutine("ScreenFade");
     }
 
@@ -46,7 +48,9 @@ public class ScreenFader : MonoBehaviour
             isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(0.5f);
+            thePlayer.SetActive(true);
+            //PlayerController.canMove = true;
         }
         else
         {
@@ -54,7 +58,9 @@ public class ScreenFader : MonoBehaviour
             isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(0.5f);
+            thePlayer.SetActive(true);
+            //PlayerController.canMove = true;
         }
     }
 

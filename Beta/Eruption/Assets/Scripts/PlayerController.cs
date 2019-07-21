@@ -238,8 +238,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    anim.SetBool("Interact", controller.isGrounded);
-                    chest.ChestOpen();
+                    StartCoroutine("Open");
                 }
                 else if (Input.GetKeyDown(KeyCode.Return) && !ChestTrigger.allowOpen)
                 {
@@ -249,8 +248,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (Input.GetKeyDown("joystick button 2"))
                     {
-                        anim.SetBool("Interact", controller.isGrounded);
-                        chest.ChestOpen();
+                        StartCoroutine("Open");
                     }
                     else if (Input.GetKeyDown("joystick button 2") && !ChestTrigger.allowOpen)
                     {
@@ -261,8 +259,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (Input.GetKeyDown("joystick button 0"))
                     {
-                        anim.SetBool("Interact", controller.isGrounded);
-                        chest.ChestOpen();
+                        StartCoroutine("Open");
                     }
                     else if (Input.GetKeyDown("joystick button 0") && !ChestTrigger.allowOpen)
                     {
@@ -294,6 +291,15 @@ public class PlayerController : MonoBehaviour
         pickupWeapon.ObjectActivation();
         yield return new WaitForSeconds(1f);
         allowInteract = false;
+        canMove = true;
+    }
+
+    public IEnumerator Open()
+    {
+        canMove = false;
+        anim.SetBool("Interact", controller.isGrounded);
+        chest.ChestOpen();
+        yield return new WaitForSeconds(1.5f);
         canMove = true;
     }
 

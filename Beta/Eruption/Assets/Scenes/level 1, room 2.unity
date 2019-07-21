@@ -7953,6 +7953,7 @@ MonoBehaviour:
   blackScreen: {fileID: 1860492029}
   fadeSpeed: 1
   waitForFade: 1
+  thePlayer: {fileID: 334949120}
 --- !u!114 &1016015513
 MonoBehaviour:
   m_ObjectHideFlags: 0
