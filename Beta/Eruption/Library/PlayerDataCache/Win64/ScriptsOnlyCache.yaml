@@ -59,7 +59,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   sceneClasses:
-    Assets/Scenes/Credits.unity:
+    Assets/Scenes/credits.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -93,9 +93,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9510}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -174,13 +174,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10060}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10840}
     - Class: 114
-      Script: {instanceID: 10946}
+      Script: {instanceID: 10944}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -275,23 +275,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10100}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10338}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 10394}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10840}
     - Class: 114
-      Script: {instanceID: 10900}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 10954}
+      Script: {instanceID: 10952}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -408,31 +408,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10100}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10338}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 10394}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 10696}
+      Script: {instanceID: 10694}
     - Class: 114
-      Script: {instanceID: 10824}
+      Script: {instanceID: 10822}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10840}
     - Class: 114
-      Script: {instanceID: 10900}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10930}
     - Class: 114
-      Script: {instanceID: 10954}
+      Script: {instanceID: 10952}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -499,15 +499,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9868}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10332}
+      Script: {instanceID: 10330}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -580,11 +580,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10100}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -669,17 +669,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10096}
     - Class: 114
-      Script: {instanceID: 10320}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 10394}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10840}
     - Class: 114
-      Script: {instanceID: 10900}
+      Script: {instanceID: 10898}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1281,7 +1281,7 @@ ScriptsOnlyBuild:
     className: ControllerManager
   - hash:
       serializedVersion: 2
-      Hash: 27a4b245623fe01a6ac3c703a3611568
+      Hash: 086617ff8e5672a830732f76245d9781
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScreenFader
@@ -1305,7 +1305,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 100431489c0726b6f282bc9a6e312b50
+      Hash: e37c2629d0a19bc5c01527fb24d6afc9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneManagement
@@ -1465,12 +1465,6 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineTargetGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Canvas
   - hash:
       serializedVersion: 2
       Hash: 7c792393fb82488bd20139dcc5ba26d8
@@ -1797,7 +1791,7 @@ ScriptsOnlyBuild:
   - Assets/Scenes/start_area 2.unity
   - Assets/Scenes/level 1, room 1.unity
   - Assets/Scenes/level 1, room 2.unity
-  - Assets/Scenes/Credits.unity
+  - Assets/Scenes/credits.unity
   playerPath: E:/Google Drive/College Work/Creative Digital Media Production Games
     Development L3/Year 2/Units/Creative Media Production Management Project/Game
     Project/Eruption/Builds/Eruption.exe

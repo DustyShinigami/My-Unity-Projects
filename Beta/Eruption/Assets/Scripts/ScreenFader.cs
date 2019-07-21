@@ -9,26 +9,22 @@ public class ScreenFader : MonoBehaviour
     public Image blackScreen;
     public float fadeSpeed;
     public float waitForFade;
-    //public static ScreenFader instance;
     public static bool black;
-    public GameObject thePlayer;
+    public GameObject thePlayer
+    {
+        get
+        {
+            if (_thePlayer != null)
+                return _thePlayer;
 
+            _thePlayer = GameObject.Find("Player");
+            return _thePlayer;
+        }
+    }
+
+    private GameObject _thePlayer = null;
     private bool isFadeToBlack;
     private bool isFadeFromBlack;
-    //private bool isBlack;
-
-    /*void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }*/
 
     void Start()
     {
@@ -48,9 +44,8 @@ public class ScreenFader : MonoBehaviour
             isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            //yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             thePlayer.SetActive(true);
-            //PlayerController.canMove = true;
         }
         else
         {
@@ -58,9 +53,8 @@ public class ScreenFader : MonoBehaviour
             isFadeToBlack = true;
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            //yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             thePlayer.SetActive(true);
-            //PlayerController.canMove = true;
         }
     }
 
