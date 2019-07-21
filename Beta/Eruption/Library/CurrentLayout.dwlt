@@ -385,9 +385,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c6300000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b6d0ffffdcd0ffff40d3ffff48dbffff18dcfffffcdfffff82e1ffff76e3ffff8ae5ffff26ebfffffaecffff2cedffff50eeffff34f3fffff6f6ffffe2f7ffff1cf9ffffaafaffffb2faffff8efbffffa8460000
+      m_ExpandedIDs: 8efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -447,9 +447,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 12.554213, y: 3.706121, z: -4.6840844}
+    m_Target: {x: 13.977672, y: 7.051249, z: -5.5412045}
     speed: 2
-    m_Value: {x: 12.554213, y: 3.706121, z: -4.6840844}
+    m_Value: {x: 13.597978, y: 6.158968, z: -5.3126082}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -482,9 +482,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 44.516525
+    m_Target: 53.08678
     speed: 2
-    m_Value: 44.516525
+    m_Value: 50.800747
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -756,19 +756,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\GitHub Repositories\My-Unity-Projects\Beta\Eruption
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b22d0000
-    m_LastClickedID: 11698
+    m_SelectedIDs: c02c0000
+    m_LastClickedID: 11456
     m_ExpandedIDs: 00000000a42b00002a2c0000042d0000082d0000e42e0000b22f00001030000084300000b0300000ba30000062310000283200005c320000a8320000ae330000f4350000f6350000f8350000fa350000fc35000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -849,7 +849,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 156}
     m_GridSize: 96
   m_DirectoriesAreaWidth: 188
 --- !u!114 &18
