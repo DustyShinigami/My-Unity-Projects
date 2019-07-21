@@ -216,27 +216,21 @@ public class PlayerController : MonoBehaviour
                 {
                     if (Input.GetKeyDown("joystick button 2"))
                     {
-                        anim.SetBool("Interact", controller.isGrounded);
-                        pickupWeapon.ObjectActivation();
-                        allowInteract = false;
+                        StartCoroutine("Pickup");
                     }
                 }
                 else if (SceneManagement.ps4Controller == 1)
                 {
                     if (Input.GetKeyDown("joystick button 0"))
                     {
-                        anim.SetBool("Interact", controller.isGrounded);
-                        pickupWeapon.ObjectActivation();
-                        allowInteract = false;
+                        StartCoroutine("Pickup");
                     }
                 }
                 else
                 {
                     if (Input.GetKeyDown(KeyCode.Return))
                     {
-                        anim.SetBool("Interact", controller.isGrounded);
-                        pickupWeapon.ObjectActivation();
-                        allowInteract = false;
+                        StartCoroutine("Pickup");
                     }
                 }
             }
@@ -291,6 +285,16 @@ public class PlayerController : MonoBehaviour
             : Mathf.Abs(Input.GetAxis("Horizontal")));
 
         //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+    }
+
+    public IEnumerator Pickup()
+    {
+        canMove = false;
+        anim.SetBool("Interact", controller.isGrounded);
+        pickupWeapon.ObjectActivation();
+        yield return new WaitForSeconds(1f);
+        allowInteract = false;
+        canMove = true;
     }
 
     public void Knockback(Vector3 direction)

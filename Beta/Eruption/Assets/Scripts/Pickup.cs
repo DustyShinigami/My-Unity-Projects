@@ -37,14 +37,6 @@ public class Pickup : MonoBehaviour
                 PCPrompts();
             }
         }
-        /*else if (other.gameObject.CompareTag("Player"))
-        {
-            if (objectsDisabled)
-            {
-                PlayerController.allowInteract = false;
-                PlayerController.interact = false;
-            }
-        }*/
     }
 
     public void OnTriggerExit(Collider other)

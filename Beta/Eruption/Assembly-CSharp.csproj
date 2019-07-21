@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AttachPlayer.cs" />
     <Compile Include="Assets\Scripts\ButtonPrompts.cs" />
-    <Compile Include="Assets\Scripts\Canvas.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
     <Compile Include="Assets\Scripts\ChestTrigger.cs" />

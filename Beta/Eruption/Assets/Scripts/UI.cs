@@ -27,4 +27,18 @@ public class UI : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    void Update()
+    {
+        if (PauseMenu.restarted)
+        {
+            DestroyThis();
+        }
+    }
+
+    void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
+
 }

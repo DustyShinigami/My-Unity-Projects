@@ -4407,7 +4407,6 @@ MonoBehaviour:
   entranceVicinity: 0
   exitVicinity: 0
   levelToLoad: hut_interior
-  exitLight: {fileID: 0}
 --- !u!65 &1584233009
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GamePaused;
     public GameObject pauseMenuUI;
+    public static bool restarted;
 
     private ScreenFader theScreenFader;
 
@@ -15,6 +16,7 @@ public class PauseMenu : MonoBehaviour
         theScreenFader = FindObjectOfType<ScreenFader>();
         ControllerDetection();
         GamePaused = false;
+        restarted = false;
     }
 
     void Update()
@@ -43,13 +45,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        restarted = true;
         SceneManager.LoadScene("start_area");
-        Debug.Log("level loaded");
         pauseMenuUI.SetActive(false);
-        Debug.Log("pause menu disabled");
         ScreenFader.black = true;
         theScreenFader.StartCoroutine("ScreenFade");
         Time.timeScale = 1f;
+        GameManager.currentEmbers = 0;
+        GameManager.currentSecrets = 0;
     }
 
     public void Pause()

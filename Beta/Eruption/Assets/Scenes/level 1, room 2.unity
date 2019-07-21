@@ -6202,6 +6202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3472026212639645536, guid: aeae5c7c8e50aed49885b12dc7f7dfc3,
+        type: 3}
+      propertyPath: m_TagString
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 3472026212639645546, guid: aeae5c7c8e50aed49885b12dc7f7dfc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15166,7 +15171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136967704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.750628, y: 1.4115298, z: -2.744358}
+  m_LocalPosition: {x: -10.746184, y: 1.4115298, z: -2.744358}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

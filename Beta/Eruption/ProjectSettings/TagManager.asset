@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Projectile
   - Chest Trigger
+  - UI
   layers:
   - Default
   - TransparentFX

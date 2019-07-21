@@ -56,7 +56,10 @@ public class Credits : MonoBehaviour
 
     public void Restart()
     {
+        PauseMenu.restarted = true;
         SceneManager.LoadScene("start_area");
+        GameManager.currentEmbers = 0;
+        GameManager.currentSecrets = 0;
     }
 
     public void QuitGame()

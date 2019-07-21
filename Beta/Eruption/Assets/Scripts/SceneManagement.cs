@@ -12,11 +12,22 @@ public class SceneManagement : MonoBehaviour
     public string levelToLoad;
     public static int xbox360Controller = 0;
     public static int ps4Controller = 0;
-    public GameObject exitLight;
+    public GameObject exitLight
+    {
+        get
+        {
+            if (_exitLight != null)
+                return _exitLight;
+
+            _exitLight = GameObject.Find("Exit Light");
+            return _exitLight;
+        }
+    }
     public static bool insideHut;
     public static bool outsideHut;
     public static bool backOutsideHut;
 
+    private GameObject _exitLight = null;
     private PlayerController thePlayer;
 
     void Start()
