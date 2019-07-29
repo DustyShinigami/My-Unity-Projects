@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        ScreenFader.deactivatePlayer += DisablePlayer;
+        ScreenFader.reactivatePlayer += EnablePlayer;
     }
 
     void OnEnable()
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
         ScreenFader.reactivatePlayer += EnablePlayer;
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         ScreenFader.deactivatePlayer -= DisablePlayer;
         ScreenFader.reactivatePlayer -= EnablePlayer;
