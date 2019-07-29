@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour
             return _chest;
         }
     }
-    //public SkinnedMeshRenderer playerRenderer;
-    //public GameObject playerRendererRef;
-    //public static PlayerController instance;
 
     private ChestTrigger _chest = null;
     private Vector2 moveDirection;
@@ -46,16 +43,18 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        //playerRenderer = playerRendererRef.GetComponent<SkinnedMeshRenderer>();
-        /*if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }*/
+    }
+
+    void OnEnable()
+    {
+        ScreenFader.deactivatePlayer += DisablePlayer;
+        ScreenFader.reactivatePlayer += EnablePlayer;
+    }
+
+    void OnDisable()
+    {
+        ScreenFader.deactivatePlayer -= DisablePlayer;
+        ScreenFader.reactivatePlayer -= EnablePlayer;
     }
 
     void Start()
@@ -282,6 +281,16 @@ public class PlayerController : MonoBehaviour
             : Mathf.Abs(Input.GetAxis("Horizontal")));
 
         //anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+    }
+
+    void DisablePlayer()
+    {
+        gameObject.SetActive(false);
+    }
+
+    void EnablePlayer()
+    {
+        gameObject.SetActive(true);
     }
 
     public IEnumerator Pickup()

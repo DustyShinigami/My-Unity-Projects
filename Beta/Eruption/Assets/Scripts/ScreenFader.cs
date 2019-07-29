@@ -10,6 +10,10 @@ public class ScreenFader : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
     public static bool black;
+    public delegate void PlayerDeactivated();
+    public static event PlayerDeactivated deactivatePlayer;
+    public delegate void PlayerReactivated();
+    public static event PlayerReactivated reactivatePlayer;
 
     private bool isFadeToBlack;
     private bool isFadeFromBlack;
@@ -27,20 +31,33 @@ public class ScreenFader : MonoBehaviour
         }
         else if (black)
         {
+            Invoke("DeactivatePlayer", 0.5f);
             yield return new WaitForSeconds(fadeSpeed);
             isFadeToBlack = true;
+            Invoke("ReactivatePlayer", 0.5f);
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            //yield return new WaitForSeconds(0.1f);
         }
         else
         {
+            Invoke("DeactivatePlayer", 0.5f);
             yield return new WaitForSeconds(fadeSpeed);
             isFadeToBlack = true;
+            Invoke("ReactivatePlayer", 0.5f);
+            print("reactivated player");
             yield return new WaitForSeconds(waitForFade);
             isFadeFromBlack = true;
-            //yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    void DeactivatePlayer()
+    {
+        deactivatePlayer();
+    }
+
+    void ReactivatePlayer()
+    {
+        reactivatePlayer();
     }
 
     void Update()
